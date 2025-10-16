@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <!-- 日志输出格式 -->
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="LOG_FILE_PATH">logs/springboot-log4j2</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- 文件输出（滚动日志，按大小分割） -->
+        <RollingFile name="RollingFile" fileName="${LOG_FILE_PATH}.log"
+                     filePattern="${LOG_FILE_PATH}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/> <!-- 单个文件最大 10MB -->
+            </Policies>
+            <DefaultRolloverStrategy max="10"/> <!-- 最多保留 10 个文件 -->
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- 根日志级别 -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+
+        <!-- 自定义包日志级别（例如降低 Spring 框架日志级别） -->
+        <Logger name="org.springframework" level="warn" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>

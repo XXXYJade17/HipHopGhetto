@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: hiphop-ghetto
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.133:3306/hiphop_ghetto?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+mybatis-plus:
+#  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: status
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 9998
+
+
+jwt:
+  secret-key: xxxyjade
+  token-name: authentication
+  ttl: 7200000
+aliyun:
+  oss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tDQebvmjuj7K4W38nd6
+    access-key-secret: K3S4pV829LEtLni9tdpfcOXPyh5TLv
+    bucket-name: xxxyjade-hiphop-home

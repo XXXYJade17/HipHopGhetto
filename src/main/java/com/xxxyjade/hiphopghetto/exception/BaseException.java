@@ -1,0 +1,61 @@
+package com.xxxyjade.hiphopghetto.exception;
+
+import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
+import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
+import lombok.Data;
+
+@Data
+public class BaseException extends RuntimeException{
+
+    private Integer code;
+
+    private String message;
+
+    public BaseException() {
+        super();
+    }
+
+    public BaseException(String message) {
+        super(message);
+    }
+
+
+    public BaseException(String code, String message) {
+        super(message);
+        this.code = Integer.parseInt(code);
+        this.message = message;
+    }
+
+    public BaseException(Integer code, String message) {
+        super(message);
+        this.code = code;
+        this.message = message;
+    }
+
+    public BaseException(BaseCode baseCode) {
+        super(baseCode.getMsg());
+        this.code = baseCode.getCode();
+        this.message = baseCode.getMsg();
+    }
+
+    public BaseException(Result result) {
+        super(result.getMessage());
+        this.code = result.getCode();
+        this.message = result.getMessage();
+    }
+
+    public BaseException(Throwable cause) {
+        super(cause);
+    }
+
+    public BaseException(String message, Throwable cause) {
+        super(message, cause);
+        this.message = message;
+    }
+
+    public BaseException(Integer code, String message, Throwable cause) {
+        super(message, cause);
+        this.code = code;
+        this.message = message;
+    }
+}
