@@ -34,7 +34,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         try {
             log.info("jwt校验:{}", token);
             Claims claims = JwtUtil.parseJWT(jwtProperties.getSecretKey(), token);
-            Long id = Long.valueOf(claims.get(JwtClaimsConstant.ID).toString());
+            Long id = Long.valueOf(claims.get(JwtClaimsConstant.USER_ID).toString());
             log.info("当前用户id:{}", id);
             ThreadUtil.setId(id);
             return true;

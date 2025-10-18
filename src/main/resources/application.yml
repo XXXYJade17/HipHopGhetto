@@ -26,6 +26,6 @@ jwt:
 aliyun:
   oss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tDQebvmjuj7K4W38nd6
-    access-key-secret: K3S4pV829LEtLni9tdpfcOXPyh5TLv
+    access-key-id: ${ALIYUN_ACCESS_KEY_ID}
+    access-key-secret: ${ALIYUN_ACCESS_KEY_SECRET}
     bucket-name: xxxyjade-hiphop-home
