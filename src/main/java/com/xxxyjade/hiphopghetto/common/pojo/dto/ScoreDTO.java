@@ -6,8 +6,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-@Schema(title = "打分DTO")
-public class VotingDTO implements Serializable {
+@Schema(title = "评分DTO")
+public class ScoreDTO implements Serializable {
 
     @Schema(name = "activityId", description = "活动ID")
     private Long activityId;

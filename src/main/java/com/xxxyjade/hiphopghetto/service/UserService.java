@@ -2,17 +2,20 @@ package com.xxxyjade.hiphopghetto.service;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterLoginVO;
 
 public interface UserService {
     /**
-     * 用户 注册
-     * @param userRegisterDTO
+     * 用户注册
+     * @param userRegisterDTO 用户注册 DTO
+     * @return 用户注册与登录 VO
      */
-    void register(UserRegisterDTO userRegisterDTO);
+    UserRegisterLoginVO register(UserRegisterDTO userRegisterDTO);
 
     /**
-     * 用户 登录
-     * @param userLoginDTO
+     * 用户登录
+     * @param userLoginDTO 用户登录 DTO
+     * @return 用户注册与登录 VO
      */
-    void login(UserLoginDTO userLoginDTO);
+    UserRegisterLoginVO login(UserLoginDTO userLoginDTO);
 }

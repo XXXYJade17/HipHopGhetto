@@ -1,6 +1,8 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,13 +10,13 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
+@Builder
 @TableName("user")
-public class User implements Serializable {
+public class User extends BaseTableData implements Serializable {
 
     /**
      * id
-     * 由雪花算法生成
+     * 雪花生成
      */
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
@@ -25,14 +27,19 @@ public class User implements Serializable {
     private String username;
 
     /**
+     * 密码
+     */
+    private String password;
+
+    /**
      * 姓名
      */
     private String name;
 
     /**
-     * 密码
+     * 身份证号
      */
-    private String password;
+    private String idCard;
 
     /**
      * 手机号
@@ -52,23 +59,4 @@ public class User implements Serializable {
      */
     private String avatar;
 
-    /**
-     * 状态
-     * 0 - 正常
-     * 1 - 失效
-     */
-    @TableLogic(value = "0", delval = "1")
-    private Integer status;
-
-    /**
-     * 创建时间
-     */
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
-
-    /**
-     * 修改时间
-     */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
 }

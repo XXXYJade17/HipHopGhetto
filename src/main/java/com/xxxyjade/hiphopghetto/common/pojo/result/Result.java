@@ -2,6 +2,7 @@ package com.xxxyjade.hiphopghetto.common.pojo.result;
 
 import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
@@ -18,13 +19,6 @@ public class Result<T> {
 
     private Result() {}
 
-    public static <T> Result<T> error(String message) {
-        Result<T> result = new Result<>();
-        result.code = -1;
-        result.message = message;
-        return result;
-    }
-
     public static <T> Result<T> error(BaseCode baseCode) {
         Result<T> result = new Result<>();
         result.code = baseCode.getCode();
@@ -32,10 +26,18 @@ public class Result<T> {
         return result;
     }
 
-    public static <T> Result<T> error(Integer code, String message) {
+    public static <T> Result<T> error(BaseCode baseCode, T data) {
+        Result<T> result = new Result<>();
+        result.code = baseCode.getCode();
+        result.message = baseCode.getMsg();
+        result.data = data;
+        return result;
+    }
+
+    public static <T> Result<T> error(Integer code, String msg) {
         Result<T> result = new Result<>();
         result.code = code;
-        result.message = message;
+        result.message = msg;
         return result;
     }
 
@@ -53,10 +55,11 @@ public class Result<T> {
         return result;
     }
 
-    public static <T> Result<T> success(T t) {
+    public static <T> Result<T> success(T data) {
         Result<T> result = new Result<T>();
         result.code = 0;
-        result.setData(t);
+        result.message = "响应成功";
+        result.data = data;
         return result;
     }
 }

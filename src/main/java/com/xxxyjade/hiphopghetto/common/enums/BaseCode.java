@@ -2,7 +2,10 @@ package com.xxxyjade.hiphopghetto.common.enums;
 
 public enum BaseCode {
     SUCCESS(0, "响应成功"),
-    DATABASE_EXCEPTION(500, "数据库异常");
+    DATABASE_EXCEPTION(1, "数据库异常"),
+    ARGUMENT_ERROR(2, "参数校验错误"),
+    VERIFY_ERROR(3, "密码校验错误"),
+    USER_EXIST(4, "用户已存在");
 
     private final Integer code;
 

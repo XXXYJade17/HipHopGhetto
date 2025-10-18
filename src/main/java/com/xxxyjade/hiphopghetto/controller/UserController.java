@@ -2,11 +2,12 @@ package com.xxxyjade.hiphopghetto.controller;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.UserUpdateDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterLoginVO;
 import com.xxxyjade.hiphopghetto.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,24 +26,22 @@ public class UserController {
 
     @Operation(summary  = "注册")
     @PostMapping("/register")
-    public Result<Void> register(@RequestBody UserRegisterDTO userRegisterDTO) {
+    public Result<UserRegisterLoginVO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
         log.info("UserRegisterDTO: {}",userRegisterDTO);
-        userService.register(userRegisterDTO);
-        return Result.success();
+        return Result.success(userService.register(userRegisterDTO));
     }
 
     @Operation(summary = "登录")
     @PostMapping("/login")
-    public Result<Void> login(@RequestBody UserLoginDTO userLoginDTO) {
+    public Result<UserRegisterLoginVO> login(@RequestBody UserLoginDTO userLoginDTO) {
         log.info("UserLoginDTO: {}",userLoginDTO);
-        userService.login(userLoginDTO);
-        return Result.success();
+        return Result.success(userService.login(userLoginDTO));
     }
 
-    @Operation(summary = "修改")
-    @PostMapping("/update")
-    public Result<Boolean> update(@RequestBody UserUpdateDTO userUpdateDTO) {
-        return Result.success();
-    }
+//    @Operation(summary = "修改")
+//    @PostMapping("/update")
+//    public Result<Boolean> update(@RequestBody UserUpdateDTO userUpdateDTO) {
+//        return Result.success();
+//    }
 
 }

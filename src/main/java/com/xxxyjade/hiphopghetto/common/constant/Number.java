@@ -5,16 +5,16 @@ import java.util.Map;
 
 public class Number {
     private static final Map<Integer, String> numbers = new HashMap<>(){{
-        put(1, "一");
-        put(2, "二");
-        put(3, "三");
-        put(4, "四");
-        put(5, "五");
-        put(6, "六");
-        put(7, "七");
-        put(8, "八");
-        put(9, "九");
-        put(10, "十");
+        put(1, "one");
+        put(2, "two");
+        put(3, "three");
+        put(4, "four");
+        put(5, "five");
+        put(6, "six");
+        put(7, "seven");
+        put(8, "eight");
+        put(9, "nine");
+        put(10, "ten");
     }};
 
     public static String getStr(Integer num) {

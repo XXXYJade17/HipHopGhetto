@@ -9,34 +9,29 @@ import java.io.Serializable;
 
 @Data
 @Builder
-@TableName("score")
-public class Score extends BaseTableData implements Serializable {
+@TableName("posting_comment")
+public class PostingComment extends BaseTableData implements Serializable {
 
     /**
-     * id
+     * 评论Id
      * 雪花生成
      */
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
-     * 发起用户Id
+     * 帖子Id
+     */
+    private Long postingId;
+
+    /**
+     * 评论用户Id
      */
     private Long userId;
 
     /**
-     * 标题
+     * 内容
      */
-    private String title;
-
-    /**
-     * 描述
-     */
-    private String description;
-
-    /**
-     * 浏览量
-     */
-    private Integer views;
+    private String content;
 
 }

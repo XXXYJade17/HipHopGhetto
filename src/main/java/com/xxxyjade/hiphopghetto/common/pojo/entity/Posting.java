@@ -1,19 +1,19 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
 import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
 @Builder
-@TableName("activity")
-public class Activity implements Serializable {
+@TableName("posting")
+public class Posting extends BaseTableData implements Serializable {
 
     /**
-     * 活动Id
+     * id
      * 雪花生成
      */
     @TableId(type = IdType.ASSIGN_ID)
@@ -30,23 +30,18 @@ public class Activity implements Serializable {
     private String title;
 
     /**
-     * 描述
+     * 内容
      */
-    private String description;
+    private String content;
 
     /**
-     * 状态
-     * 0 - 正常
-     * 1 - 失效
+     * 浏览量
      */
-    @TableLogic(value = "0", delval = "1")
-    private Integer status = 0;
-
+    private Integer view;
 
     /**
-     * 创建时间
+     * 点赞量
      */
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
+    private Integer like;
 
 }
