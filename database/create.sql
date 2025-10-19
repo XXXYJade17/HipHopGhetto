@@ -2,17 +2,18 @@ create database hiphop_ghetto;
 use hiphop_ghetto;
 # 用户表
 create table user (
-                      id bigint(20) primary key , # 用户ID（主键）
-                      username varchar(20) not null unique , # 用户名
-                      password varchar(100) not null , # 密码
-                      name varchar(20) default null unique , # 姓名
-                      id_card varchar(18) default null unique , # 身份证号
-                      phone varchar(20) default null unique , # 手机号
-                      sex tinyint(1) default 0 , # 性别（0-未知，1-男，2-女）
-                      avatar varchar(255) default null , # 头像url
-                      create_time datetime not null , # 创建时间
-                      update_time datetime not null , # 修改时间
-                      status tinyint(1) NOT NULL DEFAULT 0 #数据状态（0-正常，1-已删除）
+    id bigint(20) primary key , # 用户ID（主键）
+    username varchar(20) not null unique , # 用户名
+    password varchar(100) not null , # 密码
+    name varchar(20) default null , # 姓名
+    id_card varchar(18) default null unique , # 身份证号
+    phone varchar(20) default null unique , # 手机号
+    email varchar(100) default null unique ,
+    sex tinyint(1) default 0 , # 性别（0-未知，1-男，2-女）
+    avatar varchar(255) default null , # 头像url
+    create_time datetime not null default current_timestamp , # 创建时间
+    update_time datetime not null default current_timestamp on update current_timestamp , # 修改时间
+    status tinyint(1) NOT NULL DEFAULT 0 # 数据状态（0-正常，1-已删除）
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 # 评分表
 create table score (

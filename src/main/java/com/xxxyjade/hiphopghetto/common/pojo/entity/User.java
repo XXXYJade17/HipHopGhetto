@@ -2,6 +2,7 @@ package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName("user")
 public class User extends BaseTableData implements Serializable {
 
@@ -47,6 +50,11 @@ public class User extends BaseTableData implements Serializable {
     private String phone;
 
     /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
      * 性别
      * 0 - 未知
      * 1 - 男
@@ -58,5 +66,10 @@ public class User extends BaseTableData implements Serializable {
      * 头像
      */
     private String avatar;
+
+    /**
+     * 生日
+     */
+    private LocalDateTime birthday;
 
 }

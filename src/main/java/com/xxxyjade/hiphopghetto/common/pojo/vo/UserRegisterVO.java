@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(title = "用户登录 VO")
-public class UserLoginVO {
+@Schema(title = "用户注册 VO")
+public class UserRegisterVO {
 
     @Schema(description = "用户Id")
     private Long id;

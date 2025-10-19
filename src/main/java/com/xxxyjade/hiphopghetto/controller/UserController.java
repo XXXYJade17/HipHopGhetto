@@ -3,17 +3,16 @@ package com.xxxyjade.hiphopghetto.controller;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterLoginVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserLoginVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserVO;
 import com.xxxyjade.hiphopghetto.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -26,22 +25,23 @@ public class UserController {
 
     @Operation(summary  = "注册")
     @PostMapping("/register")
-    public Result<UserRegisterLoginVO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
+    public Result<UserRegisterVO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
         log.info("UserRegisterDTO: {}",userRegisterDTO);
         return Result.success(userService.register(userRegisterDTO));
     }
 
     @Operation(summary = "登录")
     @PostMapping("/login")
-    public Result<UserRegisterLoginVO> login(@RequestBody UserLoginDTO userLoginDTO) {
+    public Result<UserLoginVO> login(@RequestBody UserLoginDTO userLoginDTO) {
         log.info("UserLoginDTO: {}",userLoginDTO);
         return Result.success(userService.login(userLoginDTO));
     }
 
-//    @Operation(summary = "修改")
-//    @PostMapping("/update")
-//    public Result<Boolean> update(@RequestBody UserUpdateDTO userUpdateDTO) {
-//        return Result.success();
-//    }
+    @Operation(summary = "获取信息")
+    @GetMapping("/{id}")
+    public Result<UserVO> getById(@PathVariable("id") Long id) {
+        log.info("Id:{}",id);
+        return Result.success(userService.getById(id));
+    }
 
 }

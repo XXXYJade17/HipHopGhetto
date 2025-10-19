@@ -5,7 +5,9 @@ public enum BaseCode {
     DATABASE_EXCEPTION(1, "数据库异常"),
     ARGUMENT_ERROR(2, "参数校验错误"),
     VERIFY_ERROR(3, "密码校验错误"),
-    USER_EXIST(4, "用户已存在");
+    USER_EXIST(4, "用户已存在"),
+    PASSWORDS_DIFFERENT(5, "两次密码不一致"),
+    USER_EMPTY(6, "用户不存在");
 
     private final Integer code;
 

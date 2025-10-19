@@ -3,14 +3,16 @@ package com.xxxyjade.hiphopghetto.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xxxyjade.hiphopghetto.common.constant.JwtClaimsConstant;
+import com.xxxyjade.hiphopghetto.common.enums.AccountType;
 import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.User;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterLoginVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserLoginVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.UserVO;
 import com.xxxyjade.hiphopghetto.common.property.JwtProperties;
-import com.xxxyjade.hiphopghetto.exception.PasswordVerifyError;
-import com.xxxyjade.hiphopghetto.exception.UserExistError;
+import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
 import com.xxxyjade.hiphopghetto.mapper.UserMapper;
 import com.xxxyjade.hiphopghetto.service.UserService;
 import com.xxxyjade.hiphopghetto.util.JwtUtil;
@@ -38,14 +40,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * @param userRegisterDTO 用户注册 DTO
      * @return 用户注册 VO
      */
-    public UserRegisterLoginVO register(UserRegisterDTO userRegisterDTO) {
+    public UserRegisterVO register(UserRegisterDTO userRegisterDTO) {
         // 判断用户名是否存在
-        boolean isExist = userMapper.exists(
-                new QueryWrapper<User>()
-                        .eq("username", userRegisterDTO.getUsername())
-        );
-        if (!isExist) {
-            throw new UserExistError();
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
+                .eq("username", userRegisterDTO.getUsername());
+        if (userMapper.exists(queryWrapper)) {
+            throw new HipHopGhettoFrameException(BaseCode.USER_EXIST);
+        }
+        // 判断先后密码是否一致
+        if (!userRegisterDTO.getPassword().trim().equals(userRegisterDTO.getConfirmPassword().trim())) {
+            throw new HipHopGhettoFrameException(BaseCode.PASSWORDS_DIFFERENT);
         }
 
         // 创建实体
@@ -67,7 +71,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         ThreadUtil.setId(user.getId());
 
         // 构造返回VO
-        return UserRegisterLoginVO.builder()
+        return UserRegisterVO.builder()
+                .id(user.getId())
                 .token(token)
                 .build();
     }
@@ -77,26 +82,25 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * @param userLoginDTO 用户 登录DTO
      * @return 用户注册与登录 VO
      */
-    public UserRegisterLoginVO login(UserLoginDTO userLoginDTO) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-
-        // 如果用户名不为空
-        if (!userLoginDTO.getUsername().trim().isEmpty()) {
-            queryWrapper.and(qw -> qw.eq("username", userLoginDTO.getUsername()));
+    public UserLoginVO login(UserLoginDTO userLoginDTO) {
+        // 判断账户类型
+        String account = userLoginDTO.getAccount();
+        AccountType accountType = AccountType.getAccountType(account);
+        User user = new User();
+        switch (accountType) {
+            case EMAIL -> user.setEmail(account);
+            case PHONE -> user.setPhone(account);
+            case USERNAME -> user.setUsername(account);
         }
-
-        // 如果手机号不为空
-        if (!userLoginDTO.getPhone().trim().isEmpty()) {
-            queryWrapper.or(qw -> qw.eq("phone", userLoginDTO.getPhone()));
-        }
-
-        // 查密码
-        User user = userMapper.selectOne(queryWrapper);
 
         // 校验密码
-        String encryptedPassword = user.getPassword();
-        if (!PasswordUtil.verify(userLoginDTO.getPassword(), encryptedPassword)) {
-            throw new PasswordVerifyError();
+        user = userMapper.selectOne(new QueryWrapper<>(user));
+        if (user == null) {
+            throw new HipHopGhettoFrameException(BaseCode.USER_EMPTY);
+        }
+
+        if (!PasswordUtil.verify(userLoginDTO.getPassword(), user.getPassword())) {
+            throw new HipHopGhettoFrameException(BaseCode.VERIFY_ERROR);
         }
 
         // 生成令牌
@@ -106,9 +110,22 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         ThreadUtil.setId(user.getId());
 
-        return UserRegisterLoginVO.builder()
+        return UserLoginVO.builder()
+                .id(user.getId())
                 .token(token)
                 .build();
+    }
+
+    /**
+     * 根据 Id 获取用户信息
+     * @param id 用户 Id
+     * @return 用户VO
+     */
+    public UserVO getById(Long id) {
+        User user = userMapper.selectById(id);
+        UserVO userVO = new UserVO();
+        BeanUtils.copyProperties(user, userVO);
+        return userVO;
     }
 
 }

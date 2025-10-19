@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HipHop Ghetto | 登录注册</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Montserrat:wght@400;500;600&display=swap');
+
+        * {
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0A0A0A;
+            color: #CCCCCC;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .card-bg {
+            background: #1F1F1F;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .main-btn {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            border-radius: 8px;
+            height: 48px;
+            color: #0A0A0A;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .main-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .main-btn:active {
+            transform: scale(0.98);
+        }
+
+        .outline-btn {
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            color: #FFD700;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .outline-btn:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .section-title {
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-field {
+            background: #333333;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            color: #FFFFFF;
+            height: 48px;
+            padding: 0 16px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .input-field:focus {
+            border-color: #FFD700;
+            outline: none;
+        }
+
+        .tab-indicator {
+            height: 2px;
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            width: 50%;
+            transition: all 0.3s ease;
+        }
+
+        /* 提示信息样式 */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: #0A0A0A;
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .toast.success {
+            background: #FFD700;
+        }
+        .toast.error {
+            background: #DC143C;
+            color: #FFFFFF;
+        }
+        .toast.show {
+            opacity: 1;
+        }
+
+        /* 表单标签样式 */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* 表单组间距 */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        /* 底部提示文字 */
+        .form-footer {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #808080;
+            text-align: center;
+        }
+
+        .form-footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 协议勾选区域 */
+        .terms-group {
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #808080;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .terms-group input {
+            margin-right: 8px;
+            margin-top: 2px;
+        }
+
+        .terms-group a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .terms-group a:hover {
+            text-decoration: underline;
+        }
+
+        /* 忘记密码链接 */
+        .forgot-password {
+            text-align: right;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        /* 适配移动端 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .auth-container {
+                flex-direction: column;
+            }
+
+            .auth-illustration {
+                display: none;
+            }
+
+            .card-bg {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- 提示组件 -->
+<div class="toast" id="toast"></div>
+
+<!-- 顶部导航 -->
+<header class="bg-black py-4 border-b border-[#1F1F1F]">
+    <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <iconify-icon class="text-gold" height="38" icon="game-icons:boom-mic" width="40"></iconify-icon>
+            <h1 class="text-white text-2xl font-bold ml-2 tracking-wider">HipHop Ghetto</h1>
+        </div>
+        <!-- 右侧链接 -->
+        <div>
+            <a href="#" class="text-[#CCCCCC] hover:text-[#FFD700] mr-6">首页</a>
+            <a href="#" class="outline-btn px-4 py-2">了解更多</a>
+        </div>
+    </div>
+</header>
+
+<!-- 主内容区 -->
+<main class="flex-1 flex items-center justify-center py-12">
+    <div class="container">
+        <div class="auth-container flex gap-8 items-center">
+            <!-- 左侧插图 -->
+            <div class="auth-illustration w-1/2 hidden lg:block">
+                <div class="rounded-2xl overflow-hidden relative">
+                    <img alt="Hip hop culture illustration" class="w-full h-full object-cover rounded-2xl" src="/static/images/7a50b54f5b5441e5afb9ac6a04d01024.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#0A0A0A] to-transparent opacity-70"></div>
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <h2 class="text-3xl font-bold text-white mb-4 font-['Exo 2']">加入嘻哈社区</h2>
+                        <p class="text-[#CCCCCC] mb-6">与全球说唱爱好者一起分享、发现和创作最棒的嘻哈音乐</p>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex -space-x-2">
+                                <img alt="Community member" class="w-10 h-10 rounded-full border-2 border-[#0A0A0A]" src="/static/images/b706d8b320fa453ab34ba7f3fdf0e64c.jpg"/>
+                                <img alt="Community member" class="w-10 h-10 rounded-full border-2 border-[#0A0A0A]" src="/static/images/b3363c9f043a4b68bdd4e7737c41ad18.jpg"/>
+                                <img alt="Community member" class="w-10 h-10 rounded-full border-2 border-[#0A0A0A]" src="/static/images/cbdf81ecde254895a60b19ef72123c23.jpg"/>
+                            </div>
+                            <p class="text-sm text-[#808080]">已有 <span class="text-[#FFD700]">10,000+</span> 嘻哈爱好者加入</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧表单 -->
+            <div class="w-full lg:w-1/2 max-w-md mx-auto">
+                <div class="card-bg p-8">
+                    <!-- 标签切换 -->
+                    <div class="mb-8">
+                        <div class="flex relative">
+                            <button id="login-tab" class="flex-1 py-2 text-center font-medium text-white">登录</button>
+                            <button id="register-tab" class="flex-1 py-2 text-center font-medium text-[#808080]">注册</button>
+                            <div class="tab-indicator absolute bottom-0 left-0"></div>
+                        </div>
+                    </div>
+
+                    <!-- 登录表单 -->
+                    <div id="login-form">
+                        <h3 class="text-2xl font-bold text-white mb-6">欢迎回来</h3>
+                        <p class="text-[#808080] mb-6">登录你的账号，继续探索嘻哈世界</p>
+
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="login-account">用户名/手机号/邮箱</label>
+                                <input class="input-field" id="login-account" name="account" placeholder="输入用户名、手机号或邮箱" type="text" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password">密码</label>
+                                <input class="input-field" id="login-password" name="password" placeholder="输入密码" type="password" required/>
+                                <div class="forgot-password">
+                                    <a href="#">忘记密码?</a>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="main-btn mb-6">登录账号</button>
+
+                            <div class="form-footer">
+                                <span>还没有账号? <a href="javascript:;" id="switch-to-register">立即注册</a></span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 注册表单：修改为手机号+邮箱双输入框（至少填一个） -->
+                    <div id="register-form" class="hidden">
+                        <h3 class="text-2xl font-bold text-white mb-6">创建账号</h3>
+                        <p class="text-[#808080] mb-6">加入我们的社区，发现更多嘻哈音乐和文化</p>
+
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="register-username">用户名</label>
+                                <input class="input-field" id="register-username" name="username" placeholder="设置你的用户名" type="text" required/>
+                            </div>
+
+                            <!-- 新增：手机号输入框 -->
+                            <div class="form-group">
+                                <label for="register-phone">手机号（选填）</label>
+                                <input class="input-field" id="register-phone" name="phone" placeholder="输入手机号（可选）" type="tel"/>
+                            </div>
+
+                            <!-- 新增：邮箱输入框 -->
+                            <div class="form-group">
+                                <label for="register-email">邮箱（选填）</label>
+                                <input class="input-field" id="register-email" name="email" placeholder="输入邮箱（可选）" type="email"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password">密码</label>
+                                <input class="input-field" id="register-password" name="password" placeholder="设置密码（至少8位）" type="password" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-confirm">确认密码</label>
+                                <input class="input-field" id="register-confirm" name="confirmPassword" placeholder="再次输入密码" type="password" required/>
+                            </div>
+
+                            <div class="terms-group">
+                                <input type="checkbox" id="agree-terms" required/>
+                                <label for="agree-terms">
+                                    我已阅读并同意<a href="#">用户协议</a>和<a href="#">隐私政策</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="main-btn mb-6">创建账号</button>
+
+                            <div class="form-footer">
+                                <span>已有账号? <a href="javascript:;" id="switch-to-login">立即登录</a></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- 底部区域 -->
+<footer class="py-8 bg-[#0A0A0A] border-t border-[#1F1F1F]">
+    <div class="container">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <iconify-icon class="text-gold" icon="game-icons:boom-mic" width="24"></iconify-icon>
+                <h3 class="text-white text-lg font-bold ml-2">HipHop Ghetto</h3>
+            </div>
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a class="text-[#808080] hover:text-[#FFD700] text-sm" href="#">关于我们</a>
+                <a class="text-[#808080] hover:text-[#FFD700] text-sm" href="#">用户协议</a>
+                <a class="text-[#808080] hover:text-[#FFD700] text-sm" href="#">隐私政策</a>
+                <a class="text-[#808080] hover:text-[#FFD700] text-sm" href="#">帮助中心</a>
+            </div>
+            <div class="text-sm text-[#808080]">
+                © 2023 HipHop Ghetto. 保留所有权利
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 1. 基础配置：后端接口基础路径
+    const BASE_URL = "http://localhost:9998";
+
+    // 2. 工具函数：显示提示信息
+    function showToast(message, isSuccess = true) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.className = `toast ${isSuccess ? 'success' : 'error'} show`;
+        setTimeout(() => {
+            toast.className = 'toast';
+        }, 3000);
+    }
+
+    // 3. 表单切换逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const tabIndicator = document.querySelector('.tab-indicator');
+        const switchToRegister = document.getElementById('switch-to-register');
+        const switchToLogin = document.getElementById('switch-to-login');
+        const loginFormEl = document.getElementById('loginForm');
+        const registerFormEl = document.getElementById('registerForm');
+
+        // 切换到登录
+        function showLoginForm() {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+            loginTab.classList.remove('text-[#808080]');
+            loginTab.classList.add('text-white');
+            registerTab.classList.remove('text-white');
+            registerTab.classList.add('text-[#808080]');
+            tabIndicator.style.transform = 'translateX(0)';
+        }
+
+        // 切换到注册
+        function showRegisterForm() {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+            registerTab.classList.remove('text-[#808080]');
+            registerTab.classList.add('text-white');
+            loginTab.classList.remove('text-white');
+            loginTab.classList.add('text-[#808080]');
+            tabIndicator.style.transform = 'translateX(100%)';
+        }
+
+        // 绑定切换事件
+        loginTab.addEventListener('click', showLoginForm);
+        registerTab.addEventListener('click', showRegisterForm);
+        switchToRegister.addEventListener('click', showRegisterForm);
+        switchToLogin.addEventListener('click', showLoginForm);
+
+        // 4. 输入框焦点效果
+        const inputs = document.querySelectorAll('.input-field');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('scale-[1.02]');
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('scale-[1.02]');
+            });
+        });
+
+        // 5. 登录表单提交逻辑
+        loginFormEl.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const loginData = {
+                account: formData.get('account'),
+                password: formData.get('password')
+            };
+
+            try {
+                const response = await axios({
+                    url: `${BASE_URL}/user/login`,
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    data: loginData
+                });
+
+                const { code, message, data } = response.data;
+                if (code === 200) {
+                    showToast('登录成功！即将跳转到首页');
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('username', data.username || formData.get('account'));
+                    setTimeout(() => {
+                        window.location.href = '/index.html';
+                    }, 1500);
+                } else {
+                    showToast(`登录失败：${message}`, false);
+                }
+            } catch (error) {
+                console.error('登录请求失败：', error);
+                showToast('登录失败，请检查账号密码或网络连接', false);
+            }
+        });
+
+        // 6. 注册表单提交逻辑（新增手机号+邮箱校验）
+        registerFormEl.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // 前端验证：1. 手机号/邮箱至少填一个 2. 密码一致性 3. 协议勾选
+            const phone = document.getElementById('register-phone').value.trim();
+            const email = document.getElementById('register-email').value.trim();
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm').value;
+            const agreeTerms = document.getElementById('agree-terms').checked;
+
+            // 验证1：手机号和邮箱不能同时为空
+            if (!phone && !email) {
+                showToast('手机号和邮箱至少填写一个', false);
+                return;
+            }
+
+            // 验证2：手机号格式（如果填写）
+            if (phone && !/^1[3-9]\d{9}$/.test(phone)) {
+                showToast('请输入有效的手机号', false);
+                return;
+            }
+
+            // 验证3：邮箱格式（如果填写）
+            if (email && !/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(email)) {
+                showToast('请输入有效的邮箱地址', false);
+                return;
+            }
+
+            // 验证4：密码一致性
+            if (password !== confirmPassword) {
+                showToast('两次输入的密码不一致', false);
+                return;
+            }
+
+            // 验证5：协议勾选
+            if (!agreeTerms) {
+                showToast('请同意用户协议和隐私政策', false);
+                return;
+            }
+
+            // 收集表单数据
+            const formData = new FormData(this);
+            const registerData = {
+                username: formData.get('username'),
+                phone: phone, // 手机号（可能为空）
+                email: email, // 邮箱（可能为空）
+                password: formData.get('password'),
+                confirmPassword: formData.get('confirmPassword')
+            };
+
+            try {
+                const response = await axios({
+                    url: `${BASE_URL}/user/register`,
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    data: registerData
+                });
+
+                const { code, message } = response.data;
+                if (code === 0) {
+                    showToast('注册成功！请登录');
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('username', registerData.username);
+                    setTimeout(() => {
+                        window.location.href = '/index.html';
+                    }, 1500);
+                    // 清空注册表单
+                    registerFormEl.reset();
+                } else {
+                    showToast(`注册失败：${message}`, false);
+                }
+            } catch (error) {
+                console.error('注册请求失败：', error);
+                showToast('注册失败，请检查信息或网络连接', false);
+            }
+        });
+    });
+</script>
+</body>
+</html>

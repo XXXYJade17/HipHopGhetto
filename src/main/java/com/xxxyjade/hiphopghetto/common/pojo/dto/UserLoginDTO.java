@@ -12,17 +12,13 @@ import java.io.Serializable;
 @Schema(title = "用户登录 DTO")
 public class UserLoginDTO implements Serializable {
 
-    @Schema(description = "用户名")
-    private String username;
+    @Schema(description = "用户名/手机号/邮箱")
+    private String account;
 
     @NotBlank(message = "密码不能为空")
     @Size(min = 8, max = 32, message = "密码长度必须在8-32个字符之间")
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d).+$", message = "密码必须包含字母和数字")
     @Schema(description = "密码")
     private String password;
-
-
-    @Schema(description = "手机号")
-    private String phone;
 
 }

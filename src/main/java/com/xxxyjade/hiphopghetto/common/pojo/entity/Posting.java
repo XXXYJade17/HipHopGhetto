@@ -42,6 +42,7 @@ public class Posting extends BaseTableData implements Serializable {
     /**
      * 点赞量
      */
+    @TableField("like")
     private Integer like;
 
 }
