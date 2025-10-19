@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HipHop Ghetto | 推荐</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Montserrat:wght@400;500;600&display=swap');
+
+        * {
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0A0A0A;
+            color: #CCCCCC;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .nav-border {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #FFD700;
+            color: #FFFFFF !important;
+        }
+
+        .card-bg {
+            background: #1F1F1F;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .hover-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        .main-btn {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            border-radius: 8px;
+            height: 48px;
+            color: #0A0A0A;
+            font-weight: 600;
+        }
+
+        .outline-btn {
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            color: #FFD700;
+        }
+
+        .hot-tag {
+            background: rgba(220, 20, 60, 0.3);
+            border-radius: 4px;
+            padding: 3px 8px;
+            color: #FFCCCB;
+        }
+
+        .gold-tag {
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 4px;
+            padding: 3px 8px;
+            color: #FFD700;
+        }
+
+        .artist-name {
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .post-highlight {
+            border-left: 4px solid #FFD700;
+        }
+
+        .player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(31,31,31,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .section-title {
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* ECharts图表样式 */
+        #hotChart {
+            width: 100%;
+            height: 180px;
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航 -->
+<header class="nav-border bg-black py-4 sticky top-0 z-50">
+    <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <iconify-icon class="text-gold" height="38" icon="game-icons:boom-mic" width="40"></iconify-icon>
+            <h1 class="text-white text-2xl font-bold ml-2 tracking-wider">HipHop Ghetto</h1>
+        </div>
+        <!-- 主导航 -->
+        <nav>
+            <ul class="flex space-x-8">
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="index.html">主页</a></li>
+                <li><a class="text-white text-base font-medium tab-active" href="#">推荐</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="discussion.html">讨论区</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="albums.html">专辑/单曲</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="#">我的</a></li>
+            </ul>
+        </nav>
+        <!-- 右侧功能 -->
+        <div class="flex items-center space-x-5">
+            <div class="relative">
+                <input class="bg-[#1F1F1F] border border-[#333] rounded-lg py-2 px-4 w-64 focus:border-[#FFD700] focus:outline-none" placeholder="搜索音乐、艺人..." type="text"/>
+                <iconify-icon class="text-[#808080] absolute right-3 top-2.5" icon="akar-icons:search"></iconify-icon>
+            </div>
+            <iconify-icon class="text-[#CCCCCC] hover:text-white cursor-pointer" icon="mdi:bell-outline" width="24"></iconify-icon>
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FFD700] cursor-pointer">
+                <img alt="User avatar" class="w-full h-full object-cover" id="user-avatar" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b706d8b320fa453ab34ba7f3fdf0e64c.jpg"/>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- 主内容区 -->
+<main>
+    <!-- 推荐分类筛选 -->
+    <section class="py-8">
+        <div class="container">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-white section-title">推荐内容</h2>
+                <div class="flex space-x-4">
+                    <button class="outline-btn px-4 py-2">按热度</button>
+                    <button class="outline-btn px-4 py-2">按最新</button>
+                    <button class="outline-btn px-4 py-2">按风格</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 推荐内容展示 -->
+    <section class="py-4">
+        <div class="container">
+            <div class="grid grid-cols-3 gap-6">
+                <!-- 推荐音乐卡片 -->
+                <div class="card-bg p-6 hover-float">
+                    <div class="aspect-[16/9] rounded-lg overflow-hidden mb-4">
+                        <img alt="Recommended music album cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/3f21fe9c7f0f43059a03ed589f98da9b.jpg"/>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">嘻哈风暴</h3>
+                    <p class="text-[#808080] mb-4">MC BLAZE · 新专辑</p>
+                    <div class="flex space-x-1 text-[#FFD700] mb-4">
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star-half-full" width="20"></iconify-icon>
+                    </div>
+                    <p class="text-sm mb-4">这张专辑融合了多种嘻哈元素，节奏强烈，歌词充满力量，是MC BLAZE的代表作之一。</p>
+                    <button class="main-btn w-full">立即播放</button>
+                </div>
+                <!-- 推荐艺人卡片 -->
+                <div class="card-bg p-6 hover-float">
+                    <div class="aspect-[16/9] rounded-lg overflow-hidden mb-4">
+                        <img alt="Recommended artist photo" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/fff8f99db60e4ab6923b34f59720cb32.jpg"/>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">LADY RHYME</h3>
+                    <p class="text-[#808080] mb-4">新锐女说唱歌手</p>
+                    <div class="flex space-x-1 text-[#FFD700] mb-4">
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                    </div>
+                    <p class="text-sm mb-4">以独特的女性视角和流畅的flow在说唱界崭露头角，深受年轻听众喜爱。</p>
+                    <button class="outline-btn w-full">查看详情</button>
+                </div>
+                <!-- 推荐话题卡片 -->
+                <div class="card-bg p-6 hover-float">
+                    <div class="aspect-[16/9] rounded-lg overflow-hidden mb-4">
+                        <img alt="Recommended topic image" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/511f658246c34295916574b2b04f403f.jpg"/>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">#新专辑制作幕后</h3>
+                    <p class="text-[#808080] mb-4">热门话题 · 1245人参与</p>
+                    <div class="flex space-x-1 text-[#FFD700] mb-4">
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20"></iconify-icon>
+                        <iconify-icon icon="mdi:star-outline" width="20"></iconify-icon>
+                    </div>
+                    <p class="text-sm mb-4">深入了解热门专辑的制作过程，多位制作人分享经验，快来参与讨论。</p>
+                    <button class="outline-btn w-full">参与讨论</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 为你推荐 -->
+    <section class="py-8">
+        <div class="container">
+            <h2 class="text-2xl font-bold text-white section-title mb-6">为你推荐</h2>
+            <div class="grid grid-cols-4 gap-6">
+                <!-- 为你推荐音乐卡片 -->
+                <div class="card-bg p-4 hover-float">
+                    <div class="aspect-square rounded-lg overflow-hidden mb-3">
+                        <img alt="Personalized recommended music cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b29032755e7a45c7b058d44c3abf2047.jpg"/>
+                    </div>
+                    <h3 class="text-white font-medium text-sm mb-1">街头诗人</h3>
+                    <p class="text-[#808080] text-xs">OLD SCHOOL</p>
+                </div>
+                <div class="card-bg p-4 hover-float">
+                    <div class="aspect-square rounded-lg overflow-hidden mb-3">
+                        <img alt="Personalized recommended music cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/cc306df03248486eb3b94839860d2ae4.jpg"/>
+                    </div>
+                    <h3 class="text-white font-medium text-sm mb-1">城市节奏</h3>
+                    <p class="text-[#808080] text-xs">TRAP</p>
+                </div>
+                <div class="card-bg p-4 hover-float">
+                    <div class="aspect-square rounded-lg overflow-hidden mb-3">
+                        <img alt="Personalized recommended music cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/38e7a766c27c48daa11020f395012046.jpg"/>
+                    </div>
+                    <h3 class="text-white font-medium text-sm mb-1">午夜说唱</h3>
+                    <p class="text-[#808080] text-xs">LOFI HIP HOP</p>
+                </div>
+                <div class="card-bg p-4 hover-float">
+                    <div class="aspect-square rounded-lg overflow-hidden mb-3">
+                        <img alt="Personalized recommended music cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/6b7ea6f1dd4e4f579c47a8c47e494b33.jpg"/>
+                    </div>
+                    <h3 class="text-white font-medium text-sm mb-1">街头之声</h3>
+                    <p class="text-[#808080] text-xs">CONSCIOUS HIP HOP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- 底部区域 -->
+<footer class="py-16 bg-[#0A0A0A] border-t border-[#1F1F1F]">
+    <div class="container">
+        <div class="grid grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <iconify-icon class="text-gold" icon="game-icons:boom-mic" width="32"></iconify-icon>
+                    <h3 class="text-white text-xl font-bold ml-2">RHYME STREET</h3>
+                </div>
+                <p class="text-sm text-[#808080] mb-4 pr-8">最专业的说唱音乐爱好者交流平台，发现街头音乐的魅力。</p>
+                <div class="flex space-x-4">
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:twitter" width="24"></iconify-icon>
+                    </a>
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
+                    </a>
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">平台栏目</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">音乐推荐</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">专辑评分</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700]

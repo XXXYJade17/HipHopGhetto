@@ -50,14 +50,14 @@ public class Result<T> {
 
     public static <T> Result<T> success() {
         Result<T> result = new Result<>();
-        result.code = 0;
+        result.code = 200;
         result.message = "响应成功";
         return result;
     }
 
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<T>();
-        result.code = 0;
+        result.code = 200;
         result.message = "响应成功";
         result.data = data;
         return result;

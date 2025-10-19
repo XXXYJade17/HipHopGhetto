@@ -1,7 +1,7 @@
 package com.xxxyjade.hiphopghetto.common.enums;
 
 public enum BaseCode {
-    SUCCESS(0, "响应成功"),
+    SUCCESS(200, "响应成功"),
     DATABASE_EXCEPTION(1, "数据库异常"),
     ARGUMENT_ERROR(2, "参数校验错误"),
     VERIFY_ERROR(3, "密码校验错误"),

@@ -89,6 +89,21 @@
             outline: none;
         }
 
+        .input-error {
+            border-color: #DC143C !important;
+        }
+
+        .error-message {
+            color: #DC143C;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
         .tab-indicator {
             height: 2px;
             background: linear-gradient(to right, #FFD700, #FF8C00);
@@ -279,11 +294,13 @@
                             <div class="form-group">
                                 <label for="login-account">用户名/手机号/邮箱</label>
                                 <input class="input-field" id="login-account" name="account" placeholder="输入用户名、手机号或邮箱" type="text" required/>
+                                <div class="error-message" id="login-account-error">请输入有效的用户名、手机号或邮箱</div>
                             </div>
 
                             <div class="form-group">
                                 <label for="login-password">密码</label>
                                 <input class="input-field" id="login-password" name="password" placeholder="输入密码" type="password" required/>
+                                <div class="error-message" id="login-password-error">密码长度必须在8-32个字符之间，且包含字母和数字</div>
                                 <div class="forgot-password">
                                     <a href="#">忘记密码?</a>
                                 </div>
@@ -306,28 +323,33 @@
                             <div class="form-group">
                                 <label for="register-username">用户名</label>
                                 <input class="input-field" id="register-username" name="username" placeholder="设置你的用户名" type="text" required/>
+                                <div class="error-message" id="register-username-error">用户名长度必须为6-16位，只能包含中文、字母、数字和下划线</div>
                             </div>
 
                             <!-- 新增：手机号输入框 -->
                             <div class="form-group">
                                 <label for="register-phone">手机号（选填）</label>
                                 <input class="input-field" id="register-phone" name="phone" placeholder="输入手机号（可选）" type="tel"/>
+                                <div class="error-message" id="register-phone-error">请输入有效的手机号</div>
                             </div>
 
                             <!-- 新增：邮箱输入框 -->
                             <div class="form-group">
                                 <label for="register-email">邮箱（选填）</label>
                                 <input class="input-field" id="register-email" name="email" placeholder="输入邮箱（可选）" type="email"/>
+                                <div class="error-message" id="register-email-error">请输入有效的邮箱地址</div>
                             </div>
 
                             <div class="form-group">
                                 <label for="register-password">密码</label>
-                                <input class="input-field" id="register-password" name="password" placeholder="设置密码（至少8位）" type="password" required/>
+                                <input class="input-field" id="register-password" name="password" placeholder="设置密码（至少8位，需包含字母、数字和特殊字符）" type="password" required/>
+                                <div class="error-message" id="register-password-error">密码长度必须为8-20位，且包含字母、数字和特殊字符</div>
                             </div>
 
                             <div class="form-group">
                                 <label for="register-confirm">确认密码</label>
                                 <input class="input-field" id="register-confirm" name="confirmPassword" placeholder="再次输入密码" type="password" required/>
+                                <div class="error-message" id="register-confirm-error">两次输入的密码不一致</div>
                             </div>
 
                             <div class="terms-group">
@@ -385,7 +407,42 @@
         }, 3000);
     }
 
-    // 3. 表单切换逻辑
+    // 3. 验证工具函数
+    const Validator = {
+        // 验证用户名
+        username: function(value) {
+            const regex = /^[a-zA-Z0-9_\u4e00-\u9fa5]+$/;
+            return value.length >= 6 && value.length <= 16 && regex.test(value);
+        },
+        // 验证手机号
+        phone: function(value) {
+            if (!value) return true; // 允许为空
+            const regex = /^1[3-9]\d{9}$/;
+            return regex.test(value);
+        },
+        // 验证邮箱
+        email: function(value) {
+            if (!value) return true; // 允许为空
+            const regex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            return regex.test(value);
+        },
+        // 验证密码（注册）
+        passwordRegister: function(value) {
+            const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).+$/;
+            return value.length >= 8 && value.length <= 20 && regex.test(value);
+        },
+        // 验证密码（登录）
+        passwordLogin: function(value) {
+            const regex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+            return value.length >= 8 && value.length <= 32 && regex.test(value);
+        },
+        // 验证账号（登录）
+        account: function(value) {
+            return value.trim().length > 0;
+        }
+    };
+
+    // 4. 表单切换逻辑
     document.addEventListener('DOMContentLoaded', function() {
         const loginTab = document.getElementById('login-tab');
         const registerTab = document.getElementById('register-tab');
@@ -425,20 +482,84 @@
         switchToRegister.addEventListener('click', showRegisterForm);
         switchToLogin.addEventListener('click', showLoginForm);
 
-        // 4. 输入框焦点效果
+        // 5. 输入框焦点效果
         const inputs = document.querySelectorAll('.input-field');
         inputs.forEach(input => {
             input.addEventListener('focus', function() {
                 this.parentElement.classList.add('scale-[1.02]');
+                this.classList.remove('input-error');
+                const errorElement = this.parentElement.querySelector('.error-message');
+                if (errorElement) errorElement.classList.remove('show');
             });
             input.addEventListener('blur', function() {
                 this.parentElement.classList.remove('scale-[1.02]');
+                validateInput(this);
             });
         });
 
-        // 5. 登录表单提交逻辑
+        // 6. 输入框验证
+        function validateInput(input) {
+            const id = input.id;
+            const value = input.value.trim();
+            let isValid = true;
+            let errorMessage = '';
+
+            if (id === 'register-username') {
+                isValid = Validator.username(value);
+                errorMessage = '用户名长度必须为6-16位，只能包含中文、字母、数字和下划线';
+            } else if (id === 'register-phone') {
+                isValid = Validator.phone(value);
+                errorMessage = '请输入有效的手机号';
+            } else if (id === 'register-email') {
+                isValid = Validator.email(value);
+                errorMessage = '请输入有效的邮箱地址';
+            } else if (id === 'register-password') {
+                isValid = Validator.passwordRegister(value);
+                errorMessage = '密码长度必须为8-20位，且包含字母、数字和特殊字符';
+            } else if (id === 'register-confirm') {
+                const password = document.getElementById('register-password').value;
+                isValid = value === password;
+                errorMessage = '两次输入的密码不一致';
+            } else if (id === 'login-account') {
+                isValid = Validator.account(value);
+                errorMessage = '请输入用户名、手机号或邮箱';
+            } else if (id === 'login-password') {
+                isValid = Validator.passwordLogin(value);
+                errorMessage = '密码长度必须在8-32个字符之间，且包含字母和数字';
+            }
+
+            const errorElement = input.parentElement.querySelector('.error-message');
+            if (!isValid && value) {
+                input.classList.add('input-error');
+                if (errorElement) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.classList.add('show');
+                }
+            } else {
+                input.classList.remove('input-error');
+                if (errorElement) errorElement.classList.remove('show');
+            }
+
+            return isValid;
+        }
+
+        // 7. 登录表单提交逻辑
         loginFormEl.addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // 前端验证
+            const accountInput = document.getElementById('login-account');
+            const passwordInput = document.getElementById('login-password');
+
+            let isFormValid = true;
+
+            if (!validateInput(accountInput)) isFormValid = false;
+            if (!validateInput(passwordInput)) isFormValid = false;
+
+            if (!isFormValid) {
+                showToast('请检查输入的信息是否正确', false);
+                return;
+            }
 
             const formData = new FormData(this);
             const loginData = {
@@ -459,7 +580,9 @@
                 const { code, message, data } = response.data;
                 if (code === 200) {
                     showToast('登录成功！即将跳转到首页');
+                    // 存储JWT令牌和用户信息
                     localStorage.setItem('token', data.token);
+                    localStorage.setItem('userId', data.id);
                     localStorage.setItem('username', data.username || formData.get('account'));
                     setTimeout(() => {
                         window.location.href = '/index.html';
@@ -469,59 +592,55 @@
                 }
             } catch (error) {
                 console.error('登录请求失败：', error);
-                showToast('登录失败，请检查账号密码或网络连接', false);
+                const errorMsg = error.response?.data?.message || '登录失败，请检查账号密码或网络连接';
+                showToast(errorMsg, false);
             }
         });
 
-        // 6. 注册表单提交逻辑（新增手机号+邮箱校验）
+        // 8. 注册表单提交逻辑
         registerFormEl.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // 前端验证：1. 手机号/邮箱至少填一个 2. 密码一致性 3. 协议勾选
+            // 获取表单值
+            const username = document.getElementById('register-username').value.trim();
             const phone = document.getElementById('register-phone').value.trim();
             const email = document.getElementById('register-email').value.trim();
             const password = document.getElementById('register-password').value;
             const confirmPassword = document.getElementById('register-confirm').value;
             const agreeTerms = document.getElementById('agree-terms').checked;
 
+            // 前端验证
+            let isFormValid = true;
+
+            if (!validateInput(document.getElementById('register-username'))) isFormValid = false;
+            if (!validateInput(document.getElementById('register-phone'))) isFormValid = false;
+            if (!validateInput(document.getElementById('register-email'))) isFormValid = false;
+            if (!validateInput(document.getElementById('register-password'))) isFormValid = false;
+            if (!validateInput(document.getElementById('register-confirm'))) isFormValid = false;
+
             // 验证1：手机号和邮箱不能同时为空
             if (!phone && !email) {
                 showToast('手机号和邮箱至少填写一个', false);
-                return;
-            }
-
-            // 验证2：手机号格式（如果填写）
-            if (phone && !/^1[3-9]\d{9}$/.test(phone)) {
-                showToast('请输入有效的手机号', false);
-                return;
-            }
-
-            // 验证3：邮箱格式（如果填写）
-            if (email && !/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(email)) {
-                showToast('请输入有效的邮箱地址', false);
-                return;
-            }
-
-            // 验证4：密码一致性
-            if (password !== confirmPassword) {
-                showToast('两次输入的密码不一致', false);
-                return;
+                isFormValid = false;
             }
 
             // 验证5：协议勾选
             if (!agreeTerms) {
                 showToast('请同意用户协议和隐私政策', false);
+                isFormValid = false;
+            }
+
+            if (!isFormValid) {
                 return;
             }
 
             // 收集表单数据
-            const formData = new FormData(this);
             const registerData = {
-                username: formData.get('username'),
-                phone: phone, // 手机号（可能为空）
-                email: email, // 邮箱（可能为空）
-                password: formData.get('password'),
-                confirmPassword: formData.get('confirmPassword')
+                username: username,
+                phone: phone,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
             };
 
             try {
@@ -534,22 +653,24 @@
                     data: registerData
                 });
 
-                const { code, message } = response.data;
-                if (code === 0) {
-                    showToast('注册成功！请登录');
+                const { code, message, data } = response.data;
+                if (code === 200) {
+                    showToast('注册成功！即将跳转到首页');
+                    // 存储JWT令牌和用户信息
                     localStorage.setItem('token', data.token);
+                    localStorage.setItem('userId', data.id);
                     localStorage.setItem('username', registerData.username);
+                    // 注册成功后直接跳转到首页
                     setTimeout(() => {
                         window.location.href = '/index.html';
                     }, 1500);
-                    // 清空注册表单
-                    registerFormEl.reset();
                 } else {
                     showToast(`注册失败：${message}`, false);
                 }
             } catch (error) {
                 console.error('注册请求失败：', error);
-                showToast('注册失败，请检查信息或网络连接', false);
+                const errorMsg = error.response?.data?.message || '注册失败，请检查信息或网络连接';
+                showToast(errorMsg, false);
             }
         });
     });
