@@ -70,8 +70,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         claims.put(JwtClaimsConstant.USER_ID, user.getId());
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
-        ThreadUtil.setId(user.getId());
-
         // 构造返回VO
         return UserRegisterVO.builder()
                 .id(user.getId())
@@ -107,11 +105,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         // 生成令牌
         Map<String,Object> claims = new HashMap<>();
+        System.out.println("---------");
         claims.put(JwtClaimsConstant.USER_ID, user.getId());
+        System.out.println(claims);
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
-
-        ThreadUtil.setId(user.getId());
-        System.out.println(user.getId());
+        System.out.println(token);
 
         return UserLoginVO.builder()
                 .id(user.getId())

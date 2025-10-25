@@ -7,6 +7,8 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Axios 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Montserrat:wght@400;500;600&display=swap');
 
@@ -700,6 +702,46 @@
 <script>
     // 全局变量
     const API_BASE_URL = 'http://localhost:9998';
+    // 创建 Axios 实例并配置拦截器
+    const api = axios.create({
+        baseURL: API_BASE_URL,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    // 请求拦截器：自动添加 Token 到请求头
+    api.interceptors.request.use(
+        config => {
+            const token = localStorage.getItem('authentication');
+            if (token) {
+                // 统一添加 Token 到请求头（键名与后端约定，这里用 Authentication）
+                config.headers.authentication = token;
+            }
+            return config;
+        },
+        error => {
+            return Promise.reject(error);
+        }
+    );
+
+    // 响应拦截器：统一处理 401 未授权（Token 过期/无效）
+    api.interceptors.response.use(
+        response => response, // 正常响应直接返回
+        error => {
+            if (error.response && error.response.status === 401) {
+                // 清除无效 Token
+                localStorage.removeItem('authentication');
+                // 提示用户并跳转登录页
+                alert('登录已过期，请重新登录');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+            return Promise.reject(error);
+        }
+    );
+
     let currentPage = 1;
     const pageSize = 12; // 每页显示12条
     let totalPages = 1; // 动态更新总页数
@@ -876,34 +918,20 @@
             let response, result;
 
             if (type === 'album') {
-                // 获取专辑数据
-                response = await fetch(`${API_BASE_URL}/albums`, {
-                    method: 'POST',
-                    headers: {
-                        'accept': '*/*',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        page: page,
-                        size: requestSize
-                    })
+                // 获取专辑数据（使用 Axios 替代 fetch）
+                response = await api.post('/albums', {
+                    page: page,
+                    size: requestSize
                 });
             } else if (type === 'song') {
                 // 获取歌曲数据
-                response = await fetch(`${API_BASE_URL}/songs`, {
-                    method: 'POST',
-                    headers: {
-                        'accept': '*/*',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        page: page,
-                        size: requestSize
-                    })
+                response = await api.post('/songs', {
+                    page: page,
+                    size: requestSize
                 });
             }
 
-            result = await response.json();
+            result = response.data; // Axios 自动解析 JSON，数据在 response.data 中
 
             if (result.code !== 200 || !result.data || !Array.isArray(result.data.list)) {
                 throw new Error('数据格式错误');
@@ -941,12 +969,9 @@
             // 保存当前专辑ID
             currentAlbumId = albumId;
 
-            // 获取专辑基本信息
-            const response = await fetch(`${API_BASE_URL}/album/${albumId}`, {
-                method: 'GET',
-                headers: { 'accept': '*/*' }
-            });
-            const result = await response.json();
+            // 获取专辑基本信息（使用 Axios）
+            const response = await api.get(`/album/${albumId}`);
+            const result = response.data;
             if (result.code !== 200 || !result.data) {
                 throw new Error('获取专辑详情失败');
             }
@@ -971,11 +996,8 @@
      */
     async function fetchAndRenderAlbumScore(albumId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/album/score/${albumId}`, {
-                method: 'GET',
-                headers: { 'accept': '*/*' }
-            });
-            const result = await response.json();
+            const response = await api.get(`/album/score/${albumId}`);
+            const result = response.data;
 
             if (result.code === 200 && result.data) {
                 renderAlbumScore(result.data);
@@ -984,7 +1006,6 @@
             }
         } catch (err) {
             console.error('Error fetching album score:', err);
-            // 可以在这里设置默认评分或显示错误信息
             ratingDistribution.innerHTML = '<p class="text-gray-400">无法加载评分数据</p>';
         }
     }
@@ -996,30 +1017,23 @@
      */
     async function submitAlbumRating(albumId, score) {
         try {
-            // 从localStorage中获取userId，而不是硬编码
-            const userId = localStorage.getItem('userId');
-
-            // 检查用户是否已登录
-            if (!userId) {
+            const token = localStorage.getItem('authentication');
+            if (!token) {
                 showRatingMessage('请先登录后再进行评分', 'error');
-                return; // 阻止继续执行评分提交
+                // 1秒后跳转到登录页
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+                return;
             }
 
-            const response = await fetch(`${API_BASE_URL}/album/score`, {
-                method: 'POST',
-                headers: {
-                    'accept': '*/*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    userId: userId,
-                    albumId: albumId,
-                    score: score
-                })
+            // 使用 Axios 提交，Token 已通过拦截器自动添加
+            const response = await api.post('/album/score', {
+                albumId: albumId,
+                score: score
             });
 
-            const result = await response.json();
-
+            const result = response.data;
             if (result.code === 200) {
                 showRatingMessage('评分提交成功！', 'success');
                 // 重新获取并更新评分显示
@@ -1074,11 +1088,8 @@
     async function fetchSongDetail(songId) {
         showLoading();
         try {
-            const response = await fetch(`${API_BASE_URL}/song/${songId}`, {
-                method: 'GET',
-                headers: { 'accept': '*/*' }
-            });
-            const result = await response.json();
+            const response = await api.get(`/song/${songId}`);
+            const result = response.data;
             if (result.code !== 200 || !result.data) {
                 throw new Error('获取歌曲详情失败');
             }
@@ -1147,11 +1158,8 @@
      */
     async function fetchAlbumScore(albumId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/album/score/${albumId}`, {
-                method: 'GET',
-                headers: { 'accept': '*/*' }
-            });
-            const result = await response.json();
+            const response = await api.get(`/album/score/${albumId}`);
+            const result = response.data;
             if (result.code === 200 && result.data) {
                 return result.data.score;
             }
