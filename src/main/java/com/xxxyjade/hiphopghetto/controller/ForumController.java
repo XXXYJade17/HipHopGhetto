@@ -18,23 +18,23 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "论坛服务")
 @Slf4j
 public class ForumController {
-
-    @Autowired
-    private PostingService postingService;
-
-    @Operation(summary = "创建帖子")
-    @PostMapping("/create")
-    public Result<Void> createPosting(@Valid @RequestBody PostingCreateDTO postingCreateDTO) {
-        log.info("PostingCreateDTO:{}",postingCreateDTO);
-        return Result.success(postingService.createPosting(postingCreateDTO));
-    }
-
-    @Operation(summary = "分页查询帖子")
-    @PostMapping
-    public Result<PageVO<Posting>> page(@Valid @RequestBody PageQueryDTO pageQueryDTO) {
-        log.info("PageQueryDTO:{}", pageQueryDTO);
-        return Result.success(postingService.page(pageQueryDTO));
-    }
+//
+//    @Autowired
+//    private PostingService postingService;
+//
+//    @Operation(summary = "创建帖子")
+//    @PostMapping("/create")
+//    public Result<Void> createPosting(@Valid @RequestBody PostingCreateDTO postingCreateDTO) {
+//        log.info("PostingCreateDTO:{}",postingCreateDTO);
+//        return Result.success(postingService.createPosting(postingCreateDTO));
+//    }
+//
+//    @Operation(summary = "分页查询帖子")
+//    @PostMapping
+//    public Result<PageVO<Posting>> page(@Valid @RequestBody PageQueryDTO pageQueryDTO) {
+//        log.info("PageQueryDTO:{}", pageQueryDTO);
+//        return Result.success(postingService.page(pageQueryDTO));
+//    }
 
 
 }

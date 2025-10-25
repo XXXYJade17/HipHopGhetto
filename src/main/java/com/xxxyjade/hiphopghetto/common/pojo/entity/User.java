@@ -35,16 +35,6 @@ public class User extends BaseTableData implements Serializable {
     private String password;
 
     /**
-     * 姓名
-     */
-    private String name;
-
-    /**
-     * 身份证号
-     */
-    private String idCard;
-
-    /**
      * 手机号
      */
     private String phone;
@@ -66,6 +56,11 @@ public class User extends BaseTableData implements Serializable {
      * 头像
      */
     private String avatar;
+
+    /**
+     * 简介
+     */
+    private String description;
 
     /**
      * 生日

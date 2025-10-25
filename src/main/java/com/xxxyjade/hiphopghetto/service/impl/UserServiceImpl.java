@@ -1,12 +1,14 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xxxyjade.hiphopghetto.common.constant.JwtClaimsConstant;
 import com.xxxyjade.hiphopghetto.common.enums.AccountType;
 import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.UserUpdateDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.User;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserLoginVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterVO;
@@ -109,6 +111,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
         ThreadUtil.setId(user.getId());
+        System.out.println(user.getId());
 
         return UserLoginVO.builder()
                 .id(user.getId())
@@ -121,11 +124,26 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * @param id 用户 Id
      * @return 用户VO
      */
-    public UserVO getById(Long id) {
+    public UserVO get(Long id) {
         User user = userMapper.selectById(id);
+        if (user == null) {
+            throw new HipHopGhettoFrameException(BaseCode.USER_EMPTY);
+        }
         UserVO userVO = new UserVO();
         BeanUtils.copyProperties(user, userVO);
         return userVO;
+    }
+
+    public Void update(UserUpdateDTO userUpdateDTO) {
+        User user = new User();
+        BeanUtils.copyProperties(userUpdateDTO, user);
+        userMapper.update(user, new UpdateWrapper<User>().eq("id", ThreadUtil.getId()));
+        return null;
+    }
+
+    public Void delete(Long id) {
+        userMapper.deleteById(id);
+        return null;
     }
 
 }

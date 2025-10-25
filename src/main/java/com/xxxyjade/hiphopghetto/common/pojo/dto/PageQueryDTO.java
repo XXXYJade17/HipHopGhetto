@@ -13,7 +13,7 @@ public class PageQueryDTO {
     private Integer page;
 
     @NotNull
-    @Schema(description = "每页大小")
-    private Integer pageSize;
+    @Schema(description = "记录数")
+    private Integer size;
 
 }

@@ -36,6 +36,11 @@ public class UserVO {
     private String avatar;
 
     /**
+     * 简介
+     */
+    private String description;
+
+    /**
      * 生日
      */
     private LocalDateTime birthday;
