@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
 import com.xxxyjade.hiphopghetto.mapper.*;
@@ -31,6 +30,14 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private SongMapper songMapper;
 
+    /**
+     * 插入专辑数据
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void insert(Album album) {
+        albumMapper.insertIgnore(album);
+        albumScoreSummaryMapper.insertIgnore(album.getId());
+    }
 
     /**
      * 查询
@@ -80,45 +87,25 @@ public class AlbumServiceImpl implements AlbumService {
      */
     @Transactional(rollbackFor = Exception.class)
     public AlbumScoreVO getScore(Long id) {
-        if (!albumScoreSummaryMapper.exists(new QueryWrapper<AlbumScoreSummary>().eq("id", id))) {
-            albumScoreSummaryMapper.insert(AlbumScoreSummary.builder().id(id).build());
-        }
+        // 插入空数据，已存在则忽略
+        albumScoreSummaryMapper.insertIgnore(id);
+
+        // 根据 Id 查询评分汇总
         AlbumScoreSummary albumScoreSummary = albumScoreSummaryMapper.selectById(id);
         AlbumScoreVO albumScoreVO = new AlbumScoreVO();
         BeanUtils.copyProperties(albumScoreSummary, albumScoreVO);
+
         return albumScoreVO;
     }
 
     /**
-     * 插入专辑数据
-     * @param album 专辑实体
+     * 有无评分记录
+     * @param albumId 专辑 id
+     * @return null:没有记录  Integer:评分
      */
-    @Transactional(rollbackFor = Exception.class)
-    public void insert(Album album) {
-        // 如果专辑数据不存在
-        if (!albumMapper.exists(new QueryWrapper<Album>().eq("id", album.getId()))) {
-            albumMapper.insert(album);
-        }
-        // 如果专辑评分汇总数据不存在
-        if (!albumScoreSummaryMapper.exists(new QueryWrapper<AlbumScoreSummary>().eq("id", album.getId()))) {
-            albumScoreSummaryMapper.insert(AlbumScoreSummary.builder().id(album.getId()).build());
-        }
-    }
-
-    /**
-     * 判断有无评分
-     * @param id 专辑Id
-     * @return 专辑有无评分VO
-     */
-    public AlbumHasScoredVO hasScored(Long id) {
+    public Integer hasScore(Long albumId) {
         Long userId = ThreadUtil.getId();
-        AlbumScore albumScore = albumScoreMapper.selectOne(new QueryWrapper<AlbumScore>().eq("user_id", userId).eq("album_id", id));
-        AlbumHasScoredVO albumHasScoredVO = new AlbumHasScoredVO();
-        albumHasScoredVO.setHasScored(albumScore != null);
-        if (albumHasScoredVO.getHasScored()) {
-            albumHasScoredVO.setScore(albumScore.getScore());
-        }
-        return albumHasScoredVO;
+        return albumScoreMapper.select(userId, albumId);
     }
 
 }

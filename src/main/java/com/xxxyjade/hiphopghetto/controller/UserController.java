@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.controller;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserUpdateDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
+import com.xxxyjade.hiphopghetto.common.result.Result;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserLoginVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserVO;

@@ -3,12 +3,16 @@ package com.xxxyjade.hiphopghetto.service;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumHasScoredVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 
 public interface AlbumService {
+
+    /**
+     * 插入专辑数据
+     */
+    void insert(Album album);
 
     /**
      * 分页查询
@@ -38,16 +42,10 @@ public interface AlbumService {
     AlbumScoreVO getScore(Long id);
 
     /**
-     * 插入专辑数据
-     * @param album 专辑实体
+     * 有无评分记录
+     * @param albumId 专辑 id
+     * @return null:没有记录  Integer:评分
      */
-    void insert(Album album);
-
-    /**
-     * 判断有无评分
-     * @param id 专辑Id
-     * @return 专辑有无评分VO
-     */
-    AlbumHasScoredVO hasScored(Long id);
+    Integer hasScore(Long albumId);
 
 }

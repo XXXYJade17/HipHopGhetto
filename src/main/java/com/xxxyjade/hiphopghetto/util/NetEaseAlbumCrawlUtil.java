@@ -6,6 +6,7 @@ import com.xxxyjade.hiphopghetto.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Component
 @Slf4j
-public final class NetEaseAlbumCrawlUtil implements PageProcessor {
+public class NetEaseAlbumCrawlUtil implements PageProcessor {
 
     @Autowired
     private AlbumService albumService;
@@ -27,11 +28,9 @@ public final class NetEaseAlbumCrawlUtil implements PageProcessor {
 
     private final Site site = Site.me()
             .setDomain("music.163.com")        // 目标域名
-            .setSleepTime(1000)               // 爬取间隔（避免反爬）
+            .setSleepTime(100)               // 爬取间隔（避免反爬）
             .setRetryTimes(3)                 // 重试次数
             .setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"); // 模拟浏览器UA
-
-    private final String ALBUM_URL = "https://music.163.com/album?id=";
 
     @Override
     public Site getSite() {
@@ -39,7 +38,9 @@ public final class NetEaseAlbumCrawlUtil implements PageProcessor {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void process(Page page) {
+        log.info("开始爬取专辑数据");
         // 判断 URL
         if (page.getUrl().regex("https?://music\\.163\\.com/album\\?id=\\d+").match()) {
             // 专辑 Id
@@ -65,7 +66,6 @@ public final class NetEaseAlbumCrawlUtil implements PageProcessor {
             });
             // 插入专辑数据
             Album album = new Album(albumId, albumName, singer, releaseTime, url, introduction);
-            log.info("Album:{}",album);
             albumService.insert(album);
         }
     }
@@ -78,7 +78,9 @@ public final class NetEaseAlbumCrawlUtil implements PageProcessor {
     }
 
     public void startCrawl(Long id) {
-        startCrawl(ALBUM_URL + id);
+        startCrawl("https://music.163.com/album?id=" + id);
     }
+
+
 
 }

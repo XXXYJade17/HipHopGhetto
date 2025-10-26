@@ -29,6 +29,14 @@ public class SongServiceImpl implements SongService {
     private SongScoreSummaryMapper songScoreSummaryMapper;
 
     /**
+     * 插入歌曲数据
+     */
+    public void insert(Song song) {
+        songMapper.insertIgnore(song);
+        songScoreSummaryMapper.insertIgnore(song.getId());
+    }
+
+    /**
      * 查询
      * @param pageQueryDTO 分页查询DTO
      * @return 分页VO
@@ -80,21 +88,6 @@ public class SongServiceImpl implements SongService {
         SongScoreVO songScoreVO = new SongScoreVO();
         BeanUtils.copyProperties(songScoreSummary, songScoreVO);
         return songScoreVO;
-    }
-
-    /**
-     * 插入歌曲数据
-     * @param song 歌曲实体
-     */
-    public void insert(Song song) {
-        // 如果歌曲数据不存在
-        if (!songMapper.exists(new QueryWrapper<Song>().eq("id", song.getId()))) {
-            songMapper.insert(song);
-        }
-        // 如果歌曲评分汇总数据不存在
-        if (!songScoreSummaryMapper.exists(new QueryWrapper<SongScoreSummary>().eq("id", song.getId()))) {
-            songScoreSummaryMapper.insert(SongScoreSummary.builder().id(song.getId()).build());
-        }
     }
 
 }

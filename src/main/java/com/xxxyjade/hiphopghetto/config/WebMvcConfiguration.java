@@ -23,9 +23,11 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 //        log.info("开始注册拦截器...");
         registry.addInterceptor(jwtInterceptor)
 //                .addPathPatterns("/album/score/{id}")
-                .excludePathPatterns("/user/**");
+                .excludePathPatterns("/user/**")
+                .excludePathPatterns("/albums/**")
 //                .excludePathPatterns("/**.html")
-//                .excludePathPatterns("/swagger-ui/**");
+                .excludePathPatterns("/swagger-ui/index.html")
+                .excludePathPatterns("/v3/api-docs/**");
     }
 
 

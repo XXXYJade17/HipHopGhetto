@@ -2,13 +2,17 @@ package com.xxxyjade.hiphopghetto.service;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
 
 public interface SongService {
+
+    /**
+     * 插入歌曲数据
+     */
+    void insert(Song song);
 
     /**
      * 分页查询
@@ -36,11 +40,5 @@ public interface SongService {
      * @return 歌曲评分VO
      */
     SongScoreVO getScore(Long id);
-
-    /**
-     * 插入歌曲数据
-     * @param song 歌曲实体
-     */
-    void insert(Song song);
 
 }

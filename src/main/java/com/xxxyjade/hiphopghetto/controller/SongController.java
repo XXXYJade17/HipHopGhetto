@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.controller;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
-import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
+import com.xxxyjade.hiphopghetto.common.result.Result;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;

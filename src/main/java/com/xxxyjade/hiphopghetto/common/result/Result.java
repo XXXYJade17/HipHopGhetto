@@ -1,8 +1,7 @@
-package com.xxxyjade.hiphopghetto.common.pojo.result;
+package com.xxxyjade.hiphopghetto.common.result;
 
 import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Builder;
 import lombok.Data;
 
 @Data

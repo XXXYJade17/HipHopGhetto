@@ -5,6 +5,7 @@ import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -13,7 +14,7 @@ import us.codecraft.webmagic.selector.Selectable;
 
 @Component
 @Slf4j
-public final class NetEaseSongCrawlUtil implements PageProcessor {
+public class NetEaseSongCrawlUtil implements PageProcessor {
 
     @Autowired
     private SongService songService;
@@ -32,6 +33,7 @@ public final class NetEaseSongCrawlUtil implements PageProcessor {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void process(Page page) {
         // 判断 URL
         if (page.getUrl().regex("https?://music\\.163\\.com/song\\?id=\\d+").match()) {
@@ -53,7 +55,6 @@ public final class NetEaseSongCrawlUtil implements PageProcessor {
 
             // 插入数据
             Song song = new Song(songId, songName, albumId, albumName, singer, duration, coverUrl);
-            log.info("Song:{}",song);
             songService.insert(song);
         }
     }

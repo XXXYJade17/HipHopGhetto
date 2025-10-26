@@ -1,7 +1,6 @@
 package com.xxxyjade.hiphopghetto.exception;
 
 import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
-import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
 import lombok.Data;
 
 @Data
