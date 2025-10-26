@@ -2,6 +2,7 @@ package com.xxxyjade.hiphopghetto.controller;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserLoginDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.UserRegisterDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.UserUpdateDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserLoginVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.UserRegisterVO;
@@ -39,9 +40,23 @@ public class UserController {
 
     @Operation(summary = "获取信息")
     @GetMapping("/{id}")
-    public Result<UserVO> getById(@PathVariable("id") Long id) {
+    public Result<UserVO> get(@PathVariable("id") Long id) {
         log.info("Id:{}",id);
-        return Result.success(userService.getById(id));
+        return Result.success(userService.get(id));
+    }
+
+    @Operation(summary = "更新信息")
+    @PutMapping
+    public Result<Void> update(@RequestBody UserUpdateDTO userUpdateDTO) {
+        log.info("UserUpdateDTO:{}", userUpdateDTO);
+        return Result.success(userService.update(userUpdateDTO));
+    }
+
+    @Operation(summary = "注销")
+    @DeleteMapping("/{id}")
+    public Result<Void> delete(@PathVariable("id") Long id) {
+        log.info("Id:{}",id);
+        return Result.success(userService.delete(id));
     }
 
 }

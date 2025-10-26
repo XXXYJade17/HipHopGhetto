@@ -53,7 +53,7 @@ public class PostingServiceImpl implements PostingService {
      * @return 分页查询VO
      */
     public PageVO<Posting> page(PageQueryDTO pageQueryDTO) {
-        Page<Posting> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getPageSize());
+        Page<Posting> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
         Page<Posting> res = postingMapper.selectPage(page, null);
         PageVO<Posting> pageVO = new PageVO<>();
         pageVO.setList(res.getRecords());

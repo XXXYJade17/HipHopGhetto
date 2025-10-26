@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HipHop Ghetto | 发现</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Montserrat:wght@400;500;600&display=swap');
+
+        * {
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0A0A0A;
+            color: #CCCCCC;
+            overflow-x: hidden;
+            padding-bottom: 80px; /* 为底部播放器留出空间 */
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .nav-border {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #FFD700;
+            color: #FFFFFF !important;
+        }
+
+        .card-bg {
+            background: #1F1F1F;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .hover-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        .main-btn {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            border-radius: 8px;
+            height: 48px;
+            color: #0A0A0A;
+            font-weight: 600;
+        }
+
+        .outline-btn {
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            color: #FFD700;
+        }
+
+        .hot-tag {
+            background: rgba(220, 20, 60, 0.3);
+            border-radius: 4px;
+            padding: 3px 8px;
+            color: #FFCCCB;
+        }
+
+        .gold-tag {
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 4px;
+            padding: 3px 8px;
+            color: #FFD700;
+        }
+
+        .artist-name {
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .post-highlight {
+            border-left: 4px solid #FFD700;
+        }
+
+        .player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(31,31,31,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .section-title {
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 专辑和歌曲网格样式 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .content-card:hover .play-button {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .content-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.7);
+        }
+
+        .content-cover {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0A0A0A;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        /* 分页样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+        }
+
+        .pagination-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1F1F1F;
+            color: #CCCCCC;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pagination-btn:hover {
+            background: #333;
+            color: #FFD700;
+        }
+
+        .pagination-btn.active {
+            background: #FFD700;
+            color: #0A0A0A;
+            font-weight: bold;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* 二级导航样式 */
+        .secondary-nav {
+            background: #121212;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .secondary-nav ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .secondary-nav li {
+            margin-right: 30px;
+        }
+
+        .secondary-nav a {
+            display: block;
+            padding: 16px 0;
+            color: #CCCCCC;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .secondary-nav a:hover {
+            color: #FFFFFF;
+        }
+
+        .secondary-nav a.active {
+            color: #FFD700;
+        }
+
+        .secondary-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #FFD700;
+        }
+
+        /* 可点击元素样式 */
+        .clickable {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .clickable:hover {
+            color: #FFD700 !important;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .content-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .secondary-nav li {
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航 -->
+<header class="nav-border bg-black py-4 sticky top-0 z-50">
+    <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <iconify-icon class="text-gold" height="38" icon="game-icons:boom-mic" width="40"></iconify-icon>
+            <h1 class="text-white text-2xl font-bold ml-2 tracking-wider">HipHop Ghetto</h1>
+        </div>
+        <!-- 主导航 -->
+        <nav>
+            <ul class="flex space-x-8">
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="index.html">主页</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="#">推荐</a></li>
+                <li><a class="text-white text-base font-medium tab-active" href="#">发现</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="#">讨论区</a></li>
+                <li><a class="text-[#CCCCCC] hover:text-white text-base font-medium" href="#">我的</a></li>
+            </ul>
+        </nav>
+        <!-- 右侧功能 -->
+        <div class="flex items-center space-x-5">
+            <div class="relative">
+                <input class="bg-[#1F1F1F] border border-[#333] rounded-lg py-2 px-4 w-64 focus:border-[#FFD700] focus:outline-none" placeholder="搜索专辑、歌曲..." type="text"/>
+                <iconify-icon class="text-[#808080] absolute right-3 top-2.5" icon="akar-icons:search"></iconify-icon>
+            </div>
+            <iconify-icon class="text-[#CCCCCC] hover:text-white cursor-pointer" icon="mdi:bell-outline" width="24"></iconify-icon>
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FFD700] cursor-pointer">
+                <img alt="User avatar" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b706d8b320fa453ab34ba7f3fdf0e64c.jpg"/>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 二级导航栏 -->
+<div class="secondary-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#" class="active" data-type="album">专辑</a></li>
+            <li><a href="#" data-type="song">歌曲</a></li>
+            <li><a href="#" data-type="artist">歌手</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 主内容区 -->
+<main>
+    <!-- 内容展示区 -->
+    <section class="py-8">
+        <div class="container">
+
+            <!-- 加载状态 -->
+            <div id="loading" class="flex justify-center items-center py-16">
+                <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#FFD700]"></div>
+            </div>
+
+            <!-- 错误状态 -->
+            <div id="error" class="hidden text-center py-16">
+                <p class="text-[#FF6B6B]">加载内容失败，请稍后重试</p>
+                <button id="retryBtn" class="mt-4 px-6 py-2 main-btn">重试</button>
+            </div>
+
+            <!-- 专辑网格 -->
+            <div id="albumContainer" class="content-grid hidden">
+                <!-- 专辑卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <!-- 歌曲网格 -->
+            <div id="songContainer" class="content-grid hidden">
+                <!-- 歌曲卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <!-- 分页控件 -->
+            <div id="pagination" class="pagination hidden">
+                <button id="prevPage" class="pagination-btn" disabled>
+                    <iconify-icon icon="mdi:chevron-left" width="16"></iconify-icon>
+                </button>
+                <div id="pageNumbers">
+                    <!-- 页码将通过JavaScript动态生成 -->
+                </div>
+                <button id="nextPage" class="pagination-btn">
+                    <iconify-icon icon="mdi:chevron-right" width="16"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专辑详情区域 -->
+    <div id="albumDetail" class="hidden py-8">
+        <div class="container card-bg p-8">
+            <button id="backToAlbums" class="outline-btn px-4 py-2 mb-6">返回专辑列表</button>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="content-cover md:w-1/3">
+                    <img id="detailAlbumCover" alt="Album cover" class="w-full rounded">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 id="detailAlbumName" class="text-3xl font-bold text-white mb-2"></h3>
+                    <p class="text-[#FFD700] mb-4"><span class="artist-name" id="detailAlbumSinger"></span> · <span id="detailReleaseTime"></span></p>
+                    <p id="detailIntroduction" class="text-gray-300 mb-6"></p>
+                    <h4 class="text-xl font-bold text-white mb-4">歌曲列表</h4>
+                    <div id="songList" class="space-y-3">
+                        <!-- 歌曲列表将动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 歌曲详情区域 -->
+    <div id="songDetail" class="hidden py-8">
+        <div class="container card-bg p-8">
+            <button id="backToSongs" class="outline-btn px-4 py-2 mb-6">返回歌曲列表</button>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="content-cover md:w-1/3">
+                    <img id="detailSongCover" alt="Song cover" class="w-full rounded">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 id="detailSongName" class="text-3xl font-bold text-white mb-2"></h3>
+                    <p class="text-[#FFD700] mb-4"><span class="artist-name" id="detailSongSinger"></span></p>
+                    <p class="text-gray-300 mb-2">专辑: <span id="detailAlbumFrom" class="clickable"></span></p>
+                    <p class="text-gray-300 mb-6">时长: <span id="detailSongDuration"></span></p>
+                    <button class="main-btn px-8 py-3 text-lg">立即播放</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- 底部区域 -->
+<footer class="py-16 bg-[#0A0A0A] border-t border-[#1F1F1F]">
+    <div class="container">
+        <div class="grid grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <iconify-icon class="text-gold" icon="game-icons:boom-mic" width="32"></iconify-icon>
+                    <h3 class="text-white text-xl font-bold ml-2">RHYME STREET</h3>
+                </div>
+                <p class="text-sm text-[#808080] mb-4 pr-8">最专业的说唱音乐爱好者交流平台，发现街头音乐的魅力。</p>
+                <div class="flex space-x-4">
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:twitter" width="24"></iconify-icon>
+                    </a>
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
+                    </a>
+                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
+                        <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">平台栏目</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">音乐推荐</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">专辑评分</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">歌词大全</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">赛事活动</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">帮助中心</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">用户指南</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">版权说明</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">问题反馈</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">友情链接</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">Beat交易平台</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">音乐制作社区</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">嘻哈文化杂志</a></li>
+                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">街头服饰品牌</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-16 pt-8 text-center text-sm text-[#808080] border-t border-[#1F1F1F]">
+            © 2023 RHYME STREET 说唱音乐平台 · 用户协议 · 隐私政策
+        </div>
+    </div>
+</footer>
+
+<!-- 音乐播放器 -->
+<div class="player">
+    <div class="container">
+        <div class="flex items-center justify-between py-3">
+            <div class="flex items-center">
+                <div class="w-14 h-14 rounded mr-3 overflow-hidden">
+                    <img alt="Current playing track album cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/6b7ea6f1dd4e4f579c47a8c47e494b33.jpg"/>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium">BEAT THE STREET</h4>
+                    <p class="text-xs text-[#808080]"><span class="artist-name">Q-BOOM</span> · NEW TRACK</p>
+                </div>
+            </div>
+            <div class="flex-1 max-w-lg">
+                <div class="flex items-center justify-center mb-2">
+                    <button class="text-[#CCCCCC] hover:text-[#FFD700] mx-2">
+                        <iconify-icon icon="mdi:skip-previous" width="30"></iconify-icon>
+                    </button>
+                    <button class="ml-4 w-12 h-12 rounded-full flex items-center justify-center main-btn hover:scale-105 mx-2">
+                        <iconify-icon icon="mdi:play" width="24"></iconify-icon>
+                    </button>
+                    <button class="text-[#CCCCCC] hover:text-[#FFD700] mx-2">
+                        <iconify-icon icon="mdi:skip-next" width="30"></iconify-icon>
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-xs text-[#808080]">1:34</span>
+                    <div class="flex-1 bg-[#333] h-1 rounded-full overflow-hidden mx-2">
+                        <div class="bg-[#FFD700] h-full" style="width: 30%"></div>
+                    </div>
+                    <span class="text-xs text-[#808080]">4:12</span>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <iconify-icon class="text-[#CCCCCC] hover:text-[#FFD700] mr-5 cursor-pointer" icon="mdi:playlist-music" width="24"></iconify-icon>
+                <iconify-icon class="text-[#CCCCCC] hover:text-[#FFD700] cursor-pointer" icon="mdi:volume-high" width="24"></iconify-icon>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 全局变量
+    const API_BASE_URL = 'http://localhost:9998';
+    let currentPage = 1;
+    const pageSize = 12; // 每页显示12条
+    let totalPages = 1; // 动态更新总页数
+    let hasMoreData = true; // 标记是否有下一页
+    let currentContentType = 'album'; // 当前显示的内容类型：album/song/artist
+
+    // DOM元素
+    const loading = document.getElementById('loading');
+    const error = document.getElementById('error');
+    const pagination = document.getElementById('pagination');
+    const pageNumbers = document.getElementById('pageNumbers');
+    const prevPageBtn = document.getElementById('prevPage');
+    const nextPageBtn = document.getElementById('nextPage');
+    const retryBtn = document.getElementById('retryBtn');
+
+    // 内容容器
+    const albumContainer = document.getElementById('albumContainer');
+    const songContainer = document.getElementById('songContainer');
+
+    // 详情容器
+    const albumDetail = document.getElementById('albumDetail');
+    const songDetail = document.getElementById('songDetail');
+
+    // 返回按钮
+    const backToAlbumsBtn = document.getElementById('backToAlbums');
+    const backToSongsBtn = document.getElementById('backToSongs');
+
+    // 专辑和歌曲详情中的交互元素
+    const detailAlbumFrom = document.getElementById('detailAlbumFrom');
+    const songListContainer = document.getElementById('songList');
+
+    // 初始化页面
+    document.addEventListener('DOMContentLoaded', () => {
+        // 加载初始内容（专辑）
+        fetchContent(currentContentType, currentPage);
+
+        // 分页按钮事件监听
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchContent(currentContentType, currentPage);
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                fetchContent(currentContentType, currentPage);
+            }
+        });
+
+        // 重试按钮事件
+        retryBtn.addEventListener('click', () => {
+            fetchContent(currentContentType, currentPage);
+        });
+
+        // 返回按钮事件
+        backToAlbumsBtn.addEventListener('click', () => {
+            albumDetail.classList.add('hidden');
+            showContent('album');
+        });
+
+        backToSongsBtn.addEventListener('click', () => {
+            songDetail.classList.add('hidden');
+            showContent('song');
+        });
+
+        // 二级导航切换效果
+        document.querySelectorAll('.secondary-nav a').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // 获取内容类型
+                const contentType = this.getAttribute('data-type');
+                if (contentType === currentContentType) return;
+
+                // 更新当前内容类型
+                currentContentType = contentType;
+                currentPage = 1; // 重置页码
+
+                // 移除所有active类
+                document.querySelectorAll('.secondary-nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // 为当前点击的添加active类
+                this.classList.add('active');
+
+                // 加载对应内容
+                fetchContent(currentContentType, currentPage);
+            });
+        });
+
+        // 歌曲详情中的专辑点击事件
+        detailAlbumFrom.addEventListener('click', function() {
+            const albumId = this.getAttribute('data-album-id');
+            if (albumId) {
+                fetchAlbumDetail(albumId);
+            }
+        });
+
+        // 专辑详情中的歌曲点击事件委托
+        songListContainer.addEventListener('click', function(e) {
+            const songItem = e.target.closest('.song-item');
+            if (songItem) {
+                const songId = songItem.getAttribute('data-song-id');
+                if (songId) {
+                    fetchSongDetail(songId);
+                }
+            }
+        });
+
+        // 添加卡片悬停效果
+        addCardHoverEffects();
+    });
+
+    /**
+     * 根据内容类型获取数据
+     * @param {string} type 内容类型：album/song
+     * @param {number} page 页码
+     */
+    async function fetchContent(type, page) {
+        // 显示加载状态
+        showLoading();
+
+        try {
+            const requestSize = pageSize + 1;
+            let response, result;
+
+            if (type === 'album') {
+                // 获取专辑数据
+                response = await fetch(`${API_BASE_URL}/albums`, {
+                    method: 'POST',
+                    headers: {
+                        'accept': '*/*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        page: page,
+                        size: requestSize
+                    })
+                });
+            } else if (type === 'song') {
+                // 获取歌曲数据
+                response = await fetch(`${API_BASE_URL}/songs`, {
+                    method: 'POST',
+                    headers: {
+                        'accept': '*/*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        page: page,
+                        size: requestSize
+                    })
+                });
+            }
+
+            result = await response.json();
+
+            if (result.code !== 200 || !result.data || !Array.isArray(result.data.list)) {
+                throw new Error('数据格式错误');
+            }
+
+            const fetchedList = result.data.list;
+            const currentPageList = fetchedList.slice(0, pageSize);
+
+            hasMoreData = fetchedList.length > pageSize;
+            totalPages = hasMoreData ? page + 1 : page;
+
+            // 渲染当前页数据和分页
+            if (type === 'album') {
+                renderAlbums(currentPageList);
+            } else if (type === 'song') {
+                renderSongs(currentPageList);
+            }
+
+            updatePagination();
+            showContent(type);
+
+        } catch (err) {
+            console.error(`Error fetching ${type}s:`, err);
+            showError();
+        }
+    }
+
+    /**
+     * 获取专辑详情
+     * @param {number} albumId 专辑ID
+     */
+    async function fetchAlbumDetail(albumId) {
+        showLoading();
+        try {
+            const response = await fetch(`${API_BASE_URL}/album/${albumId}`, {
+                method: 'GET',
+                headers: { 'accept': '*/*' }
+            });
+            const result = await response.json();
+            if (result.code !== 200 || !result.data) {
+                throw new Error('获取专辑详情失败');
+            }
+            renderAlbumDetail(result.data);
+        } catch (err) {
+            console.error('Error fetching album detail:', err);
+            showError();
+        } finally {
+            loading.classList.add('hidden');
+        }
+    }
+
+    /**
+     * 获取歌曲详情
+     * @param {number} songId 歌曲ID
+     */
+    async function fetchSongDetail(songId) {
+        showLoading();
+        try {
+            const response = await fetch(`${API_BASE_URL}/song/${songId}`, {
+                method: 'GET',
+                headers: { 'accept': '*/*' }
+            });
+            const result = await response.json();
+            if (result.code !== 200 || !result.data) {
+                throw new Error('获取歌曲详情失败');
+            }
+            renderSongDetail(result.data);
+        } catch (err) {
+            console.error('Error fetching song detail:', err);
+            showError();
+        } finally {
+            loading.classList.add('hidden');
+        }
+    }
+
+    /**
+     * 渲染专辑列表
+     * @param {Array} albums 专辑数组
+     */
+    function renderAlbums(albums) {
+        // 清空容器
+        albumContainer.innerHTML = '';
+
+        if (albums.length === 0) {
+            albumContainer.innerHTML = '<div class="col-span-full text-center py-16">没有找到专辑</div>';
+            return;
+        }
+
+        // 生成专辑卡片
+        albums.forEach(album => {
+            const albumCard = document.createElement('div');
+            albumCard.className = 'content-card hover-float';
+            albumCard.innerHTML = `
+                <div class="content-cover mb-4">
+                    <img alt="Album cover: ${album.name}" class="w-full aspect-square object-cover transition-transform duration-500" src="${album.url}"/>
+                    <div class="play-button">
+                        <iconify-icon icon="mdi:play" width="24"></iconify-icon>
+                    </div>
+                </div>
+                <h4 class="text-white font-bold truncate" title="${album.name}">${album.name}</h4>
+                <p class="text-sm text-[#808080] mt-1"><span class="artist-name">${album.singer}</span></p>
+            `;
+            // 点击专辑卡片，请求详情
+            albumCard.addEventListener('click', () => {
+                fetchAlbumDetail(album.id);
+            });
+            albumContainer.appendChild(albumCard);
+        });
+    }
+
+    /**
+     * 渲染歌曲列表
+     * @param {Array} songs 歌曲数组
+     */
+    function renderSongs(songs) {
+        // 清空容器
+        songContainer.innerHTML = '';
+
+        if (songs.length === 0) {
+            songContainer.innerHTML = '<div class="col-span-full text-center py-16">没有找到歌曲</div>';
+            return;
+        }
+
+        // 生成歌曲卡片
+        songs.forEach(song => {
+            const songCard = document.createElement('div');
+            songCard.className = 'content-card hover-float';
+            songCard.innerHTML = `
+                <div class="content-cover mb-4">
+                    <img alt="Song cover: ${song.name}" class="w-full aspect-square object-cover transition-transform duration-500" src="${song.url}"/>
+                    <div class="play-button">
+                        <iconify-icon icon="mdi:play" width="24"></iconify-icon>
+                    </div>
+                </div>
+                <h4 class="text-white font-bold truncate" title="${song.name}">${song.name}</h4>
+                <p class="text-sm text-[#808080] mt-1"><span class="artist-name">${song.singer}</span></p>
+                <p class="text-xs text-gray-500 mt-1 clickable" data-album-id="${song.albumId}">${song.albumName}</p>
+            `;
+            // 点击歌曲卡片，请求详情
+            songCard.addEventListener('click', () => {
+                fetchSongDetail(song.id);
+            });
+            songContainer.appendChild(songCard);
+        });
+    }
+
+    /**
+     * 渲染专辑详情
+     * @param {Object} albumData 专辑数据
+     */
+    function renderAlbumDetail(albumData) {
+        // 隐藏列表和分页
+        hideAllContent();
+
+        // 填充专辑基本信息
+        document.getElementById('detailAlbumCover').src = albumData.url;
+        document.getElementById('detailAlbumName').textContent = albumData.name;
+        document.getElementById('detailAlbumSinger').textContent = albumData.singer;
+        document.getElementById('detailReleaseTime').textContent = albumData.releaseTime;
+        document.getElementById('detailIntroduction').textContent = albumData.introduction;
+
+        // 填充歌曲列表
+        songListContainer.innerHTML = '';
+        albumData.songs.forEach((song, index) => {
+            const songItem = document.createElement('div');
+            songItem.className = 'song-item flex items-center justify-between p-3 bg-[#2a2a2a] rounded hover:bg-[#333333]';
+            songItem.setAttribute('data-song-id', song.id);
+            songItem.innerHTML = `
+            <div class="flex items-center">
+                <span class="text-gray-500 mr-4 w-6 text-center">${index + 1}</span>
+                <div>
+                    <p class="text-white font-medium">${song.name}</p>
+                    <p class="text-sm text-gray-400">${song.singer}</p>
+                </div>
+            </div>
+            <p class="text-gray-400">${formatDuration(song.duration)}</p>
+        `;
+            songListContainer.appendChild(songItem);
+        });
+
+        // 显示专辑详情
+        albumDetail.classList.remove('hidden');
+    }
+
+    /**
+     * 渲染歌曲详情
+     * @param {Object} songData 歌曲数据
+     */
+    function renderSongDetail(songData) {
+        // 隐藏列表和分页
+        hideAllContent();
+
+        // 填充歌曲基本信息
+        document.getElementById('detailSongCover').src = songData.url;
+        document.getElementById('detailSongName').textContent = songData.name;
+        document.getElementById('detailSongSinger').textContent = songData.singer;
+        document.getElementById('detailAlbumFrom').textContent = songData.albumName;
+        document.getElementById('detailAlbumFrom').setAttribute('data-album-id', songData.albumId);
+        document.getElementById('detailSongDuration').textContent = formatDuration(songData.duration);
+
+        // 显示歌曲详情
+        songDetail.classList.remove('hidden');
+    }
+
+    /**
+     * 辅助函数：将秒数转换为“分:秒”格式
+     * @param {number} seconds 秒数
+     * @returns {string} 格式化后的时间字符串
+     */
+    function formatDuration(seconds) {
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        return `${min}:${sec < 10 ? '0' + sec : sec}`;
+    }
+
+    /**
+     * 更新分页控件
+     */
+    function updatePagination() {
+        pageNumbers.innerHTML = '';
+
+        // 创建当前页码按钮
+        const currentPageBtn = document.createElement('button');
+        currentPageBtn.className = 'pagination-btn active';
+        currentPageBtn.textContent = currentPage;
+        pageNumbers.appendChild(currentPageBtn);
+
+        // 更新上一页/下一页按钮状态
+        prevPageBtn.disabled = currentPage === 1;
+        nextPageBtn.disabled = !hasMoreData;
+    }
+
+    /**
+     * 显示加载状态
+     */
+    function showLoading() {
+        loading.classList.remove('hidden');
+        hideAllContent();
+        error.classList.add('hidden');
+        pagination.classList.add('hidden');
+    }
+
+    /**
+     * 显示指定类型的内容
+     * @param {string} type 内容类型：album/song
+     */
+    function showContent(type) {
+        loading.classList.add('hidden');
+        error.classList.add('hidden');
+        pagination.classList.remove('hidden');
+
+        // 隐藏所有内容容器
+        hideAllContent();
+
+        // 显示当前类型的内容容器
+        if (type === 'album') {
+            albumContainer.classList.remove('hidden');
+        } else if (type === 'song') {
+            songContainer.classList.remove('hidden');
+        }
+    }
+
+    /**
+     * 隐藏所有内容容器
+     */
+    function hideAllContent() {
+        albumContainer.classList.add('hidden');
+        songContainer.classList.add('hidden');
+        albumDetail.classList.add('hidden');
+        songDetail.classList.add('hidden');
+    }
+
+    /**
+     * 显示错误状态
+     */
+    function showError() {
+        loading.classList.add('hidden');
+        hideAllContent();
+        pagination.classList.add('hidden');
+        error.classList.remove('hidden');
+    }
+
+    /**
+     * 添加卡片悬停效果
+     */
+    function addCardHoverEffects() {
+        const cards = document.querySelectorAll('.hover-float');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                this.style.transform = `translateY(${-5 + (y / rect.height - 0.5) * 2}px) rotateX(${(y / rect.height - 0.5) * 1}deg) rotateY(${(x / rect.width - 0.5) * 3}deg)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+            });
+        });
+    }
+</script>
+</body>
+</html>

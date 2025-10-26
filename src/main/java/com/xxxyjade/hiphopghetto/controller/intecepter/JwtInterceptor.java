@@ -39,7 +39,6 @@ public class JwtInterceptor implements HandlerInterceptor {
             ThreadUtil.setId(id);
             return true;
         } catch (Exception ex) {
-            // TODO 改成身份异常状态码
             response.setStatus(401);
             return false;
         }

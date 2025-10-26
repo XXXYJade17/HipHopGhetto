@@ -19,7 +19,7 @@
             background: #0A0A0A;
             color: #CCCCCC;
             overflow-x: hidden;
-            padding-bottom: 80px; /* 为底部播放器预留空间 */
+            padding-bottom: 80px; /* 为底部播放器留出空间 */
         }
 
         .container {
@@ -126,6 +126,7 @@
 
         .sidebar-menu {
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .sidebar-menu.active {
@@ -137,9 +138,40 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 内容区块过渡动画 */
+        .content-block {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .content-block.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
         @media (max-width: 1024px) {
             .container {
                 padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .player {
+                padding: 10px 0;
+            }
+
+            .player .container {
+                flex-wrap: wrap;
+            }
+
+            .player .flex-1 {
+                order: 3;
+                width: 100%;
+                margin: 10px 0 0 0;
             }
         }
     </style>
@@ -171,7 +203,7 @@
             </div>
             <iconify-icon class="text-[#CCCCCC] hover:text-white cursor-pointer" icon="mdi:bell-outline" width="24"></iconify-icon>
             <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FFD700] cursor-pointer">
-                <img alt="User avatar" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b706d8b320fa453ab34ba7f3fdf0e64c.jpg"/>
+                <img alt="User avatar" class="w-full h-full object-cover" src="/images/avatar.jpg"/>
             </div>
         </div>
     </div>
@@ -183,17 +215,17 @@
         <section class="mb-8">
             <div class="profile-header">
                 <div class="h-48 relative overflow-hidden">
-                    <img alt="Profile cover image" class="w-full h-full object-cover opacity-40" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/7a50b54f5b5441e5afb9ac6a04d01024.jpg"/>
+                    <img alt="Profile cover image" class="w-full h-full object-cover opacity-40" src="/images/cover.jpg"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
                 </div>
                 <div class="px-8 pb-8 -mt-16 relative z-10">
                     <div class="flex flex-wrap items-end justify-between">
                         <div class="flex items-end">
                             <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-[#0A0A0A]">
-                                <img alt="User profile picture" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b706d8b320fa453ab34ba7f3fdf0e64c.jpg"/>
+                                <img alt="User profile picture" class="w-full h-full object-cover" src="/images/avatar.jpg"/>
                             </div>
                             <div class="ml-6 mb-2">
-                                <h2 class="text-2xl font-bold text-white">嘻哈爱好者</h2>
+                                <h2 class="text-2xl font-bold text-white profile-username">嘻哈爱好者</h2>
                                 <p class="text-[#808080]">已加入 2 年 · 说唱收集控</p>
                             </div>
                         </div>
@@ -233,28 +265,28 @@
                 <div class="card-bg p-4">
                     <h3 class="text-lg font-bold text-white mb-4 px-2">个人中心</h3>
                     <div class="space-y-1">
-                        <div class="sidebar-menu active px-4 py-3 flex items-center cursor-pointer">
+                        <div class="sidebar-menu active px-4 py-3 flex items-center">
                             <iconify-icon class="text-[#FFD700] mr-3" icon="mdi:home" width="20"></iconify-icon>
                             <span class="text-white">个人主页</span>
                         </div>
-                        <div class="sidebar-menu px-4 py-3 flex items-center cursor-pointer">
+                        <div class="sidebar-menu px-4 py-3 flex items-center">
                             <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:heart" width="20"></iconify-icon>
                             <span>我的收藏</span>
                         </div>
-                        <div class="sidebar-menu px-4 py-3 flex items-center cursor-pointer">
+                        <div class="sidebar-menu px-4 py-3 flex items-center">
                             <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:playlist-music" width="20"></iconify-icon>
                             <span>我的歌单</span>
                         </div>
-                        <div class="sidebar-menu px-4 py-3 flex items-center cursor-pointer">
-                            <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:clock-outline" width="20"></iconify-icon>
+                        <div class="sidebar-menu px-4 py-3 flex items-center">
+                            <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:history" width="20"></iconify-icon>
                             <span>播放历史</span>
                         </div>
-                        <div class="sidebar-menu px-4 py-3 flex items-center cursor-pointer">
+                        <div class="sidebar-menu px-4 py-3 flex items-center">
                             <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:ticket-account" width="20"></iconify-icon>
                             <span>我的活动</span>
                         </div>
-                        <div class="sidebar-menu px-4 py-3 flex items-center cursor-pointer">
-                            <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:settings" width="20"></iconify-icon>
+                        <div class="sidebar-menu px-4 py-3 flex items-center">
+                            <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:cog" width="20"></iconify-icon>
                             <span>账号设置</span>
                         </div>
                     </div>
@@ -263,311 +295,525 @@
 
             <!-- 右侧主内容 -->
             <div class="flex-1">
-                <!-- 最近播放 -->
-                <div class="card-bg p-6 mb-8">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-white section-title">最近播放</h3>
-                        <a href="#" class="text-[#FFD700] hover:underline text-sm">查看全部</a>
-                    </div>
+                <!-- 1. 个人主页内容（默认显示） -->
+                <div class="content-block" id="profile-content">
+                    <!-- 最近播放 -->
+                    <section class="mb-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white section-title">最近播放</h3>
+                            <a href="#" class="text-[#FFD700] text-sm hover:underline">查看全部</a>
+                        </div>
+                        <div class="card-bg p-6">
+                            <div class="space-y-4">
+                                <!-- 历史记录1 -->
+                                <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
+                                    <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                                        <img alt="History song cover" class="w-full h-full object-cover" src="/images/song1.jpg"/>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h4 class="text-white text-sm font-medium">城市节奏</h4>
+                                        <p class="text-xs text-[#808080]"><span class="artist-name">FLOW MASTER</span></p>
+                                    </div>
+                                    <div class="text-xs text-[#808080]">今天 10:23</div>
+                                    <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                                        <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                                    </button>
+                                </div>
 
-                    <div class="space-y-4">
-                        <!-- 播放记录1 -->
-                        <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
-                                <img alt="Recently played song cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b29032755e7a45c7b058d44c3abf2047.jpg"/>
+                                <!-- 历史记录2 -->
+                                <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
+                                    <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                                        <img alt="History song cover" class="w-full h-full object-cover" src="/images/song2.jpg"/>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h4 class="text-white text-sm font-medium">午夜街区</h4>
+                                        <p class="text-xs text-[#808080]"><span class="artist-name">URBAN POET</span></p>
+                                    </div>
+                                    <div class="text-xs text-[#808080]">昨天 23:15</div>
+                                    <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                                        <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                                    </button>
+                                </div>
+
+                                <!-- 历史记录3 -->
+                                <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
+                                    <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                                        <img alt="History song cover" class="w-full h-full object-cover" src="/images/song3.jpg"/>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h4 class="text-white text-sm font-medium">女王的节奏</h4>
+                                        <p class="text-xs text-[#808080]"><span class="artist-name">LADY RHYME</span></p>
+                                    </div>
+                                    <div class="text-xs text-[#808080]">昨天 21:58</div>
+                                    <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                                        <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                                    </button>
+                                </div>
+
+                                <!-- 历史记录4 -->
+                                <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
+                                    <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                                        <img alt="History song cover" class="w-full h-full object-cover" src="/images/album1.jpg"/>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h4 class="text-white text-sm font-medium">街头传奇 - 完整专辑</h4>
+                                        <p class="text-xs text-[#808080]"><span class="artist-name">MC BLAZE</span></p>
+                                    </div>
+                                    <div class="text-xs text-[#808080]">昨天 16:42</div>
+                                    <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                                        <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                                    </button>
+                                </div>
+
+                                <!-- 历史记录5 -->
+                                <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
+                                    <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                                        <img alt="History song cover" class="w-full h-full object-cover" src="/images/album2.jpg"/>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h4 class="text-white text-sm font-medium">地下之声合辑</h4>
+                                        <p class="text-xs text-[#808080]">群星合辑</p>
+                                    </div>
+                                    <div class="text-xs text-[#808080]">前天 19:30</div>
+                                    <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                                        <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white text-sm font-medium">街头梦响</h4>
-                                <p class="text-xs text-[#808080]"><span class="artist-name">YOUNG FIRE</span></p>
-                            </div>
-                            <div class="text-xs text-[#808080]">3:45</div>
-                            <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
-                                <iconify-icon icon="mdi:play" width="16"></iconify-icon>
+                        </div>
+                    </section>
+
+                    <!-- 我的歌单 -->
+                    <section class="mb-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white section-title">我的歌单</h3>
+                            <button class="outline-btn px-4 py-2 text-sm hover:bg-[#FFD700]/10">
+                                <iconify-icon class="mr-1" icon="mdi:plus" width="16"></iconify-icon>
+                                创建歌单
                             </button>
                         </div>
+                        <div class="space-y-4">
+                            <!-- 歌单1 -->
+                            <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/images/playlist1.jpg"/>
+                                </div>
+                                <div class="ml-5 flex-1">
+                                    <h4 class="text-white font-medium text-lg">工作学习必备Beats</h4>
+                                    <p class="text-sm text-[#808080]">32首 · 最后更新: 昨天</p>
+                                    <div class="flex items-center mt-2">
+                                        <div class="flex -space-x-2">
+                                            <img src="/images/avatar.jpg" class="w-6 h-6 rounded-full border-2 border-[#1F1F1F]" alt="Collaborator"/>
+                                            <div class="w-6 h-6 rounded-full bg-[#333] border-2 border-[#1F1F1F] flex items-center justify-center text-xs">+3</div>
+                                        </div>
+                                        <span class="text-xs text-[#808080] ml-3">公开 · 128人收藏</span>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
+                                    <iconify-icon icon="mdi:play" width="20"></iconify-icon>
+                                </button>
+                            </div>
 
-                        <!-- 播放记录2 -->
-                        <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
-                                <img alt="Recently played song cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/6b7ea6f1dd4e4f579c47a8c47e494b33.jpg"/>
+                            <!-- 歌单2 -->
+                            <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/images/playlist2.jpg"/>
+                                </div>
+                                <div class="ml-5 flex-1">
+                                    <h4 class="text-white font-medium text-lg">派对必备嘻哈金曲</h4>
+                                    <p class="text-sm text-[#808080]">45首 · 最后更新: 3天前</p>
+                                    <div class="flex items-center mt-2">
+                                        <div class="flex -space-x-2">
+                                            <img src="/images/avatar.jpg" class="w-6 h-6 rounded-full border-2 border-[#1F1F1F]" alt="Collaborator"/>
+                                        </div>
+                                        <span class="text-xs text-[#808080] ml-3">公开 · 86人收藏</span>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
+                                    <iconify-icon icon="mdi:play" width="20"></iconify-icon>
+                                </button>
                             </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white text-sm font-medium">BEAT THE STREET</h4>
-                                <p class="text-xs text-[#808080]"><span class="artist-name">Q-BOOM</span></p>
+
+                            <!-- 歌单3 -->
+                            <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/images/playlist3.jpg"/>
+                                </div>
+                                <div class="ml-5 flex-1">
+                                    <h4 class="text-white font-medium text-lg">中文说唱精选</h4>
+                                    <p class="text-sm text-[#808080]">28首 · 最后更新: 1周前</p>
+                                    <div class="flex items-center mt-2">
+                                        <div class="flex -space-x-2">
+                                            <img src="/images/avatar.jpg" class="w-6 h-6 rounded-full border-2 border-[#1F1F1F]" alt="Collaborator"/>
+                                            <div class="w-6 h-6 rounded-full bg-[#333] border-2 border-[#1F1F1F] flex items-center justify-center text-xs">+2</div>
+                                        </div>
+                                        <span class="text-xs text-[#808080] ml-3">私有 · 仅自己可见</span>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
+                                    <iconify-icon icon="mdi:play" width="20"></iconify-icon>
+                                </button>
                             </div>
-                            <div class="text-xs text-[#808080]">4:12</div>
-                            <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
-                                <iconify-icon icon="mdi:play" width="16"></iconify-icon>
-                            </button>
                         </div>
+                    </section>
 
-                        <!-- 播放记录3 -->
-                        <div class="flex items-center p-3 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
-                                <img alt="Recently played song cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/2ba080dc8a33456a90f23e3cd7cc7f5e.jpg"/>
+                    <!-- 我的收藏 -->
+                    <section class="mb-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white section-title">我的收藏</h3>
+                            <a href="#" class="text-[#FFD700] text-sm hover:underline">查看全部</a>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                            <!-- 收藏项目1 -->
+                            <div class="hover-float cursor-pointer">
+                                <div class="relative rounded-lg overflow-hidden mb-2">
+                                    <img alt="Favorite item" class="w-full aspect-square object-cover" src="/images/album1.jpg"/>
+                                    <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
+                                        <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
+                                    </button>
+                                    <span class="absolute bottom-2 left-2 gold-tag text-xs">专辑</span>
+                                </div>
+                                <h4 class="text-white text-sm font-medium truncate">街头传奇</h4>
+                                <p class="text-xs text-[#808080]"><span class="artist-name">MC BLAZE</span></p>
                             </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white text-sm font-medium">女王的节奏</h4>
+
+                            <!-- 收藏项目2 -->
+                            <div class="hover-float cursor-pointer">
+                                <div class="relative rounded-lg overflow-hidden mb-2">
+                                    <img alt="Favorite item" class="w-full aspect-square object-cover" src="/images/song1.jpg"/>
+                                    <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
+                                        <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
+                                    </button>
+                                    <span class="absolute bottom-2 left-2 hot-tag text-xs">单曲</span>
+                                </div>
+                                <h4 class="text-white text-sm font-medium truncate">城市节奏</h4>
+                                <p class="text-xs text-[#808080]"><span class="artist-name">FLOW MASTER</span></p>
+                            </div>
+
+                            <!-- 收藏项目3 -->
+                            <div class="hover-float cursor-pointer">
+                                <div class="relative rounded-lg overflow-hidden mb-2">
+                                    <img alt="Favorite item" class="w-full aspect-square object-cover" src="/images/artist1.jpg"/>
+                                    <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
+                                        <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
+                                    </button>
+                                    <span class="absolute bottom-2 left-2 gold-tag text-xs">艺人</span>
+                                </div>
+                                <h4 class="text-white text-sm font-medium truncate">URBAN POET</h4>
+                                <p class="text-xs text-[#808080]">32首作品 · 12.5k粉丝</p>
+                            </div>
+
+                            <!-- 收藏项目4 -->
+                            <div class="hover-float cursor-pointer">
+                                <div class="relative rounded-lg overflow-hidden mb-2">
+                                    <img alt="Favorite item" class="w-full aspect-square object-cover" src="/images/song3.jpg"/>
+                                    <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
+                                        <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
+                                    </button>
+                                    <span class="absolute bottom-2 left-2 hot-tag text-xs">单曲</span>
+                                </div>
+                                <h4 class="text-white text-sm font-medium truncate">女王的节奏</h4>
                                 <p class="text-xs text-[#808080]"><span class="artist-name">LADY RHYME</span></p>
                             </div>
-                            <div class="text-xs text-[#808080]">2:58</div>
-                            <button class="ml-4 w-8 h-8 rounded-full bg-[#FFD700]/20 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
-                                <iconify-icon icon="mdi:play" width="16"></iconify-icon>
-                            </button>
+
+                            <!-- 收藏项目5 -->
+                            <div class="hover-float cursor-pointer">
+                                <div class="relative rounded-lg overflow-hidden mb-2">
+                                    <img alt="Favorite item" class="w-full aspect-square object-cover" src="/images/album4.jpg"/>
+                                    <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
+                                        <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
+                                    </button>
+                                    <span class="absolute bottom-2 left-2 gold-tag text-xs">专辑</span>
+                                </div>
+                                <h4 class="text-white text-sm font-medium truncate">地下王国</h4>
+                                <p class="text-xs text-[#808080]"><span class="artist-name">UNDERGROUND CREW</span></p>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <!-- 我的活动 -->
+                    <section>
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-white section-title">我的活动</h3>
+                            <a href="#" class="text-[#FFD700] text-sm hover:underline">查看全部</a>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- 近期活动 -->
+                            <div class="card-bg p-6">
+                                <h4 class="text-white font-medium mb-4">近期参与</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-[#1a1a1a] rounded-lg p-4 hover:bg-[#222]">
+                                        <div class="flex items-center">
+                                            <div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                                                <img src="/images/event1.jpg" alt="Upcoming event" class="w-full h-full object-cover"/>
+                                            </div>
+                                            <div class="ml-4 flex-1">
+                                                <h5 class="text-white text-sm font-medium">2023嘻哈盛典</h5>
+                                                <p class="text-xs text-[#808080] mt-1">2023-12-15 · 上海·梅赛德斯奔驰文化中心</p>
+                                                <div class="mt-2 inline-block gold-tag text-xs">已购票</div>
+                                            </div>
+                                            <span class="text-xs text-[#FFD700]">即将开始</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 历史活动 -->
+                            <div class="card-bg p-6">
+                                <h4 class="text-white font-medium mb-4">历史参与</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-[#1a1a1a] rounded-lg p-4 hover:bg-[#222]">
+                                        <div class="flex items-center">
+                                            <div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                                                <img src="/images/event2.jpg" alt="Past event" class="w-full h-full object-cover"/>
+                                            </div>
+                                            <div class="ml-4 flex-1">
+                                                <h5 class="text-white text-sm font-medium">DJ SPINNER 专场演出</h5>
+                                                <p class="text-xs text-[#808080] mt-1">2023-10-05 · 北京·愚公移山</p>
+                                            </div>
+                                            <span class="text-xs text-[#808080]">已结束</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-[#1a1a1a] rounded-lg p-4 hover:bg-[#222]">
+                                        <div class="flex items-center">
+                                            <div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                                                <img src="/images/event3.jpg" alt="Past event" class="w-full h-full object-cover"/>
+                                            </div>
+                                            <div class="ml-4 flex-1">
+                                                <h5 class="text-white text-sm font-medium">嘻哈制作人交流会</h5>
+                                                <p class="text-xs text-[#808080] mt-1">2023-08-18 · 线上活动</p>
+                                            </div>
+                                            <span class="text-xs text-[#808080]">已结束</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
-                <!-- 我的收藏专辑 -->
-                <div class="card-bg p-6 mb-8">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-white section-title">我的收藏</h3>
-                        <a href="#" class="text-[#FFD700] hover:underline text-sm">查看全部</a>
-                    </div>
+                <!-- 6. 账号设置内容（默认隐藏） -->
+                <div class="content-block hidden" id="settings-content">
+                    <div class="card-bg p-6">
+                        <h3 class="text-xl font-bold text-white section-title mb-6">账号设置</h3>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        <!-- 收藏专辑1 -->
-                        <div class="hover-float cursor-pointer">
-                            <div class="relative rounded-lg overflow-hidden mb-2">
-                                <img alt="Favorite album cover" class="w-full aspect-square object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/cc306df03248486eb3b94839860d2ae4.jpg"/>
-                                <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
-                                    <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="text-white text-sm font-medium truncate">新势力混音带</h4>
-                            <p class="text-xs text-[#808080]">群星合辑</p>
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- 左侧导航 -->
+                            <div class="md:col-span-1">
+                                <div class="space-y-1 mb-6">
+                                    <div class="settings-tab active px-4 py-3 flex items-center cursor-pointer">
+                                        <iconify-icon class="text-[#FFD700] mr-3" icon="mdi:account" width="20"></iconify-icon>
+                                        <span class="text-white">个人信息</span>
+                                    </div>
+                                    <div class="settings-tab px-4 py-3 flex items-center cursor-pointer">
+                                        <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:lock" width="20"></iconify-icon>
+                                        <span>隐私设置</span>
+                                    </div>
+                                    <div class="settings-tab px-4 py-3 flex items-center cursor-pointer">
+                                        <iconify-icon class="text-[#CCCCCC] mr-3" icon="mdi:notification" width="20"></iconify-icon>
+                                        <span>通知设置</span>
+                                    </div>
+                                </div>
 
-                        <!-- 收藏专辑2 -->
-                        <div class="hover-float cursor-pointer">
-                            <div class="relative rounded-lg overflow-hidden mb-2">
-                                <img alt="Favorite album cover" class="w-full aspect-square object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/b29032755e7a45c7b058d44c3abf2047.jpg"/>
-                                <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
-                                    <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
-                                </button>
+                                <div class="bg-[#2a0f0f] rounded-lg p-4">
+                                    <h4 class="text-[#FF6B6B] font-medium mb-2 flex items-center">
+                                        <iconify-icon icon="mdi:alert-circle" width="18" class="mr-2"></iconify-icon>
+                                        账号安全
+                                    </h4>
+                                    <p class="text-xs text-[#808080] mb-3">您的账号尚未绑定手机号，建议完成绑定以提高账号安全性。</p>
+                                    <button class="text-[#FF6B6B] text-sm hover:underline flex items-center">
+                                        <iconify-icon icon="mdi:phone" width="16" class="mr-1"></iconify-icon>
+                                        立即绑定
+                                    </button>
+                                </div>
                             </div>
-                            <h4 class="text-white text-sm font-medium truncate">经典老歌重混</h4>
-                            <p class="text-xs text-[#808080]"><span class="artist-name">DJ SPINNER</span></p>
-                        </div>
 
-                        <!-- 收藏专辑3 -->
-                        <div class="hover-float cursor-pointer">
-                            <div class="relative rounded-lg overflow-hidden mb-2">
-                                <img alt="Favorite album cover" class="w-full aspect-square object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/511f658246c34295916574b2b04f403f.jpg"/>
-                                <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
-                                    <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="text-white text-sm font-medium truncate">地下之王</h4>
-                            <p class="text-xs text-[#808080]">群星合辑</p>
-                        </div>
+                            <!-- 右侧内容 -->
+                            <div class="md:col-span-2">
+                                <form>
+                                    <div class="mb-6">
+                                        <label class="block text-sm text-[#CCCCCC] mb-4">头像设置</label>
+                                        <div class="flex items-center">
+                                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#333]">
+                                                <img src="/images/avatar.jpg" alt="Current avatar" class="w-full h-full object-cover"/>
+                                            </div>
+                                            <div class="ml-6">
+                                                <button type="button" class="outline-btn px-4 py-2 text-sm hover:bg-[#FFD700]/10 mr-3">
+                                                    <iconify-icon icon="mdi:upload" width="16" class="mr-1"></iconify-icon>
+                                                    更换头像
+                                                </button>
+                                                <p class="text-xs text-[#808080] mt-2">支持JPG、PNG格式，建议尺寸400x400px</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <!-- 收藏专辑4 -->
-                        <div class="hover-float cursor-pointer">
-                            <div class="relative rounded-lg overflow-hidden mb-2">
-                                <img alt="Favorite album cover" class="w-full aspect-square object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/38e7a766c27c48daa11020f395012046.jpg"/>
-                                <button class="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#0A0A0A]/70 flex items-center justify-center text-[#DC143C]">
-                                    <iconify-icon icon="mdi:heart" width="16"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="text-white text-sm font-medium truncate">陷阱之城</h4>
-                            <p class="text-xs text-[#808080]"><span class="artist-name">TRAP LORD</span></p>
-                        </div>
-                    </div>
-                </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div>
+                                            <label class="block text-sm text-[#CCCCCC] mb-2">昵称</label>
+                                            <input type="text" value="嘻哈爱好者" class="w-full bg-[#333] border border-[#444] rounded-lg py-2 px-4 focus:border-[#FFD700] focus:outline-none text-white"/>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm text-[#CCCCCC] mb-2">账号ID</label>
+                                            <input type="text" value="hiphop_lover_88" class="w-full bg-[#333] border border-[#444] rounded-lg py-2 px-4 focus:border-[#FFD700] focus:outline-none text-white" disabled/>
+                                            <p class="text-xs text-[#808080] mt-1">账号ID不可修改</p>
+                                        </div>
+                                    </div>
 
-                <!-- 我的歌单 -->
-                <div class="card-bg p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-white section-title">我的歌单</h3>
-                        <button class="outline-btn px-4 py-2 text-sm hover:bg-[#FFD700]/10">
-                            <iconify-icon class="mr-1" icon="mdi:plus" width="16"></iconify-icon>
-                            创建歌单
-                        </button>
-                    </div>
+                                    <div class="mb-6">
+                                        <label class="block text-sm text-[#CCCCCC] mb-2">个人简介</label>
+                                        <textarea rows="4" class="w-full bg-[#333] border border-[#444] rounded-lg py-2 px-4 focus:border-[#FFD700] focus:outline-none text-white">已加入2年 · 说唱收集控 · 最爱BoomBap和Trap</textarea>
+                                    </div>
 
-                    <div class="space-y-4">
-                        <!-- 歌单1 -->
-                        <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                                <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/511f658246c34295916574b2b04f403f.jpg"/>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white font-medium">工作学习必备Beats</h4>
-                                <p class="text-sm text-[#808080]">32首 · 最后更新: 昨天</p>
-                            </div>
-                            <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
-                                <iconify-icon icon="mdi:play" width="20"></iconify-icon>
-                            </button>
-                        </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div>
+                                            <label class="block text-sm text-[#CCCCCC] mb-2">性别</label>
+                                            <div class="flex space-x-4">
+                                                <label class="flex items-center">
+                                                    <input type="radio" name="gender" checked class="mr-2 text-[#FFD700]"/>
+                                                    <span>男</span>
+                                                </label>
+                                                <label class="flex items-center">
+                                                    <input type="radio" name="gender" class="mr-2 text-[#FFD700]"/>
+                                                    <span>女</span>
+                                                </label>
+                                                <label class="flex items-center">
+                                                    <input type="radio" name="gender" class="mr-2 text-[#FFD700]"/>
+                                                    <span>保密</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm text-[#CCCCCC] mb-2">生日</label>
+                                            <input type="date" value="1995-08-15" class="w-full bg-[#333] border border-[#444] rounded-lg py-2 px-4 focus:border-[#FFD700] focus:outline-none text-white"/>
+                                        </div>
+                                    </div>
 
-                        <!-- 歌单2 -->
-                        <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                                <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/38e7a766c27c48daa11020f395012046.jpg"/>
+                                    <div class="flex justify-end">
+                                        <button type="button" class="outline-btn px-6 py-2 text-sm hover:bg-[#FFD700]/10 mr-3">
+                                            取消
+                                        </button>
+                                        <button type="button" class="main-btn px-6 py-2 text-sm font-medium hover:scale-105">
+                                            保存设置
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white font-medium">Trap精选合集</h4>
-                                <p class="text-sm text-[#808080]">18首 · 最后更新: 3天前</p>
-                            </div>
-                            <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
-                                <iconify-icon icon="mdi:play" width="20"></iconify-icon>
-                            </button>
-                        </div>
-
-                        <!-- 歌单3 -->
-                        <div class="flex items-center p-4 hover:bg-[#333]/30 rounded-lg">
-                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                                <img alt="Custom playlist cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/6b7ea6f1dd4e4f579c47a8c47e494b33.jpg"/>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="text-white font-medium">派对氛围组</h4>
-                                <p class="text-sm text-[#808080]">25首 · 最后更新: 1周前</p>
-                            </div>
-                            <button class="w-10 h-10 rounded-full main-btn flex items-center justify-center hover:scale-105">
-                                <iconify-icon icon="mdi:play" width="20"></iconify-icon>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </main>
 
-<!-- 页脚 -->
-<footer class="py-16 bg-[#0A0A0A] border-t border-[#1F1F1F] mt-16">
-    <div class="container">
-        <div class="grid grid-cols-4 gap-8">
-            <div>
-                <div class="flex items-center mb-4">
-                    <iconify-icon class="text-gold" icon="game-icons:boom-mic" width="32"></iconify-icon>
-                    <h3 class="text-white text-xl font-bold ml-2">RHYME STREET</h3>
-                </div>
-                <p class="text-sm text-[#808080] mb-4 pr-8">最专业的说唱音乐爱好者交流平台，发现街头音乐的魅力。</p>
-                <div class="flex space-x-4">
-                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
-                        <iconify-icon icon="mdi:twitter" width="24"></iconify-icon>
-                    </a>
-                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
-                        <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
-                    </a>
-                    <a class="text-[#CCCCCC] hover:text-[#FFD700]" href="#">
-                        <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
-                    </a>
-                </div>
+<!-- 底部播放器 -->
+<div class="player py-3">
+    <div class="container flex items-center">
+        <!-- 当前播放歌曲信息 -->
+        <div class="flex items-center w-1/4">
+            <div class="w-14 h-14 rounded overflow-hidden flex-shrink-0">
+                <img alt="Now playing song cover" class="w-full h-full object-cover" src="/images/song1.jpg"/>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">平台栏目</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">音乐推荐</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">专辑评分</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">歌词大全</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">赛事活动</a></li>
-                </ul>
+            <div class="ml-3 overflow-hidden">
+                <h4 class="text-white text-sm font-medium truncate">城市节奏</h4>
+                <p class="text-xs text-[#808080] truncate"><span class="artist-name">FLOW MASTER</span></p>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">帮助中心</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">用户指南</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">版权说明</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">问题反馈</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">联系我们</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">友情链接</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">Beat交易平台</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">音乐制作社区</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">嘻哈文化杂志</a></li>
-                    <li><a class="text-[#CCCCCC] hover:text-[#FFD700] text-sm" href="#">街头服饰品牌</a></li>
-                </ul>
-            </div>
+            <button class="ml-4 text-[#808080] hover:text-[#DC143C]">
+                <iconify-icon icon="mdi:heart" width="20"></iconify-icon>
+            </button>
         </div>
-        <div class="mt-16 pt-8 text-center text-sm text-[#808080] border-t border-[#1F1F1F]">
-            © 2023 RHYME STREET 说唱音乐平台 · 用户协议 · 隐私政策
-        </div>
-    </div>
-</footer>
 
-<!-- 音乐播放器 -->
-<div class="player">
-    <div class="container">
-        <div class="flex items-center justify-between py-3">
-            <div class="flex items-center">
-                <div class="w-14 h-14 rounded mr-3 overflow-hidden">
-                    <img alt="Current playing track album cover" class="w-full h-full object-cover" src="/agent-py/workspace/68f378a250f4deb5b97ceb4c/generated_images/6b7ea6f1dd4e4f579c47a8c47e494b33.jpg"/>
-                </div>
-                <div>
-                    <h4 class="text-white font-medium">BEAT THE STREET</h4>
-                    <p class="text-xs text-[#808080]"><span class="artist-name">Q-BOOM</span> · NEW TRACK</p>
-                </div>
+        <!-- 播放控制 -->
+        <div class="flex-1 flex flex-col items-center">
+            <div class="flex items-center space-x-6 mb-2">
+                <button class="text-[#808080] hover:text-white">
+                    <iconify-icon icon="mdi:shuffle" width="20"></iconify-icon>
+                </button>
+                <button class="text-[#808080] hover:text-white">
+                    <iconify-icon icon="mdi:skip-previous" width="24"></iconify-icon>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-[#FFD700] flex items-center justify-center text-[#0A0A0A] hover:scale-105">
+                    <iconify-icon icon="mdi:pause" width="24"></iconify-icon>
+                </button>
+                <button class="text-[#808080] hover:text-white">
+                    <iconify-icon icon="mdi:skip-next" width="24"></iconify-icon>
+                </button>
+                <button class="text-[#808080] hover:text-white">
+                    <iconify-icon icon="mdi:repeat" width="20"></iconify-icon>
+                </button>
             </div>
-            <div class="flex-1 max-w-lg">
-                <div class="flex items-center justify-center mb-2">
-                    <button class="text-[#CCCCCC] hover:text-[#FFD700] mx-2">
-                        <iconify-icon icon="mdi:skip-previous" width="30"></iconify-icon>
-                    </button>
-                    <button class="ml-4 w-12 h-12 rounded-full flex items-center justify-center main-btn hover:scale-105 mx-2">
-                        <iconify-icon icon="mdi:play" width="24"></iconify-icon>
-                    </button>
-                    <button class="text-[#CCCCCC] hover:text-[#FFD700] mx-2">
-                        <iconify-icon icon="mdi:skip-next" width="30"></iconify-icon>
-                    </button>
+
+            <div class="w-full flex items-center space-x-2">
+                <span class="text-xs text-[#808080]">1:24</span>
+                <div class="flex-1 h-1 bg-[#444] rounded-full overflow-hidden">
+                    <div class="h-full w-1/3 bg-[#FFD700]"></div>
                 </div>
-                <div class="flex items-center">
-                    <span class="text-xs text-[#808080]">1:34</span>
-                    <div class="flex-1 bg-[#333] h-1 rounded-full overflow-hidden mx-2">
-                        <div class="bg-[#FFD700] h-full" style="width: 30%"></div>
-                    </div>
-                    <span class="text-xs text-[#808080]">4:12</span>
-                </div>
+                <span class="text-xs text-[#808080]">3:45</span>
             </div>
-            <div class="flex items-center">
-                <iconify-icon class="text-[#CCCCCC] hover:text-[#FFD700] mr-5 cursor-pointer" icon="mdi:playlist-music" width="24"></iconify-icon>
-                <iconify-icon class="text-[#CCCCCC] hover:text-[#FFD700] cursor-pointer" icon="mdi:volume-high" width="24"></iconify-icon>
-            </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <button class="text-[#808080] hover:text-white">
+                <iconify-icon icon="mdi:volume-medium" width="20"></iconify-icon>
+            </button>
+            <button class="text-[#808080] hover:text-white">
+                <iconify-icon icon="mdi:playlist-repeat" width="20"></iconify-icon>
+            </button>
         </div>
     </div>
 </div>
 
+<footer class="bg-[#111] py-8 mt-16">
+    <div class="container">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-6 md:mb-0">
+                <iconify-icon class="text-gold" height="32" icon="game-icons:boom-mic" width="32"></iconify-icon>
+                <h2 class="text-white text-xl font-bold ml-2 tracking-wider">HipHop Ghetto</h2>
+            </div>
+            <div class="flex space-x-6 mb-6 md:mb-0">
+                <a href="#" class="text-[#808080] hover:text-white">关于我们</a>
+                <a href="#" class="text-[#808080] hover:text-white">联系我们</a>
+                <a href="#" class="text-[#808080] hover:text-white">使用条款</a>
+                <a href="#" class="text-[#808080] hover:text-white">隐私政策</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-[#222] flex items-center justify-center text-[#808080] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                    <iconify-icon icon="mdi:instagram" width="18"></iconify-icon>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#222] flex items-center justify-center text-[#808080] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                    <iconify-icon icon="mdi:twitter" width="18"></iconify-icon>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#222] flex items-center justify-center text-[#808080] hover:bg-[#FFD700] hover:text-[#0A0A0A]">
+                    <iconify-icon icon="mdi:youtube" width="18"></iconify-icon>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-[#333] mt-8 pt-6 text-center text-[#808080] text-sm">
+            © 2023 HipHop Ghetto. 保留所有权利。
+        </div>
+    </div>
+</footer>
+
 <script>
-    // 卡片悬停效果 - 保持与index.html一致的交互体验
-    const cards = document.querySelectorAll('.hover-float');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    // 等待DOM加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('===== 开始加载用户名 =====');
 
-            // 基于鼠标位置添加3D悬浮效果
-            this.style.transform = `translateY(${-5 + (y / rect.height - 0.5) * 2}px) rotateX(${(y / rect.height - 0.5) * 1}deg) rotateY(${(x / rect.width - 0.5) * 3}deg)`;
-        });
+        // 1. 从localStorage获取用户名，无值则用默认
+        const storedUsername = localStorage.getItem('username');
+        const username = storedUsername || '嘻哈爱好者'; // 核心逻辑：优先用localStorage，否则默认
+        console.log('获取到的用户名:', storedUsername ? `localStorage中存在: ${storedUsername}` : 'localStorage中无值，使用默认');
 
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
-        });
-    });
+        // 2. 找到用户名元素并更新
+        const profileNameElement = document.querySelector('.profile-username');
+        console.log('查找到的用户名元素:', profileNameElement);
 
-    // 侧边栏菜单切换效果
-    const sidebarMenus = document.querySelectorAll('.sidebar-menu');
-    sidebarMenus.forEach(menu => {
-        menu.addEventListener('click', function() {
-            // 移除所有激活状态
-            sidebarMenus.forEach(m => {
-                m.classList.remove('active');
-                m.querySelector('iconify-icon').classList.remove('text-[#FFD700]');
-                m.querySelector('iconify-icon').classList.add('text-[#CCCCCC]');
-                m.querySelector('span').classList.remove('text-white');
-            });
-
-            // 添加当前激活状态
-            this.classList.add('active');
-            this.querySelector('iconify-icon').classList.remove('text-[#CCCCCC]');
-            this.querySelector('iconify-icon').classList.add('text-[#FFD700]');
-            this.querySelector('span').classList.add('text-white');
-        });
+        if (profileNameElement) {
+            profileNameElement.textContent = username;
+            console.log('用户名更新成功，显示值:', username);
+        } else {
+            console.error('未找到class为"profile-username"的元素，请检查HTML结构');
+        }
     });
 </script>
 </body>
