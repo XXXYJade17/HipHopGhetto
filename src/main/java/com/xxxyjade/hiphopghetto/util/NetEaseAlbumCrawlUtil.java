@@ -2,7 +2,7 @@ package com.xxxyjade.hiphopghetto.util;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
-import com.xxxyjade.hiphopghetto.mapper.AlbumMapper;
+import com.xxxyjade.hiphopghetto.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ import java.util.List;
 public final class NetEaseAlbumCrawlUtil implements PageProcessor {
 
     @Autowired
-    private AlbumMapper albumMapper;
+    private AlbumService albumService;
     @Autowired
     private NetEaseSongCrawlUtil netEaseSongCrawlUtil;
 
@@ -66,10 +66,7 @@ public final class NetEaseAlbumCrawlUtil implements PageProcessor {
             // 插入专辑数据
             Album album = new Album(albumId, albumName, singer, releaseTime, url, introduction);
             log.info("Album:{}",album);
-            if (albumMapper.exists(new QueryWrapper<Album>().eq("id", albumId))) {
-                return;
-            }
-            albumMapper.insert(album);
+            albumService.insert(album);
         }
     }
 

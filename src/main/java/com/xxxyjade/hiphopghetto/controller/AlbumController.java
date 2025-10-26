@@ -1,10 +1,10 @@
 package com.xxxyjade.hiphopghetto.controller;
 
-import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumHasScoredDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.common.pojo.result.Result;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumHasScoredVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
@@ -49,10 +49,10 @@ public class AlbumController {
         return Result.success(albumService.getScore(id));
     }
 
-    @Operation(summary = "是否存在评分")
-    @PostMapping("/album/hasScore")
-    public Result<Integer> hasScore(@RequestBody AlbumHasScoredDTO albumHasScoredDTO) {
-        return Result.success(albumService.hasScore(albumHasScoredDTO));
+    @Operation(summary = "是否评分过")
+    @GetMapping("/album/hasScored/{id}")
+    public Result<AlbumHasScoredVO> hasScored(@PathVariable("id") Long id) {
+        return Result.success(albumService.hasScored(id));
     }
 
 }

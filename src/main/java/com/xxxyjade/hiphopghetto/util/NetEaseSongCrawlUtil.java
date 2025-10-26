@@ -1,9 +1,7 @@
 package com.xxxyjade.hiphopghetto.util;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
-import com.xxxyjade.hiphopghetto.mapper.SongMapper;
+import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +16,7 @@ import us.codecraft.webmagic.selector.Selectable;
 public final class NetEaseSongCrawlUtil implements PageProcessor {
 
     @Autowired
-    private SongMapper songMapper;
+    private SongService songService;
 
     private static final Site site = Site.me()
             .setDomain("music.163.com")        // 目标域名
@@ -52,13 +50,11 @@ public final class NetEaseSongCrawlUtil implements PageProcessor {
             Integer duration = Integer.parseInt(html.xpath("//meta[@property='music:duration']/@content").get());
             // 封面 URL
             String coverUrl = html.xpath("//meta[@property='og:image']/@content").get();
+
             // 插入数据
             Song song = new Song(songId, songName, albumId, albumName, singer, duration, coverUrl);
             log.info("Song:{}",song);
-            if (songMapper.exists(new QueryWrapper<Song>().eq("id", songId))) {
-                return;
-            }
-            songMapper.insert(song);
+            songService.insert(song);
         }
     }
 

@@ -1,11 +1,10 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.SongScore;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.SongScoreSummary;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
@@ -70,9 +69,32 @@ public class SongServiceImpl implements SongService {
      */
     public SongScoreVO getScore(Long id) {
         SongScoreSummary songScoreSummary = songScoreSummaryMapper.selectById(id);
+        // 如果汇总表不存在
+        if (songScoreSummary == null) {
+            SongScoreSummary insert = SongScoreSummary.builder()
+                    .id(id)
+                    .build();
+            songScoreSummaryMapper.insert(insert);
+            songScoreSummary = songScoreSummaryMapper.selectById(id);
+        }
         SongScoreVO songScoreVO = new SongScoreVO();
         BeanUtils.copyProperties(songScoreSummary, songScoreVO);
         return songScoreVO;
+    }
+
+    /**
+     * 插入歌曲数据
+     * @param song 歌曲实体
+     */
+    public void insert(Song song) {
+        // 如果歌曲数据不存在
+        if (!songMapper.exists(new QueryWrapper<Song>().eq("id", song.getId()))) {
+            songMapper.insert(song);
+        }
+        // 如果歌曲评分汇总数据不存在
+        if (!songScoreSummaryMapper.exists(new QueryWrapper<SongScoreSummary>().eq("id", song.getId()))) {
+            songScoreSummaryMapper.insert(SongScoreSummary.builder().id(song.getId()).build());
+        }
     }
 
 }

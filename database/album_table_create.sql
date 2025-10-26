@@ -8,20 +8,6 @@ create table album (
     url varchar(255) not null , # 专辑封面
     introduction text default null# 简介
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-# 专辑评分记录表
-create table album_score (
-    id bigint auto_increment primary key , # 主键
-    user_id bigint(20) , # 用户 Id
-    album_id bigint(20) , # 歌曲 Id
-    score tinyint(1) not null , # 评分
-    unique key (user_id, album_id),
-    constraint fk_album_score_user_id
-        foreign key (user_id)
-            references user(id),
-    constraint fk_album_score_album_id
-        foreign key (album_id)
-            references album(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 # 专辑评分汇总表
 create table album_score_summary (
     id bigint(20) , # 专辑 Id
@@ -42,4 +28,21 @@ create table album_score_summary (
             references album(id)
             on delete cascade  -- 可选：主表记录删除时，从表对应记录自动删除
             on update cascade  -- 可选：主表主键更新时，从表外键自动同步更新
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+# 专辑评分记录表
+create table album_score (
+    user_id bigint(20) , # 用户 Id
+    album_id bigint(20) , # 歌曲 Id
+    score tinyint(1) not null , # 评分
+    primary key (user_id, album_id),
+    constraint fk_album_score_user_id
+        foreign key (user_id)
+            references user(id)
+            on delete cascade
+            on update cascade,
+    constraint fk_album_score_album_id
+        foreign key (album_id)
+            references album(id)
+            on delete cascade
+            on update cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

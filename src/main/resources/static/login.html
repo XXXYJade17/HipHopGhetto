@@ -657,7 +657,7 @@
                 if (code === 200) {
                     showToast('注册成功！即将跳转到首页');
                     // 存储JWT令牌和用户信息
-                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('authentication', data.token);
                     localStorage.setItem('userId', data.id);
                     localStorage.setItem('username', registerData.username);
                     // 注册成功后直接跳转到首页

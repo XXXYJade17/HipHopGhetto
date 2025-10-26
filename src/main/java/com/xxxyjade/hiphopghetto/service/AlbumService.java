@@ -1,9 +1,9 @@
 package com.xxxyjade.hiphopghetto.service;
 
-import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumHasScoredDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumHasScoredVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
@@ -38,10 +38,16 @@ public interface AlbumService {
     AlbumScoreVO getScore(Long id);
 
     /**
-     * 是否评分
-     * @param albumHasScoredDTO DTO
-     * @return null:没有评分 Integer:评分
+     * 插入专辑数据
+     * @param album 专辑实体
      */
-    Integer hasScore(AlbumHasScoredDTO albumHasScoredDTO);
+    void insert(Album album);
+
+    /**
+     * 判断有无评分
+     * @param id 专辑Id
+     * @return 专辑有无评分VO
+     */
+    AlbumHasScoredVO hasScored(Long id);
 
 }

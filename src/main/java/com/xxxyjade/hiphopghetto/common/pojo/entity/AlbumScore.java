@@ -1,7 +1,5 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -10,25 +8,19 @@ import lombok.Data;
 public class AlbumScore {
 
     /**
-     * 主键自增
-     */
-    @TableId(type = IdType.AUTO)
-    private Integer id;
-
-    /**
      * 用户Id
      */
-    private Long userId;
+    Long userId;
 
     /**
      * 专辑Id
      */
-    private Long albumId;
+    Long albumId;
 
     /**
      * 评分
      */
-    private Integer score;
+    Integer score;
 
 }
 

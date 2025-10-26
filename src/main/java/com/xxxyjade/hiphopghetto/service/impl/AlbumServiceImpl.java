@@ -2,20 +2,14 @@ package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumHasScoredDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumScoreVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
-import com.xxxyjade.hiphopghetto.mapper.AlbumMapper;
-import com.xxxyjade.hiphopghetto.mapper.AlbumScoreMapper;
-import com.xxxyjade.hiphopghetto.mapper.AlbumScoreSummaryMapper;
-import com.xxxyjade.hiphopghetto.mapper.SongMapper;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
+import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
+import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +25,11 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private AlbumMapper albumMapper;
     @Autowired
-    private SongMapper songMapper;
-    @Autowired
     private AlbumScoreMapper albumScoreMapper;
     @Autowired
     private AlbumScoreSummaryMapper albumScoreSummaryMapper;
+    @Autowired
+    private SongMapper songMapper;
 
 
     /**
@@ -70,8 +64,8 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * 专辑评分
-     * @param albumScoreDTO 专辑评分 DTO
+     * 歌曲评分
+     * @param albumScoreDTO 歌曲评分DTO
      */
     public void score(AlbumScoreDTO albumScoreDTO) {
         AlbumScore albumScore = new AlbumScore();
@@ -81,18 +75,50 @@ public class AlbumServiceImpl implements AlbumService {
 
     /**
      * 获取评分
-     * @param id 专辑 Id
-     * @return 专辑评分 VO
+     * @param id 歌曲id
+     * @return 歌曲评分VO
      */
+    @Transactional(rollbackFor = Exception.class)
     public AlbumScoreVO getScore(Long id) {
+        if (!albumScoreSummaryMapper.exists(new QueryWrapper<AlbumScoreSummary>().eq("id", id))) {
+            albumScoreSummaryMapper.insert(AlbumScoreSummary.builder().id(id).build());
+        }
         AlbumScoreSummary albumScoreSummary = albumScoreSummaryMapper.selectById(id);
         AlbumScoreVO albumScoreVO = new AlbumScoreVO();
         BeanUtils.copyProperties(albumScoreSummary, albumScoreVO);
         return albumScoreVO;
     }
 
-    public Integer hasScore(AlbumHasScoredDTO albumHasScoredDTO) {
-        return albumScoreMapper.select(albumHasScoredDTO.getUserId(), albumHasScoredDTO.getAlbumId());
+    /**
+     * 插入专辑数据
+     * @param album 专辑实体
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void insert(Album album) {
+        // 如果专辑数据不存在
+        if (!albumMapper.exists(new QueryWrapper<Album>().eq("id", album.getId()))) {
+            albumMapper.insert(album);
+        }
+        // 如果专辑评分汇总数据不存在
+        if (!albumScoreSummaryMapper.exists(new QueryWrapper<AlbumScoreSummary>().eq("id", album.getId()))) {
+            albumScoreSummaryMapper.insert(AlbumScoreSummary.builder().id(album.getId()).build());
+        }
+    }
+
+    /**
+     * 判断有无评分
+     * @param id 专辑Id
+     * @return 专辑有无评分VO
+     */
+    public AlbumHasScoredVO hasScored(Long id) {
+        Long userId = ThreadUtil.getId();
+        AlbumScore albumScore = albumScoreMapper.selectOne(new QueryWrapper<AlbumScore>().eq("user_id", userId).eq("album_id", id));
+        AlbumHasScoredVO albumHasScoredVO = new AlbumHasScoredVO();
+        albumHasScoredVO.setHasScored(albumScore != null);
+        if (albumHasScoredVO.getHasScored()) {
+            albumHasScoredVO.setScore(albumScore.getScore());
+        }
+        return albumHasScoredVO;
     }
 
 }
