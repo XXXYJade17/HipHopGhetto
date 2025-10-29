@@ -1,6 +1,5 @@
 package com.xxxyjade.hiphopghetto.util;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
@@ -54,7 +53,7 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             // 专辑封面
             String url = page.getHtml().xpath("//div[@class=\"cover u-cover u-cover-alb\"]/img/@data-src").get();
             // 专辑介绍
-            String introduction = page.getHtml().xpath("//div[@id='album-desc-dot']/p/text()").get();
+            String description = page.getHtml().xpath("//div[@id='album-desc-dot']/p/text()").get();
             // 歌曲id列表
             List<Long> songs = page.getHtml().xpath("//ul[@class='f-hide']/li").all().stream().map(s -> {
                 Html html = Html.create(s);
@@ -65,22 +64,22 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
                 netEaseSongCrawlUtil.startCrawl(songId);
             });
             // 插入专辑数据
-            Album album = new Album(albumId, albumName, singer, releaseTime, url, introduction);
-            albumService.insert(album);
+            albumService.insert(Album.builder()
+                    .albumId(albumId)
+                    .albumName(albumName)
+                    .singer(singer)
+                    .releaseTime(releaseTime)
+                    .coverUrl(url)
+                    .description(description)
+                    .build());
         }
     }
 
-    public void startCrawl(String albumUrl) {
+    public void startCrawl(Long id) {
         Spider.create(this)
-                .addUrl(albumUrl)
+                .addUrl(("https://music.163.com/album?id=" + id))
                 .thread(1) // 单线程避免请求过于频繁
                 .run();
     }
-
-    public void startCrawl(Long id) {
-        startCrawl("https://music.163.com/album?id=" + id);
-    }
-
-
 
 }

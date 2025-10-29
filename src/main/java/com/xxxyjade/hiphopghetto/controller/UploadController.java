@@ -49,8 +49,8 @@ public class UploadController {
 
     @Operation(summary = "专辑上传")
     @GetMapping("/album/{id}")
-    public Result<Void> album(@PathVariable("id") Long id) {
-        log.info("albumId:{}", id);
+    public Result<Void> uploadAlbum(@PathVariable("id") Long id) {
+        log.info("专辑上传:{}", id);
         netEaseAlbumCrawlUtil.startCrawl(id);
         return Result.success();
     }

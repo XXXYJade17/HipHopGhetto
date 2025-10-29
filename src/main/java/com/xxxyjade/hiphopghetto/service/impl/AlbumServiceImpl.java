@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumScore;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumStats;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
 import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
@@ -24,55 +27,60 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private AlbumMapper albumMapper;
     @Autowired
+    private AlbumStatsMapper albumStatsMapper;
+    @Autowired
     private AlbumScoreMapper albumScoreMapper;
     @Autowired
-    private AlbumScoreSummaryMapper albumScoreSummaryMapper;
+    private AlbumCollectMapper albumCollectMapper;
     @Autowired
     private SongMapper songMapper;
 
     /**
-     * 插入专辑数据
+     * 插入数据
      */
     @Transactional(rollbackFor = Exception.class)
     public void insert(Album album) {
         albumMapper.insertIgnore(album);
-        albumScoreSummaryMapper.insertIgnore(album.getId());
+        albumStatsMapper.insertIgnore(album.getAlbumId());
     }
 
     /**
-     * 查询
-     * @param pageQueryDTO 分页查询DTO
-     * @return 分页VO
+     * （条件）分页查询
      */
-    public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
-        Page<Album> page = albumMapper.selectPage(new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize()), null);
-        PageVO<Album> pageVO = new PageVO<>();
-        pageVO.setList(page.getRecords());
-        return pageVO;
+    public List<Album> page(PageQueryDTO pageQueryDTO) {
+        QueryWrapper<Album> wrapper = new QueryWrapper<>();
+        String clause = "";
+        switch (pageQueryDTO.getSortType()){
+            case AVG_SCORE -> clause = "avg_score";
+            case SCORE_COUNT -> clause = "score_count";
+            case COLLECT_COUNT -> clause = "collect_count";
+            case COMMENT_COUNT -> clause = "comment_count";
+        }
+        if (!clause.isEmpty()) {
+            wrapper = wrapper.orderByDesc("album_stats." + clause);
+        }
+        Page<Album> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
+        page = albumMapper.selectAlbumPage(page, wrapper);
+        return page.getRecords();
     }
 
     /**
      * 查询详情
-     * @param id 专辑Id
-     * @return 专辑VO
      */
     @Transactional(rollbackFor = Exception.class)
-    public AlbumVO info(Long id) {
-        Album album = albumMapper.selectById(id);
-        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", album.getId()));
-        return AlbumVO.builder()
-                    .name(album.getName())
-                    .singer(album.getSinger())
-                    .releaseTime(album.getReleaseTime())
-                    .url(album.getUrl())
-                    .introduction(album.getIntroduction())
+    public AlbumInfoVO info(Long id) {
+        AlbumStats albumStats = albumStatsMapper.selectById(id);    // 专辑聚合数据
+        // 专辑下歌曲数据
+        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
+
+        return AlbumInfoVO.builder()
+                    .albumStats(albumStats)
                     .songs(songs)
                     .build();
     }
 
     /**
      * 歌曲评分
-     * @param albumScoreDTO 歌曲评分DTO
      */
     public void score(AlbumScoreDTO albumScoreDTO) {
         AlbumScore albumScore = new AlbumScore();
@@ -81,27 +89,7 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * 获取评分
-     * @param id 歌曲id
-     * @return 歌曲评分VO
-     */
-    @Transactional(rollbackFor = Exception.class)
-    public AlbumScoreVO getScore(Long id) {
-        // 插入空数据，已存在则忽略
-        albumScoreSummaryMapper.insertIgnore(id);
-
-        // 根据 Id 查询评分汇总
-        AlbumScoreSummary albumScoreSummary = albumScoreSummaryMapper.selectById(id);
-        AlbumScoreVO albumScoreVO = new AlbumScoreVO();
-        BeanUtils.copyProperties(albumScoreSummary, albumScoreVO);
-
-        return albumScoreVO;
-    }
-
-    /**
      * 有无评分记录
-     * @param albumId 专辑 id
-     * @return null:没有记录  Integer:评分
      */
     public Integer hasScore(Long albumId) {
         Long userId = ThreadUtil.getId();

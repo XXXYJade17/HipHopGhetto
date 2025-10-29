@@ -3,6 +3,7 @@ package com.xxxyjade.hiphopghetto.common.pojo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,29 +13,28 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("album_score")
-public class AlbumScore {
+@TableName("album_comment")
+public class AlbumComment extends BaseTableData {
 
     /**
      * 主键
      */
     @TableId(type = IdType.AUTO)
-    Integer id;
+    private Integer id;
 
     /**
      * 用户 Id
      */
-    Long userId;
+    private Long userId;
 
     /**
      * 专辑 Id
      */
-    Long albumId;
+    private Long albumId;
 
     /**
-     * 评分
+     * 评论
      */
-    String score;
+    private String comment;
 
 }
-

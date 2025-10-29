@@ -1,21 +1,29 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
+@TableName("song")
 public class Song {
 
     /**
      * 歌曲 Id
      */
-    Long id;
+    @TableId
+    Long songId;
 
     /**
-     * 歌曲 名
+     * 歌曲名
      */
-    String name;
+    String songName;
 
     /**
      * 所属专辑 Id
@@ -41,6 +49,6 @@ public class Song {
     /**
      * 封面 URL
      */
-    String url;
+    String coverUrl;
 
 }

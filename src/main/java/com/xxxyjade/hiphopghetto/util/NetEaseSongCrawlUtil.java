@@ -59,15 +59,11 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
         }
     }
 
-    public void startCrawl(String url) {
+    public void startCrawl(Long id) {
         Spider.create(this)
-                .addUrl(url)
+                .addUrl("https://music.163.com/song?id=" + id)
                 .thread(1) // 单线程避免请求过于频繁
                 .run();
-    }
-
-    public void startCrawl(Long id) {
-        startCrawl(SONG_URL + id);
     }
 
 }

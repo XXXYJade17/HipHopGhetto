@@ -4,7 +4,6 @@ import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.result.Result;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
 import com.xxxyjade.hiphopghetto.service.SongService;
@@ -22,12 +21,12 @@ public class SongController {
     @Autowired
     private SongService songService;
 
-    @Operation(summary = "查询")
-    @PostMapping("/songs")
-    public Result<PageVO<Song>> page(@RequestBody PageQueryDTO pageQueryDTO) {
-        return Result.success(songService.page(pageQueryDTO));
-
-    }
+//    @Operation(summary = "查询")
+//    @PostMapping("/songs")
+//    public Result<PageVO<Song>> page(@RequestBody PageQueryDTO pageQueryDTO) {
+//        return Result.success(songService.page(pageQueryDTO));
+//
+//    }
 
     @Operation(summary = "详情")
     @GetMapping("/song/{id}")

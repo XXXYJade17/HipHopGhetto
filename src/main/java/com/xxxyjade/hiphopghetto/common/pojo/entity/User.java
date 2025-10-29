@@ -22,7 +22,7 @@ public class User extends BaseTableData implements Serializable {
      * 雪花生成
      */
     @TableId(type = IdType.ASSIGN_ID)
-    private Long id;
+    private Long userId;
 
     /**
      * 用户名

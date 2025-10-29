@@ -1,6 +1,6 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -8,33 +8,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("album_score")
-public class AlbumScore {
+@TableName("song_stats")
+public class SongStats extends BaseStats {
 
     /**
-     * 主键
+     * 歌曲 Id
      */
-    @TableId(type = IdType.AUTO)
-    Integer id;
-
-    /**
-     * 用户 Id
-     */
-    Long userId;
-
-    /**
-     * 专辑 Id
-     */
-    Long albumId;
-
-    /**
-     * 评分
-     */
-    String score;
+    @TableId
+    private Long songId;
 
 }
-

@@ -39,23 +39,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     /**
      * 用户注册
-     * @param userRegisterDTO 用户注册 DTO
-     * @return 用户注册 VO
      */
     public UserRegisterVO register(UserRegisterDTO userRegisterDTO) {
-        // 判断用户名是否存在
-        QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
-                .eq("username", userRegisterDTO.getUsername());
-        if (userMapper.exists(queryWrapper)) {
-            throw new HipHopGhettoFrameException(BaseCode.USER_EXIST);
-        }
         // 判断先后密码是否一致
-        if (!userRegisterDTO.getPassword().trim().equals(userRegisterDTO.getConfirmPassword().trim())) {
+        if (!userRegisterDTO.getPassword().equals(userRegisterDTO.getConfirmPassword())) {
             throw new HipHopGhettoFrameException(BaseCode.PASSWORDS_DIFFERENT);
+        }
+        // 判断用户名是否存在
+        if (userMapper.existByUsername(userRegisterDTO.getUsername())) {
+            throw new HipHopGhettoFrameException(BaseCode.USER_EXIST);
         }
 
         // 创建实体
-        User user = User.builder().build();
+        User user = new User();
         BeanUtils.copyProperties(userRegisterDTO,user);
 
         // 密码加密
@@ -67,20 +63,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         // 生成令牌
         Map<String,Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.USER_ID, user.getId());
+        claims.put(JwtClaimsConstant.USER_ID, user.getUserId());
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
         // 构造返回VO
         return UserRegisterVO.builder()
-                .id(user.getId())
+                .id(user.getUserId())
                 .token(token)
                 .build();
     }
 
     /**
      * 用户登录
-     * @param userLoginDTO 用户 登录DTO
-     * @return 用户注册与登录 VO
      */
     public UserLoginVO login(UserLoginDTO userLoginDTO) {
         // 判断账户类型
@@ -96,32 +90,33 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 校验密码
         user = userMapper.selectOne(new QueryWrapper<>(user));
         if (user == null) {
+            // 用户不存在
             throw new HipHopGhettoFrameException(BaseCode.USER_EMPTY);
         }
 
         if (!PasswordUtil.verify(userLoginDTO.getPassword(), user.getPassword())) {
+            // 密码验证错误
             throw new HipHopGhettoFrameException(BaseCode.VERIFY_ERROR);
         }
 
         // 生成令牌
         Map<String,Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.USER_ID, user.getId());
+        claims.put(JwtClaimsConstant.USER_ID, user.getUserId());
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
         return UserLoginVO.builder()
-                .id(user.getId())
+                .id(user.getUserId())
                 .token(token)
                 .build();
     }
 
     /**
      * 根据 Id 获取用户信息
-     * @param id 用户 Id
-     * @return 用户VO
      */
-    public UserVO get(Long id) {
+    public UserVO info(Long id) {
         User user = userMapper.selectById(id);
         if (user == null) {
+            // 用户不存在
             throw new HipHopGhettoFrameException(BaseCode.USER_EMPTY);
         }
         UserVO userVO = new UserVO();
@@ -129,16 +124,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userVO;
     }
 
-    public Void update(UserUpdateDTO userUpdateDTO) {
+    /**
+     * 更新用户信息
+     * @param userUpdateDTO 用户信息更新DTO
+     */
+    public void update(UserUpdateDTO userUpdateDTO) {
         User user = new User();
         BeanUtils.copyProperties(userUpdateDTO, user);
-        userMapper.update(user, new UpdateWrapper<User>().eq("id", ThreadUtil.getId()));
-        return null;
+        userMapper.update(user, null);
     }
 
-    public Void delete(Long id) {
+    public void delete(Long id) {
         userMapper.deleteById(id);
-        return null;
     }
 
 }

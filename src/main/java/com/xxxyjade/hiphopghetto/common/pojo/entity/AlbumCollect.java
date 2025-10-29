@@ -3,32 +3,37 @@ package com.xxxyjade.hiphopghetto.common.pojo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@TableName("score_image")
-public class ScoreImage implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("album_collect")
+public class AlbumCollect {
 
     /**
-     * 图片ID
-     * 自增长
+     * 主键
      */
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**
-     * 评分ID
+     * 用户 Id
      */
-    private Long scoreId;
+    private Long userId;
 
     /**
-     * 图片URL
+     * 专辑 Id
      */
-    private String url;
+    private Long albumId;
 
+    /**
+     * 是否收藏
+     */
+    private Boolean collect;
 
 }

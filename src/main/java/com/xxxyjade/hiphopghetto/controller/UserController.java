@@ -27,36 +27,38 @@ public class UserController {
     @Operation(summary  = "注册")
     @PostMapping("/register")
     public Result<UserRegisterVO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
-        log.info("UserRegisterDTO: {}",userRegisterDTO);
+        log.info("用户注册: {}",userRegisterDTO);
         return Result.success(userService.register(userRegisterDTO));
     }
 
     @Operation(summary = "登录")
     @PostMapping("/login")
     public Result<UserLoginVO> login(@RequestBody UserLoginDTO userLoginDTO) {
-        log.info("UserLoginDTO: {}",userLoginDTO);
+        log.info("用户登录: {}",userLoginDTO);
         return Result.success(userService.login(userLoginDTO));
     }
 
     @Operation(summary = "获取信息")
     @GetMapping("/{id}")
-    public Result<UserVO> get(@PathVariable("id") Long id) {
-        log.info("Id:{}",id);
-        return Result.success(userService.get(id));
+    public Result<UserVO> info(@PathVariable("id") Long id) {
+        log.info("获取信息:{}",id);
+        return Result.success(userService.info(id));
     }
 
     @Operation(summary = "更新信息")
     @PutMapping
     public Result<Void> update(@RequestBody UserUpdateDTO userUpdateDTO) {
         log.info("UserUpdateDTO:{}", userUpdateDTO);
-        return Result.success(userService.update(userUpdateDTO));
+        userService.update(userUpdateDTO);
+        return Result.success();
     }
 
     @Operation(summary = "注销")
     @DeleteMapping("/{id}")
     public Result<Void> delete(@PathVariable("id") Long id) {
         log.info("Id:{}",id);
-        return Result.success(userService.delete(id));
+        userService.delete(id);
+        return Result.success();
     }
 
 }

@@ -1,12 +1,19 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @TableName("album")
 public class Album {
@@ -14,12 +21,13 @@ public class Album {
     /**
      * 专辑 Id
      */
-    Long id;
+    @TableId
+    Long albumId;
 
     /**
      * 专辑名
      */
-    String name;
+    String albumName;
 
     /**
      * 歌手名
@@ -34,11 +42,17 @@ public class Album {
     /**
      * 专辑封面
      */
-    String url;
+    String coverUrl;
 
     /**
-     * 专辑介绍
+     * 专辑简介
      */
-    String introduction;
+    String description;
+
+    /**
+     * 专辑综合评分
+     */
+    @TableField(exist = false)
+    BigDecimal avgScore;
 
 }

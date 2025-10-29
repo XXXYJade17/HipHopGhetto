@@ -1,16 +1,14 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
 import com.xxxyjade.hiphopghetto.mapper.SongMapper;
 import com.xxxyjade.hiphopghetto.mapper.SongScoreMapper;
-import com.xxxyjade.hiphopghetto.mapper.SongScoreSummaryMapper;
+import com.xxxyjade.hiphopghetto.mapper.SongStatsMapper;
 import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -26,14 +24,14 @@ public class SongServiceImpl implements SongService {
     @Autowired
     private SongScoreMapper songScoreMapper;
     @Autowired
-    private SongScoreSummaryMapper songScoreSummaryMapper;
+    private SongStatsMapper songStatsMapper;
 
     /**
      * 插入歌曲数据
      */
     public void insert(Song song) {
         songMapper.insertIgnore(song);
-        songScoreSummaryMapper.insertIgnore(song.getId());
+        songStatsMapper.insertIgnore(song.getSongId());
     }
 
     /**
@@ -41,12 +39,12 @@ public class SongServiceImpl implements SongService {
      * @param pageQueryDTO 分页查询DTO
      * @return 分页VO
      */
-    public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
-        Page<Song> page = songMapper.selectPage(new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize()), null);
-        PageVO<Song> pageVO = new PageVO<>();
-        pageVO.setList(page.getRecords());
-        return pageVO;
-    }
+//    public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
+//        Page<Song> page = songMapper.selectPage(new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize()), null);
+//        PageVO<Song> pageVO = new PageVO<>();
+//        pageVO.setList(page.getRecords());
+//        return pageVO;
+//    }
 
     /**
      * 查询详情
@@ -76,18 +74,19 @@ public class SongServiceImpl implements SongService {
      * @return 歌曲评分VO
      */
     public SongScoreVO getScore(Long id) {
-        SongScoreSummary songScoreSummary = songScoreSummaryMapper.selectById(id);
-        // 如果汇总表不存在
-        if (songScoreSummary == null) {
-            SongScoreSummary insert = SongScoreSummary.builder()
-                    .id(id)
-                    .build();
-            songScoreSummaryMapper.insert(insert);
-            songScoreSummary = songScoreSummaryMapper.selectById(id);
-        }
-        SongScoreVO songScoreVO = new SongScoreVO();
-        BeanUtils.copyProperties(songScoreSummary, songScoreVO);
-        return songScoreVO;
+//        SongScoreSummary songScoreSummary = songStatsMapper.selectById(id);
+//        // 如果汇总表不存在
+//        if (songScoreSummary == null) {
+//            SongScoreSummary insert = SongScoreSummary.builder()
+//                    .id(id)
+//                    .build();
+//            songStatsMapper.insert(insert);
+//            songScoreSummary = songStatsMapper.selectById(id);
+//        }
+//        SongScoreVO songScoreVO = new SongScoreVO();
+//        BeanUtils.copyProperties(songScoreSummary, songScoreVO);
+//        return songScoreVO;
+        return null;
     }
 
 }

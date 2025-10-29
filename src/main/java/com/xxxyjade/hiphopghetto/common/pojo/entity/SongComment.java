@@ -4,29 +4,37 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
-import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@TableName("posting_like")
-public class PostingLike extends BaseTableData {
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("song_comment")
+public class SongComment extends BaseTableData {
 
     /**
-     * 点赞记录Id
+     * 主键
      */
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
     /**
-     * 帖子Id
-     */
-    private Long postingId;
-
-    /**
-     * 点赞用户Id
+     * 用户 Id
      */
     private Long userId;
+
+    /**
+     * 歌曲 Id
+     */
+    private Long songId;
+
+    /**
+     * 评论
+     */
+    private String comment;
 
 }
