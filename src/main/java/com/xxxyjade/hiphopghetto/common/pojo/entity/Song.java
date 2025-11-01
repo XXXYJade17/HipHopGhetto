@@ -1,11 +1,14 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -50,5 +53,11 @@ public class Song {
      * 封面 URL
      */
     String coverUrl;
+
+    /**
+     * 专辑综合评分
+     */
+    @TableField(exist = false)
+    BigDecimal avgScore;
 
 }

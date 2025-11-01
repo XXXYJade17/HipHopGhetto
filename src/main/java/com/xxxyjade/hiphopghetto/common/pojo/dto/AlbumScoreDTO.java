@@ -6,9 +6,6 @@ import lombok.Data;
 @Data
 public class AlbumScoreDTO {
 
-    @Schema(description = "用户Id")
-    Long userId;
-
     @Schema(description = "专辑Id")
     Long albumId;
 

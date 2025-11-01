@@ -72,7 +72,7 @@ public class StatsHandleTask {
                     // 根据ID获取或创建统计对象
                     T stats = statsMap.computeIfAbsent(scoreCount.getId(), statsCreator);
                     // 设置对应分数的数量
-                    stats.setScoreCount(scoreCount);
+                    stats.calculateScoreCount(scoreCount);
                 });
 
         // 计算总评分数和平均评分

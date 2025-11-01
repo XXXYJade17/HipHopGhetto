@@ -2,6 +2,7 @@ package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.constant.Number;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
@@ -69,21 +70,29 @@ public class AlbumServiceImpl implements AlbumService {
      */
     @Transactional(rollbackFor = Exception.class)
     public AlbumInfoVO info(Long id) {
+        Album album = albumMapper.selectById(id);
         AlbumStats albumStats = albumStatsMapper.selectById(id);    // 专辑聚合数据
         // 专辑下歌曲数据
         List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
-
-        return AlbumInfoVO.builder()
-                    .albumStats(albumStats)
-                    .songs(songs)
-                    .build();
+        AlbumInfoVO albumInfoVO = new AlbumInfoVO();
+        BeanUtils.copyProperties(album, albumInfoVO);
+        albumInfoVO.setAlbumStats(albumStats);
+        albumInfoVO.setSongs(songs);
+        System.out.println(albumStats.getScoreCount());
+        System.out.println(albumStats.getNine());
+        return albumInfoVO;
     }
 
     /**
      * 歌曲评分
      */
     public void score(AlbumScoreDTO albumScoreDTO) {
-        AlbumScore albumScore = new AlbumScore();
+        Long userId = ThreadUtil.getId();
+        AlbumScore albumScore = AlbumScore.builder()
+                .albumId(albumScoreDTO.getAlbumId())
+                .userId(userId)
+                .score(Number.getStr(albumScoreDTO.getScore()))
+                .build();
         BeanUtils.copyProperties(albumScoreDTO, albumScore);
         albumScoreMapper.insertOrUpdate(albumScore);
     }
@@ -93,7 +102,7 @@ public class AlbumServiceImpl implements AlbumService {
      */
     public Integer hasScore(Long albumId) {
         Long userId = ThreadUtil.getId();
-        return albumScoreMapper.select(userId, albumId);
+        return Number.getInt(albumScoreMapper.select(userId, albumId));
     }
 
 }

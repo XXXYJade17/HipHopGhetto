@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Tag(name = "歌曲服务")
 @Slf4j
@@ -21,12 +23,11 @@ public class SongController {
     @Autowired
     private SongService songService;
 
-//    @Operation(summary = "查询")
-//    @PostMapping("/songs")
-//    public Result<PageVO<Song>> page(@RequestBody PageQueryDTO pageQueryDTO) {
-//        return Result.success(songService.page(pageQueryDTO));
-//
-//    }
+    @Operation(summary = "查询")
+    @PostMapping("/songs")
+    public Result<List<Song>> page(@RequestBody PageQueryDTO pageQueryDTO) {
+        return Result.success(songService.page(pageQueryDTO));
+    }
 
     @Operation(summary = "详情")
     @GetMapping("/song/{id}")

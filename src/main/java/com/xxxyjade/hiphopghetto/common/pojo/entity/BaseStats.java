@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
+@Data
 public class BaseStats {
 
     /**
@@ -18,7 +19,7 @@ public class BaseStats {
     /**
      * 评分数
      */
-    private Integer scoreCount = 0;
+    private Integer scoreCount;
 
     /**
      * 收藏数
@@ -45,7 +46,7 @@ public class BaseStats {
     Integer ten = 0;
 
     @SneakyThrows
-    public void setScoreCount(ScoreCount scoreCount) {
+    public void calculateScoreCount(ScoreCount scoreCount) {
         // 如果对象为空
         if (scoreCount == null) {
             return;

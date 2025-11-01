@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @Tag(name = "专辑服务")
 @Slf4j
 public class AlbumController {
@@ -27,7 +28,6 @@ public class AlbumController {
     @PostMapping("/albums")
     public Result<List<Album>> page(@RequestBody PageQueryDTO pageQueryDTO) {
         return Result.success(albumService.page(pageQueryDTO));
-
     }
 
     @Operation(summary = "详情")
@@ -43,7 +43,7 @@ public class AlbumController {
         return Result.success();
     }
 
-    @Operation(summary = "是否评分过")
+    @Operation(summary = "评分是否存在")
     @GetMapping("/album/score/{id}")
     public Result<Integer> hasScore(@PathVariable("id") Long albumId) {
         return Result.success(albumService.hasScore(albumId));

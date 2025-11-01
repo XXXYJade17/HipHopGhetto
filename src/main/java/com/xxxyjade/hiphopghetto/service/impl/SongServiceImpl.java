@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
@@ -14,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Slf4j
@@ -35,16 +38,24 @@ public class SongServiceImpl implements SongService {
     }
 
     /**
-     * 查询
-     * @param pageQueryDTO 分页查询DTO
-     * @return 分页VO
+     * （条件）分页查询
      */
-//    public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
-//        Page<Song> page = songMapper.selectPage(new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize()), null);
-//        PageVO<Song> pageVO = new PageVO<>();
-//        pageVO.setList(page.getRecords());
-//        return pageVO;
-//    }
+    public List<Song> page(PageQueryDTO pageQueryDTO) {
+        QueryWrapper<Song> wrapper = new QueryWrapper<>();
+        String clause = "";
+        switch (pageQueryDTO.getSortType()){
+            case AVG_SCORE -> clause = "avg_score";
+            case SCORE_COUNT -> clause = "score_count";
+            case COLLECT_COUNT -> clause = "collect_count";
+            case COMMENT_COUNT -> clause = "comment_count";
+        }
+        if (!clause.isEmpty()) {
+            wrapper = wrapper.orderByDesc("song_stats." + clause);
+        }
+        Page<Song> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
+        page = songMapper.selectSongPage(page, wrapper);
+        return page.getRecords();
+    }
 
     /**
      * 查询详情

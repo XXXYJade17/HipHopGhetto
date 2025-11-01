@@ -4,7 +4,6 @@ import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumInfoVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumScoreVO;
 
 import java.util.List;
 

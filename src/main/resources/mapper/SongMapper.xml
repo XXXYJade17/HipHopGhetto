@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxxyjade.hiphopghetto.mapper.SongMapper">
+    <select id="selectSongPage" resultType="com.xxxyjade.hiphopghetto.common.pojo.entity.Song">
+        select song.*, song_stats.avg_score from song
+        left join song_stats on song.song_id = song_stats.song_id
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

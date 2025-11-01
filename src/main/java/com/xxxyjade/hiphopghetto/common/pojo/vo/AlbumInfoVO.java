@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -16,6 +18,21 @@ import java.util.List;
 @AllArgsConstructor
 @Schema(title = "专辑详情VO")
 public class AlbumInfoVO {
+
+    @Schema(description = "专辑名")
+    String albumName;
+
+    @Schema(description = "歌手名")
+    String singer;
+
+    @Schema(description = "发行时间")
+    LocalDate releaseTime;
+
+    @Schema(description = "封面url")
+    String coverUrl;
+
+    @Schema(description = "专辑简介")
+    String description;
 
     @Schema(description = "专辑统计数据")
     AlbumStats albumStats;

@@ -6,6 +6,8 @@ import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
 
+import java.util.List;
+
 public interface SongService {
 
     /**
@@ -18,7 +20,7 @@ public interface SongService {
      * @param pageQueryDTO 分页查询DTO
      * @return 分页VO
      */
-//    PageVO<Song> page(PageQueryDTO pageQueryDTO);
+    List<Song> page(PageQueryDTO pageQueryDTO);
 
     /**
      * 查询详情
