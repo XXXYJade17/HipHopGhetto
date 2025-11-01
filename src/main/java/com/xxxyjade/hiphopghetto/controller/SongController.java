@@ -5,7 +5,7 @@ import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.result.Result;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 import com.xxxyjade.hiphopghetto.service.SongService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @Tag(name = "歌曲服务")
 @Slf4j
 public class SongController {
@@ -31,7 +32,7 @@ public class SongController {
 
     @Operation(summary = "详情")
     @GetMapping("/song/{id}")
-    public Result<SongVO> info(@PathVariable("id") Long id) {
+    public Result<SongInfoVO> info(@PathVariable("id") Long id) {
         return Result.success(songService.info(id));
     }
 
@@ -42,10 +43,10 @@ public class SongController {
         return Result.success();
     }
 
-    @Operation(summary = "获取评分")
+    @Operation(summary = "评分是否存在")
     @GetMapping("/song/score/{id}")
-    public Result<SongScoreVO> getScore(@PathVariable("id") Long id) {
-        return Result.success(songService.getScore(id));
+    public Result<Integer> hasScore(@PathVariable("id") Long id) {
+        return Result.success(songService.hasScore(id));
     }
 
 }

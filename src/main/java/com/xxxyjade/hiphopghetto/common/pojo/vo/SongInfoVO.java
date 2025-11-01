@@ -1,7 +1,7 @@
 package com.xxxyjade.hiphopghetto.common.pojo.vo;
 
-import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumStats;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
+
+import com.xxxyjade.hiphopghetto.common.pojo.entity.SongStats;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,33 +9,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(title = "专辑详情VO")
-public class AlbumInfoVO {
+@Schema(title = "歌曲详情VO")
+public class SongInfoVO {
 
-    @Schema(description = "专辑名")
+    @Schema(description = "歌曲名")
+    private String songName;
+
+    @Schema(description = "所属专辑Id")
+    private Long albumId;
+
+    @Schema(description = "所属专辑名")
     private String albumName;
 
     @Schema(description = "歌手名")
     private String singer;
 
-    @Schema(description = "发行时间")
-    private LocalDate releaseTime;
+    @Schema(description = "时长（秒）")
+    private Integer duration;
 
-    @Schema(description = "封面url")
+    @Schema(description = "封面URL")
     private String coverUrl;
 
-    @Schema(description = "专辑简介")
-    private String description;
-
-//    @Schema(description = "专辑统计数据")
-//    private AlbumStats albumStats;
+//    @Schema(description = "歌曲统计数据")
+//    private SongStats songStats;
 
     @Schema(description = "平均评分")
     private BigDecimal avgScore;
@@ -48,8 +49,5 @@ public class AlbumInfoVO {
 
     @Schema(description = "评论数")
     private Integer commentCount;
-
-    @Schema(description = "专辑歌曲")
-    private List<Song> songs;
 
 }

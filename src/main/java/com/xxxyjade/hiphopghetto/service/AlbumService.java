@@ -33,9 +33,7 @@ public interface AlbumService {
     void score(AlbumScoreDTO albumScoreDTO);
 
     /**
-     * 有无评分记录
-     * @param albumId 专辑 id
-     * @return null:没有记录  Integer:评分
+     * 是否已经评分
      */
     Integer hasScore(Long albumId);
 

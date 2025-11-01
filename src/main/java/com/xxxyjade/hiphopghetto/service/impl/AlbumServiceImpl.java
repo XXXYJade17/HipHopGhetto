@@ -53,7 +53,6 @@ public class AlbumServiceImpl implements AlbumService {
         String clause = "";
         switch (pageQueryDTO.getSortType()){
             case AVG_SCORE -> clause = "avg_score";
-            case SCORE_COUNT -> clause = "score_count";
             case COLLECT_COUNT -> clause = "collect_count";
             case COMMENT_COUNT -> clause = "comment_count";
         }
@@ -71,15 +70,13 @@ public class AlbumServiceImpl implements AlbumService {
     @Transactional(rollbackFor = Exception.class)
     public AlbumInfoVO info(Long id) {
         Album album = albumMapper.selectById(id);
-        AlbumStats albumStats = albumStatsMapper.selectById(id);    // 专辑聚合数据
-        // 专辑下歌曲数据
+        AlbumStats albumStats = albumStatsMapper.selectById(id);
         List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
+
         AlbumInfoVO albumInfoVO = new AlbumInfoVO();
         BeanUtils.copyProperties(album, albumInfoVO);
-        albumInfoVO.setAlbumStats(albumStats);
+        BeanUtils.copyProperties(albumStats, albumInfoVO);
         albumInfoVO.setSongs(songs);
-        System.out.println(albumStats.getScoreCount());
-        System.out.println(albumStats.getNine());
         return albumInfoVO;
     }
 
@@ -93,12 +90,11 @@ public class AlbumServiceImpl implements AlbumService {
                 .userId(userId)
                 .score(Number.getStr(albumScoreDTO.getScore()))
                 .build();
-        BeanUtils.copyProperties(albumScoreDTO, albumScore);
         albumScoreMapper.insertOrUpdate(albumScore);
     }
 
     /**
-     * 有无评分记录
+     * 是否已经评分
      */
     public Integer hasScore(Long albumId) {
         Long userId = ThreadUtil.getId();

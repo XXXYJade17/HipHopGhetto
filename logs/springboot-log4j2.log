@@ -21303,3 +21303,1099 @@ com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException: 用户不存在
 2025-11-01 15:52:22.285 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
 2025-11-01 15:57:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
 2025-11-01 15:57:22.285 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:02:04.219 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 16:02:04.220 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 16:02:04.255 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 16:02:04.256 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 16:02:22.276 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:02:22.286 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:07:22.274 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:07:22.283 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:12:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:12:22.285 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:17:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:17:22.289 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:22:22.272 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:22:22.280 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:27:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:27:22.280 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:32:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:32:22.288 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:37:22.274 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:37:22.286 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:38:46.449 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 16:38:46.450 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 16:38:46.473 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 16:38:46.474 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 16:38:53.340 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:38:55.768 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:40:59.426 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:42:22.277 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:42:22.293 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:44:53.399 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:47:22.276 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:47:22.289 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:48:13.449 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:51:55.013 [http-nio-9998-exec-5] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/songs query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource songs.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-01 16:52:07.395 [http-nio-9998-exec-3] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/songs query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource songs.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-01 16:52:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:52:22.286 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 16:52:42.645 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:52:59.104 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:53:05.514 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:53:06.040 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 16:57:22.275 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 16:57:22.289 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:00:33.515 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:02:22.271 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:02:22.277 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:04:21.589 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:05:27.935 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:05:42.987 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:06:10.177 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:06:56.205 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:07:04.098 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:07:22.274 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:07:22.302 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:07:28.687 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:07:28.714 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:07:29.056 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:07:56.869 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:08:45.478 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:12:22.273 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:12:22.276 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:14:49.412 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl - page.getRecords():[Album(albumId=98339170, albumName=冰冷热带鱼, singer=SASIOVERLXRD / JinJiBeWater_隼, releaseTime=2020-11-16, coverUrl=http://p2.music.126.net/mygs0AbhztpEaNXU3HdCGg==/109951165474171544.jpg, description=SASI联手Rich_nomadic & JinIiBeWater首张Mixtape Mix.SASI Master.寻麻疹, avgScore=null), Album(albumId=286248593, albumName=超级孙先生, singer=SASIOVERLXRD, releaseTime=2025-09-27, coverUrl=http://p1.music.126.net/YbN2afAB9qu3BkzgKrnvnw==/109951172060884093.jpg, description=SASIOVERLXRD 2025年全新说唱作品, avgScore=10.0)]
+2025-11-01 17:14:51.457 [http-nio-9998-exec-7] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/songs.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-01 17:15:16.147 [http-nio-9998-exec-3] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/songs.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-01 17:17:22.273 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:17:22.282 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:17:50.545 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 17:17:50.545 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 17:24:04.123 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 17:24:04.148 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 9092 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 17:24:04.152 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 17:24:06.132 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 17:24:06.133 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 17:24:06.133 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 17:24:06.165 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 17:24:06.709 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 17:24:06.846 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e053511
+2025-11-01 17:24:06.958 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 17:24:06.977 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 3.058 seconds (process running for 4.358)
+2025-11-01 17:24:06.982 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 17:24:07.086 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23e1f497
+2025-11-01 17:24:07.087 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 17:24:07.091 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:24:07.141 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:24:11.389 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 17:24:24.428 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 17:29:06.980 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:29:07.019 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:34:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:34:07.006 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:39:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:39:06.986 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:44:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:44:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:49:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:49:06.981 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:54:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:54:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 17:59:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 17:59:06.995 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:04:06.980 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:04:06.984 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:09:06.982 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:09:07.001 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:14:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:14:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:19:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:19:06.997 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:24:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:24:06.982 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:29:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:29:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:34:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:34:06.986 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:39:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:39:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:44:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:44:06.985 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:49:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:49:06.985 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:54:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:54:06.982 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 18:59:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 18:59:06.982 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:04:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:04:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:09:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:09:06.996 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:14:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:14:06.984 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:19:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:19:06.989 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:24:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:24:06.991 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:29:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:29:06.984 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:34:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:34:06.993 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:39:06.983 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:39:06.995 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:44:04.123 [http-nio-9998-exec-9] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:44:05.302 [http-nio-9998-exec-10] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:44:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:44:06.990 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:44:08.604 [http-nio-9998-exec-2] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:44:09.422 [http-nio-9998-exec-5] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:44:10.021 [http-nio-9998-exec-4] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:44:25.185 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 19:44:25.883 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 19:44:28.722 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MTk4ODY5M30.Q5h2C9tYx2rh8x_wlkCN2fPwybCcWf7fdyO3wysYZsc
+2025-11-01 19:44:39.866 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.UserController - 用户登录: UserLoginDTO(account=xxxyjade, password=@yc060504)
+2025-11-01 19:44:44.302 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 19:44:44.305 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 19:44:44.964 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 19:44:44.965 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 19:44:46.680 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 19:44:46.681 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 19:44:46.711 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 19:44:46.713 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 19:45:06.521 [http-nio-9998-exec-9] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:49:06.980 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:49:06.991 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:51:18.610 [http-nio-9998-exec-9] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "PLAY_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:51:21.706 [http-nio-9998-exec-10] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : POST url : http://localhost:9998/api/songs query : null 
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.xxxyjade.hiphopghetto.common.enums.SortType` from String "FAVORITE_COUNT": not one of the values accepted for Enum class: [DEFAULT, COLLECT_COUNT, AVG_SCORE, COMMENT_COUNT, SCORE_COUNT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 32] (through reference chain: com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO["sortType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.11.jar:6.2.11]
+	... 51 more
+2025-11-01 19:54:06.979 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:54:06.985 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 19:59:06.978 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 19:59:06.984 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:04:06.981 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:04:06.991 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:08:06.011 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:08:06.012 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:08:25.795 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:08:25.797 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:09:02.779 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:09:02.780 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:09:07.092 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:09:07.115 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 31872 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:09:07.118 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:09:08.023 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:09:08.025 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:09:08.025 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:09:08.065 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:09:08.531 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:09:08.667 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:09:08.782 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:09:08.799 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.934 seconds (process running for 2.574)
+2025-11-01 20:09:08.805 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:09:08.908 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fac7ec3
+2025-11-01 20:09:08.909 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:09:08.913 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:09:09.024 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:09:19.145 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:09:19.149 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:09:22.446 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:09:22.478 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 3864 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:09:22.487 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:09:23.265 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:09:23.266 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:09:23.266 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:09:23.300 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:09:23.799 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:09:23.932 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:09:24.049 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:09:24.068 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.857 seconds (process running for 2.45)
+2025-11-01 20:09:24.073 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:09:24.176 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fac7ec3
+2025-11-01 20:09:24.177 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:09:24.183 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:09:24.306 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:09:28.345 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 20:10:19.000 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:10:19.005 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:10:22.698 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:10:22.761 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 16204 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:10:22.771 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:10:24.522 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:10:24.526 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:10:24.527 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:10:24.610 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:10:25.992 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:10:26.335 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:10:26.650 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:10:26.685 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 4.409 seconds (process running for 5.153)
+2025-11-01 20:10:26.692 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:10:27.009 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fac7ec3
+2025-11-01 20:10:27.011 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:10:27.018 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:10:27.208 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:10:33.303 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 20:11:31.587 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:11:31.648 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:15:26.685 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:15:26.718 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:20:02.772 [http-nio-9998-exec-2] INFO  org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 448 ms
+2025-11-01 20:20:26.687 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:20:26.736 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:25:26.685 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:25:26.727 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:28:25.740 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:28:25.742 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:29:17.041 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:29:17.045 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:29:20.571 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:29:20.600 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 11716 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:29:20.603 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:29:21.470 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:29:21.471 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:29:21.471 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:29:21.510 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:29:22.039 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:29:22.200 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:29:22.339 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:29:22.361 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 2.031 seconds (process running for 2.677)
+2025-11-01 20:29:22.366 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:29:22.474 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2551c676
+2025-11-01 20:29:22.475 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:29:22.482 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:29:22.541 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:29:39.546 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:29:39.549 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:29:43.926 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:29:43.953 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 30052 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:29:43.957 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:29:44.650 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:29:44.651 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:29:44.651 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:29:44.682 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:29:45.126 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:29:45.260 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:29:45.365 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:29:45.382 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.658 seconds (process running for 2.21)
+2025-11-01 20:29:45.387 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:29:45.482 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23e1f497
+2025-11-01 20:29:45.483 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:29:45.487 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:29:45.592 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:29:55.246 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:29:55.249 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:29:59.096 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:29:59.126 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 28844 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:29:59.130 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:29:59.832 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:29:59.833 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:29:59.833 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:29:59.865 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:30:00.352 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:30:00.490 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:30:00.605 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:30:00.625 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.735 seconds (process running for 2.312)
+2025-11-01 20:30:00.631 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:30:00.731 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@512261fb
+2025-11-01 20:30:00.732 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:30:00.738 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:30:00.853 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:30:06.648 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 20:35:00.629 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:35:00.659 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:40:00.626 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:40:00.660 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:45:00.629 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:45:00.667 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:50:00.626 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:50:00.676 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:54:37.027 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:54:37.031 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:57:00.170 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:57:00.199 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 31608 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:57:00.203 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:57:00.983 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:57:00.984 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:57:00.984 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:57:01.019 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:57:01.483 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:57:01.620 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:57:01.720 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:57:01.736 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.78 seconds (process running for 2.377)
+2025-11-01 20:57:01.742 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:57:01.829 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@512261fb
+2025-11-01 20:57:01.830 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:57:01.834 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:57:01.941 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:57:05.368 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 20:57:06.977 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:57:07.034 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:57:44.459 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:57:44.461 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 20:58:42.625 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 20:58:42.627 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-01 20:58:57.258 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-01 20:58:57.308 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 30484 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-01 20:58:57.315 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-01 20:58:59.186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:58:59.190 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-01 20:58:59.192 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-01 20:58:59.316 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-01 20:59:00.570 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-01 20:59:00.828 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-01 20:59:01.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-01 20:59:01.156 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 4.272 seconds (process running for 4.856)
+2025-11-01 20:59:01.176 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-01 20:59:01.358 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3bb47268
+2025-11-01 20:59:01.359 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-01 20:59:01.368 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 20:59:01.475 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 20:59:33.214 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-01 20:59:53.390 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 20:59:53.466 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 21:00:01.671 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAwNDY4MH0.irLYg_LA6eBnmDiFyRgJVLYXJ-AosiFUtzQfW6ibBGQ
+2025-11-01 21:00:01.674 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-01 21:04:01.157 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:04:01.171 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:09:01.154 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:09:01.165 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:14:01.159 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:14:01.172 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:19:01.154 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:19:01.157 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:24:01.159 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:24:01.166 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:29:01.154 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:29:01.159 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:34:01.155 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:34:01.161 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:39:01.154 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:39:01.159 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:44:01.160 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:44:01.171 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:49:01.160 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 21:49:01.169 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 21:51:07.395 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-01 21:51:07.395 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

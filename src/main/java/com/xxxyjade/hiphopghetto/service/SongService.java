@@ -4,7 +4,7 @@ import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 
 import java.util.List;
 
@@ -24,10 +24,8 @@ public interface SongService {
 
     /**
      * 查询详情
-     * @param id 歌曲Id
-     * @return 歌曲VO
      */
-    SongVO info(Long id);
+    SongInfoVO info(Long id);
 
     /**
      * 歌曲评分
@@ -36,10 +34,8 @@ public interface SongService {
     void score(SongScoreDTO songScoreDTO);
 
     /**
-     * 获取评分
-     * @param id 歌曲id
-     * @return 歌曲评分VO
+     * 是否已经评分
      */
-    SongScoreVO getScore(Long id);
+    Integer hasScore(Long songId);
 
 }

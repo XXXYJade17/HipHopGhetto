@@ -54,8 +54,15 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
             String coverUrl = html.xpath("//meta[@property='og:image']/@content").get();
 
             // 插入数据
-            Song song = new Song(songId, songName, albumId, albumName, singer, duration, coverUrl);
-            songService.insert(song);
+            songService.insert(Song.builder()
+                    .songId(songId)
+                    .songName(songName)
+                    .albumId(albumId)
+                    .albumName(albumName)
+                    .singer(singer)
+                    .duration(duration)
+                    .coverUrl(coverUrl)
+                    .build());
         }
     }
 

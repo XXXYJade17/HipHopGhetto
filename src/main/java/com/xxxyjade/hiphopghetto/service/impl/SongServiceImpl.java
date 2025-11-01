@@ -2,15 +2,17 @@ package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.constant.Number;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.SongVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 import com.xxxyjade.hiphopghetto.mapper.SongMapper;
 import com.xxxyjade.hiphopghetto.mapper.SongScoreMapper;
 import com.xxxyjade.hiphopghetto.mapper.SongStatsMapper;
 import com.xxxyjade.hiphopghetto.service.SongService;
+import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +47,6 @@ public class SongServiceImpl implements SongService {
         String clause = "";
         switch (pageQueryDTO.getSortType()){
             case AVG_SCORE -> clause = "avg_score";
-            case SCORE_COUNT -> clause = "score_count";
             case COLLECT_COUNT -> clause = "collect_count";
             case COMMENT_COUNT -> clause = "comment_count";
         }
@@ -59,45 +60,37 @@ public class SongServiceImpl implements SongService {
 
     /**
      * 查询详情
-     * @param id 歌曲Id
-     * @return 歌曲VO
      */
-    public SongVO info(Long id) {
+    public SongInfoVO info(Long id) {
         Song song = songMapper.selectById(id);
-        SongVO songVO = new SongVO();
-        BeanUtils.copyProperties(song, songVO);
-        return songVO;
+        SongStats songStats = songStatsMapper.selectById(id);
+
+        SongInfoVO songInfoVO = new SongInfoVO();
+        BeanUtils.copyProperties(song, songInfoVO);
+        BeanUtils.copyProperties(songStats, songInfoVO);
+        System.out.println(songInfoVO);
+        return songInfoVO;
     }
 
     /**
      * 歌曲评分
-     * @param songScoreDTO 歌曲评分DTO
      */
     public void score(SongScoreDTO songScoreDTO) {
-        SongScore songScore = new SongScore();
-        BeanUtils.copyProperties(songScoreDTO, songScore);
-        songScoreMapper.insert(songScore);
+        Long userId = ThreadUtil.getId();
+        SongScore songScore = SongScore.builder()
+                .songId(songScoreDTO.getSongId())
+                .userId(userId)
+                .score(Number.getStr(songScoreDTO.getScore()))
+                .build();
+        songScoreMapper.insertOrUpdate(songScore);
     }
 
     /**
-     * 获取评分
-     * @param id 歌曲id
-     * @return 歌曲评分VO
+     * 是否已经评分
      */
-    public SongScoreVO getScore(Long id) {
-//        SongScoreSummary songScoreSummary = songStatsMapper.selectById(id);
-//        // 如果汇总表不存在
-//        if (songScoreSummary == null) {
-//            SongScoreSummary insert = SongScoreSummary.builder()
-//                    .id(id)
-//                    .build();
-//            songStatsMapper.insert(insert);
-//            songScoreSummary = songStatsMapper.selectById(id);
-//        }
-//        SongScoreVO songScoreVO = new SongScoreVO();
-//        BeanUtils.copyProperties(songScoreSummary, songScoreVO);
-//        return songScoreVO;
-        return null;
+    public Integer hasScore(Long songId) {
+        Long userId = ThreadUtil.getId();
+        return Number.getInt(songScoreMapper.select(userId, songId));
     }
 
 }
