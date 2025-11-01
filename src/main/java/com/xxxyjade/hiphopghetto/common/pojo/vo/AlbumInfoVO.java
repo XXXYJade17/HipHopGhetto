@@ -34,6 +34,12 @@ public class AlbumInfoVO {
     @Schema(description = "专辑简介")
     private String description;
 
+    @Schema(description = "用户评分")
+    private Integer score;
+
+    @Schema(description = "收藏状态 false-未收藏 true-已收藏")
+    private Boolean collect;
+
 //    @Schema(description = "专辑统计数据")
 //    private AlbumStats albumStats;
 

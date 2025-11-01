@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.constant.Number;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumScore;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumStats;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
 import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
@@ -68,20 +65,25 @@ public class AlbumServiceImpl implements AlbumService {
      * 查询详情
      */
     @Transactional(rollbackFor = Exception.class)
-    public AlbumInfoVO info(Long id) {
-        Album album = albumMapper.selectById(id);
-        AlbumStats albumStats = albumStatsMapper.selectById(id);
-        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
+    public AlbumInfoVO info(Long albumId) {
+        Long userId = ThreadUtil.getId();
+        Album album = albumMapper.selectById(albumId);
+        Integer score = Number.getInt(albumScoreMapper.select(userId, albumId));
+        Boolean collect = albumCollectMapper.selectOrInsert(userId, albumId);
+        AlbumStats albumStats = albumStatsMapper.selectById(albumId);
+        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", albumId));
 
         AlbumInfoVO albumInfoVO = new AlbumInfoVO();
         BeanUtils.copyProperties(album, albumInfoVO);
         BeanUtils.copyProperties(albumStats, albumInfoVO);
+        albumInfoVO.setScore(score);
+        albumInfoVO.setCollect(collect);
         albumInfoVO.setSongs(songs);
         return albumInfoVO;
     }
 
     /**
-     * 歌曲评分
+     * 专辑评分
      */
     public void score(AlbumScoreDTO albumScoreDTO) {
         Long userId = ThreadUtil.getId();
@@ -94,11 +96,11 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * 是否已经评分
+     * 收藏/取消专辑
      */
-    public Integer hasScore(Long albumId) {
+    public void collect(Long albumId) {
         Long userId = ThreadUtil.getId();
-        return Number.getInt(albumScoreMapper.select(userId, albumId));
+        albumCollectMapper.collect(userId, albumId);
     }
 
 }

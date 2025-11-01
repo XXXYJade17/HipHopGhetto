@@ -21,20 +21,17 @@ public interface AlbumService {
 
     /**
      * 查询详情
-     * @param id 专辑Id
-     * @return 专辑VO
      */
-    AlbumInfoVO info(Long id);
+    AlbumInfoVO info(Long albumId);
 
     /**
      * 专辑评分
-     * @param albumScoreDTO 歌曲评分DTO
      */
     void score(AlbumScoreDTO albumScoreDTO);
 
     /**
-     * 是否已经评分
+     * 收藏/取消专辑
      */
-    Integer hasScore(Long albumId);
+    void collect(Long albumId);
 
 }

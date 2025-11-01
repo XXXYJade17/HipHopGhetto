@@ -31,9 +31,9 @@ public class AlbumController {
     }
 
     @Operation(summary = "详情")
-    @GetMapping("/album/{id}")
-    public Result<AlbumInfoVO> info(@PathVariable("id") Long id) {
-        return Result.success(albumService.info(id));
+    @GetMapping("/album/{albumId}")
+    public Result<AlbumInfoVO> info(@PathVariable("albumId") Long albumId) {
+        return Result.success(albumService.info(albumId));
     }
 
     @Operation(summary = "评分")
@@ -43,10 +43,11 @@ public class AlbumController {
         return Result.success();
     }
 
-    @Operation(summary = "评分是否存在")
-    @GetMapping("/album/score/{id}")
-    public Result<Integer> hasScore(@PathVariable("id") Long albumId) {
-        return Result.success(albumService.hasScore(albumId));
+    @Operation(summary = "收藏")
+    @GetMapping("/album/collect/{albumId}")
+    public Result<Void> collect(@PathVariable("albumId") Long albumId) {
+        albumService.collect(albumId);
+        return Result.success();
     }
 
 }

@@ -1,8 +1,10 @@
 package com.xxxyjade.hiphopghetto.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.AlbumScore;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.ScoreCount;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.SongScore;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -15,5 +17,10 @@ public interface SongScoreMapper extends BaseMapper<SongScore> {
 
     @Select("select score from song_score where user_id = #{userId} and song_id = #{songId}")
     String select(@Param("userId") Long userId, @Param("songId") Long songId);
+
+    @Insert("insert into song_score (user_id, song_id, score) " +
+            "values (#{userId}, #{songId}, #{score}) " +
+            "on duplicate key update score = #{score}")
+    boolean insertOrUpdate(SongScore songScore);
 
 }
