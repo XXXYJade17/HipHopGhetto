@@ -1,6 +1,7 @@
 package com.xxxyjade.hiphopghetto.util;
 
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
+import com.xxxyjade.hiphopghetto.mapper.SongMapper;
 import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,13 @@ import java.time.LocalDate;
 public class NetEaseSongCrawlUtil implements PageProcessor {
 
     @Autowired
-    private SongService songService;
+    private SongMapper songMapper;
 
     private LocalDate releaseTime;
 
     private static final Site site = Site.me()
             .setDomain("music.163.com")        // 目标域名
-            .setSleepTime(1000)               // 爬取间隔（避免反爬）
+            .setSleepTime(100)               // 爬取间隔（避免反爬）
             .setRetryTimes(3)                 // 重试次数
             .setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"); // 模拟浏览器UA
 
@@ -57,8 +58,7 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
             // 封面 URL
             String coverUrl = html.xpath("//meta[@property='og:image']/@content").get();
 
-            // 插入数据
-            songService.insert(Song.builder()
+            Song song = Song.builder()
                     .neteaseId(neteaseId)
                     .songName(songName)
                     .albumId(albumId)
@@ -67,7 +67,10 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
                     .releaseTime(releaseTime)
                     .duration(duration)
                     .coverUrl(coverUrl)
-                    .build());
+                    .build();
+            System.out.println(song);
+            // 插入数据
+            songMapper.insertIgnore(song);
         }
     }
 

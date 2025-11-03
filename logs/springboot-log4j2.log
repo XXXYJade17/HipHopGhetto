@@ -24313,3 +24313,130 @@ Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta
 2025-11-02 00:21:19.877 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
 2025-11-02 00:21:39.304 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
 2025-11-02 00:22:04.562 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-03 22:20:33.010 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-03 22:20:33.063 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 32452 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-03 22:20:33.075 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:20:35.749 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-03 22:20:35.750 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 22:20:35.751 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 22:20:35.798 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 22:20:35.950 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-11-03 22:22:40.243 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-03 22:22:40.288 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 31220 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-03 22:22:40.293 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:22:41.456 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-03 22:22:41.458 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 22:22:41.458 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 22:22:41.509 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 22:22:42.301 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-03 22:22:42.516 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-03 22:22:42.698 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-03 22:22:42.723 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 2.762 seconds (process running for 3.577)
+2025-11-03 22:22:42.735 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-03 22:22:42.873 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4da3daa8
+2025-11-03 22:22:42.874 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-03 22:22:42.882 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.service.schedule.StatsHandleTask - 开始处理专辑数据
+2025-11-03 22:22:42.988 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.service.schedule.StatsHandleTask - 开始处理歌曲数据
+2025-11-03 22:22:54.794 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 22:22:55.892 [http-nio-9998-exec-8] INFO  org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 742 ms
+2025-11-03 22:23:18.959 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.UploadController - 专辑上传:98339170
+2025-11-03 22:23:19.152 [http-nio-9998-exec-9] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:19.808 [pool-2-thread-1] INFO  com.xxxyjade.hiphopghetto.util.NetEaseAlbumCrawlUtil - 开始爬取专辑数据
+2025-11-03 22:23:19.984 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:20.335 [pool-3-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:21.364 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:21.365 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:21.642 [pool-4-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:22.651 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:22.651 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:23.007 [pool-5-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:24.013 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:24.013 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:24.310 [pool-6-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:25.328 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:25.329 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:25.612 [pool-7-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:26.621 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:26.621 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:26.948 [pool-8-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:27.965 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:27.965 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:28.228 [pool-9-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:29.245 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:29.245 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:29.565 [pool-10-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:30.590 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:30.590 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:31.202 [pool-11-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:32.225 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:32.226 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:32.537 [pool-12-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:33.564 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:33.565 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:33.860 [pool-13-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:34.875 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:34.876 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:23:35.239 [pool-14-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:36.259 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:23:36.259 [pool-2-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:23:36.373 [http-nio-9998-exec-9] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:24:00.620 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-03 22:24:00.631 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-03 22:29:12.892 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-03 22:29:12.933 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 16092 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-03 22:29:12.937 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:29:14.222 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-03 22:29:14.224 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 22:29:14.225 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 22:29:14.281 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 22:29:14.952 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-03 22:29:15.125 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-03 22:29:15.276 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-03 22:29:15.300 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 2.701 seconds (process running for 3.521)
+2025-11-03 22:29:15.308 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-03 22:29:15.430 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a4d1d16
+2025-11-03 22:29:15.431 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-03 22:29:15.436 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.service.schedule.StatsHandleTask - 开始处理歌曲数据
+2025-11-03 22:29:15.564 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.service.schedule.StatsHandleTask - 开始处理专辑数据
+2025-11-03 22:29:20.474 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 22:29:20.537 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.UploadController - 专辑上传:98339170
+2025-11-03 22:29:20.691 [http-nio-9998-exec-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:21.353 [pool-2-thread-1] INFO  com.xxxyjade.hiphopghetto.util.NetEaseAlbumCrawlUtil - 开始爬取专辑数据
+2025-11-03 22:29:21.546 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:21.868 [pool-3-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:22.000 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:22.000 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:22.352 [pool-4-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:22.469 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:22.470 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:22.753 [pool-5-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:22.861 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:22.861 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:23.153 [pool-6-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:23.264 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:23.265 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:23.563 [pool-7-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:23.679 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:23.679 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:23.974 [pool-8-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:24.084 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:24.084 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:24.388 [pool-9-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:24.502 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:24.502 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:24.799 [pool-10-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:24.910 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:24.911 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:25.195 [pool-11-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:25.311 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:25.311 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:25.611 [pool-12-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:25.725 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:25.725 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:25.988 [pool-13-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:26.100 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:26.100 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com started!
+2025-11-03 22:29:26.369 [pool-14-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:26.484 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.
+2025-11-03 22:29:26.489 [pool-2-thread-1] INFO  com.xxxyjade.hiphopghetto.mybatisplus.MybatisPlusMetaObjectHandler - 开始插入填充...
+2025-11-03 22:29:26.604 [http-nio-9998-exec-1] INFO  us.codecraft.webmagic.Spider - Spider music.163.com closed! 1 pages downloaded.

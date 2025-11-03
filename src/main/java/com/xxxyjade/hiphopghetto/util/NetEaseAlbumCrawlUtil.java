@@ -1,6 +1,7 @@
 package com.xxxyjade.hiphopghetto.util;
 
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
+import com.xxxyjade.hiphopghetto.mapper.AlbumMapper;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.List;
 public class NetEaseAlbumCrawlUtil implements PageProcessor {
 
     @Autowired
-    private AlbumService albumService;
+    private AlbumMapper albumMapper;
     @Autowired
     private NetEaseSongCrawlUtil netEaseSongCrawlUtil;
 
@@ -61,17 +62,19 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             }).toList();
             // 插入歌曲数据
             songs.forEach(songId -> {
-                netEaseSongCrawlUtil.startCrawl(songId);
+                netEaseSongCrawlUtil.startCrawl(songId, releaseTime);
             });
-            // 插入专辑数据
-            albumService.insert(Album.builder()
+            Album album = Album.builder()
                     .neteaseId(neteaseId)
                     .albumName(albumName)
                     .singer(singer)
                     .releaseTime(releaseTime)
                     .coverUrl(url)
                     .description(description)
-                    .build());
+                    .build();
+            System.out.println(album);
+            // 插入专辑数据
+            albumMapper.insertIgnore(album);
         }
     }
 

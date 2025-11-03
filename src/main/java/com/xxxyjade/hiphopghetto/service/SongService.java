@@ -2,18 +2,12 @@ package com.xxxyjade.hiphopghetto.service;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 
 
 public interface SongService {
-
-    /**
-     * 插入歌曲数据
-     */
-    void insert(Song song);
 
     /**
      * （条件）分页查询

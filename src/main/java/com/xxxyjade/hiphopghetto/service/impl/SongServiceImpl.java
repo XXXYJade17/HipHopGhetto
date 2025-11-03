@@ -27,13 +27,6 @@ public class SongServiceImpl implements SongService {
     private CollectMapper collectMapper;
 
     /**
-     * 插入歌曲数据
-     */
-    public void insert(Song song) {
-        songMapper.insertIgnore(song);
-    }
-
-    /**
      * （条件）分页查询
      */
     public PageVO<Song> page(PageQueryDTO pageQueryDTO) {

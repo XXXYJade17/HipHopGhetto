@@ -32,13 +32,6 @@ public class AlbumServiceImpl implements AlbumService {
     private SongMapper songMapper;
 
     /**
-     * 插入数据
-     */
-    public void insert(Album album) {
-        albumMapper.insertIgnore(album);
-    }
-
-    /**
      * （条件）分页查询专辑
      */
     public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
