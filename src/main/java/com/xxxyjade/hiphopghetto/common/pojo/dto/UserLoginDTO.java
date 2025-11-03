@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Schema(title = "用户登录 DTO")
 public class UserLoginDTO implements Serializable {
 
+    @NotBlank(message = "账号不能为空")
     @Schema(description = "用户名/手机号/邮箱")
     private String account;
 

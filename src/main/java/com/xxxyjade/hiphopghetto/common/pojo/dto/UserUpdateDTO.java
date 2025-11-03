@@ -8,7 +8,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Schema(title = "用户信息更新DTO")
+@Schema(title = "用户更新DTO")
 public class UserUpdateDTO {
 
     /**

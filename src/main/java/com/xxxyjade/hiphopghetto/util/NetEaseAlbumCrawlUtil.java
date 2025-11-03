@@ -42,8 +42,8 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
         log.info("开始爬取专辑数据");
         // 判断 URL
         if (page.getUrl().regex("https?://music\\.163\\.com/album\\?id=\\d+").match()) {
-            // 专辑 Id
-            Long albumId = Long.parseLong(page.getUrl().regex("id=(\\d+)").get());
+            // 网易云id
+            Long neteaseId = Long.parseLong(page.getUrl().regex("id=(\\d+)").get());
             // 专辑名
             String albumName = page.getHtml().xpath("//h2[@class='f-ff2']/text()").get();
             // 歌手名
@@ -65,7 +65,7 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             });
             // 插入专辑数据
             albumService.insert(Album.builder()
-                    .albumId(albumId)
+                    .neteaseId(neteaseId)
                     .albumName(albumName)
                     .singer(singer)
                     .releaseTime(releaseTime)

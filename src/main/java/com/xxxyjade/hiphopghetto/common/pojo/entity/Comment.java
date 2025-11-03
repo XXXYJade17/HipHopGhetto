@@ -3,38 +3,47 @@ package com.xxxyjade.hiphopghetto.common.pojo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 评论实体类
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("album_score")
-public class AlbumScore {
+@TableName("comment")
+public class Comment extends BaseTableData {
 
     /**
-     * 主键
+     * 评论id
      */
     @TableId(type = IdType.AUTO)
-    Integer id;
+    private Long id;
 
     /**
-     * 用户 Id
+     * 用户id
      */
-    Long userId;
+    private Long userId;
 
     /**
-     * 专辑 Id
+     * 评论区id
      */
-    Long albumId;
+    private Long commentSectionId;
 
     /**
-     * 评分
+     * 回复对象id
      */
-    String score;
+    private Long replyId;
+
+    /**
+     * 评论内容
+     */
+    private String content;
 
 }
-

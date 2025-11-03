@@ -1,8 +1,6 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * 专辑实体类
+ */
 @Data
 @Builder
 @NoArgsConstructor
@@ -19,40 +20,71 @@ import java.time.LocalDate;
 public class Album {
 
     /**
-     * 专辑 Id
+     * 专辑id
      */
-    @TableId
-    Long albumId;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
+
+    /**
+     * 网易云id
+     */
+    private Long neteaseId;
 
     /**
      * 专辑名
      */
-    String albumName;
+    private String albumName;
 
     /**
      * 歌手名
      */
-    String singer;
+    private String singer;
 
     /**
      * 发行时间
      */
-    LocalDate releaseTime;
+    private LocalDate releaseTime;
 
     /**
-     * 专辑封面
+     * 封面
      */
-    String coverUrl;
+    private String coverUrl;
 
     /**
-     * 专辑简介
+     * 简介
      */
-    String description;
+    private String description;
 
     /**
-     * 专辑综合评分
+     * 评论区id
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Long commentSectionId;
+
+    /**
+     * 总评分
      */
     @TableField(exist = false)
-    BigDecimal avgScore;
+    private Long totalScore;
+
+    /**
+     * 综合评分
+     */
+    private BigDecimal avgScore;
+
+    /**
+     * 评分总数
+     */
+    private Integer scoreCount = 0;
+
+    /**
+     * 收藏总数
+     */
+    private Integer collectCount = 0;
+
+    /**
+     * 评论总数
+     */
+    private Integer commentCount = 0;
 
 }

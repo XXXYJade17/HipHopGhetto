@@ -67,4 +67,5 @@ public class User extends BaseTableData implements Serializable {
      */
     private LocalDateTime birthday;
 
+
 }

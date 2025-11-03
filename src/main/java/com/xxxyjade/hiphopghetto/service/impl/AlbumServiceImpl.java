@@ -2,8 +2,8 @@ package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xxxyjade.hiphopghetto.common.constant.Number;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
@@ -25,57 +25,52 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private AlbumMapper albumMapper;
     @Autowired
-    private AlbumStatsMapper albumStatsMapper;
+    private CollectMapper collectMapper;
     @Autowired
-    private AlbumScoreMapper albumScoreMapper;
-    @Autowired
-    private AlbumCollectMapper albumCollectMapper;
+    private ScoreMapper scoreMapper;
     @Autowired
     private SongMapper songMapper;
 
     /**
      * 插入数据
      */
-    @Transactional(rollbackFor = Exception.class)
     public void insert(Album album) {
         albumMapper.insertIgnore(album);
-        albumStatsMapper.insertIgnore(album.getAlbumId());
     }
 
     /**
-     * （条件）分页查询
+     * （条件）分页查询专辑
      */
-    public List<Album> page(PageQueryDTO pageQueryDTO) {
+    public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
         QueryWrapper<Album> wrapper = new QueryWrapper<>();
-        String clause = "";
         switch (pageQueryDTO.getSortType()){
-            case AVG_SCORE -> clause = "avg_score";
-            case COLLECT_COUNT -> clause = "collect_count";
-            case COMMENT_COUNT -> clause = "comment_count";
+            case AVG_SCORE -> wrapper.orderByDesc("avg_score");
+            case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
+            case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
+            case NEAREST_TIME -> wrapper.orderByDesc("release_time");
         }
-        if (!clause.isEmpty()) {
-            wrapper = wrapper.orderByDesc("album_stats." + clause);
-        }
-        Page<Album> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
-        page = albumMapper.selectAlbumPage(page, wrapper);
-        return page.getRecords();
+        Page<Album> page = albumMapper
+                .selectPage(new Page<>(pageQueryDTO.getPage(),
+                        pageQueryDTO.getSize()), wrapper);
+        PageVO<Album> pageVO = new PageVO<>();
+        pageVO.setTotal(page.getTotal());
+        pageVO.setData(page.getRecords());
+        return pageVO;
     }
 
     /**
-     * 查询详情
+     * 查询专辑详情
      */
     @Transactional(rollbackFor = Exception.class)
-    public AlbumInfoVO info(Long albumId) {
+    public AlbumInfoVO info(Long id) {
         Long userId = ThreadUtil.getId();
-        Album album = albumMapper.selectById(albumId);
-        Integer score = Number.getInt(albumScoreMapper.select(userId, albumId));
-        Boolean collect = albumCollectMapper.selectOrInsert(userId, albumId);
-        AlbumStats albumStats = albumStatsMapper.selectById(albumId);
-        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", albumId));
+        Album album = albumMapper.selectById(id);
+        Integer score = scoreMapper.isScored(userId, id);
+        Boolean collect = collectMapper.isCollected(userId, id);
+        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
 
         AlbumInfoVO albumInfoVO = new AlbumInfoVO();
         BeanUtils.copyProperties(album, albumInfoVO);
-        BeanUtils.copyProperties(albumStats, albumInfoVO);
         albumInfoVO.setScore(score);
         albumInfoVO.setCollect(collect);
         albumInfoVO.setSongs(songs);
@@ -83,24 +78,24 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * 专辑评分
+     * 创建/修改专辑评分
      */
-    public void score(AlbumScoreDTO albumScoreDTO) {
+    public void score(ScoreDTO scoreDTO) {
         Long userId = ThreadUtil.getId();
-        AlbumScore albumScore = AlbumScore.builder()
-                .albumId(albumScoreDTO.getAlbumId())
+        Score score = Score.builder()
                 .userId(userId)
-                .score(Number.getStr(albumScoreDTO.getScore()))
+                .resourceId(scoreDTO.getResourceId())
+                .score(scoreDTO.getScore())
                 .build();
-        albumScoreMapper.insertOrUpdate(albumScore);
+        scoreMapper.insertOrUpdate(score);
     }
 
     /**
-     * 收藏/取消专辑
+     * 收藏/取消收藏专辑
      */
-    public void collect(Long albumId) {
+    public void collect(Long id) {
         Long userId = ThreadUtil.getId();
-        albumCollectMapper.collect(userId, albumId);
+        collectMapper.collect(userId, id);
     }
 
 }

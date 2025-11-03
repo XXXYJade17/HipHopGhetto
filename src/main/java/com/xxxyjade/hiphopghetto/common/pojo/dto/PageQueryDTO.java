@@ -12,11 +12,11 @@ public class PageQueryDTO {
     @Schema(description = "排序方式")
     private SortType sortType = SortType.DEFAULT;
 
-    @NotNull
+    @NotNull(message = "页数不能为空")
     @Schema(description = "页数")
     private Integer page;
 
-    @NotNull
+    @NotNull(message = "记录数不能为空")
     @Schema(description = "记录数")
     private Integer size;
 

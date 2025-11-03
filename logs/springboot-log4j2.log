@@ -23495,3 +23495,821 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 2025-11-01 23:45:54.827 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
 2025-11-01 23:50:54.787 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
 2025-11-01 23:50:54.825 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-01 23:55:54.788 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-01 23:55:54.821 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:00:54.790 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:00:54.849 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:01:45.274 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:01:45.276 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:05:44.813 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:05:44.815 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:05:48.283 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:05:48.284 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:05:54.784 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:05:54.807 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:05:56.144 [http-nio-9998-exec-9] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/collect/98339170 query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/album/collect/98339170.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-02 00:06:08.569 [http-nio-9998-exec-10] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/collect/98339170 query : null 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/album/collect/98339170.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2025-11-02 00:06:15.577 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-02 00:06:15.578 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-02 00:06:19.932 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-02 00:06:19.963 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 35216 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-02 00:06:19.967 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-02 00:06:20.872 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-02 00:06:20.873 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-02 00:06:20.874 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-02 00:06:20.905 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-02 00:06:21.409 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-02 00:06:21.548 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-02 00:06:21.671 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-02 00:06:21.692 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.972 seconds (process running for 2.535)
+2025-11-02 00:06:21.698 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-02 00:06:21.795 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4822af25
+2025-11-02 00:06:21.796 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-02 00:06:21.800 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:06:21.901 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:06:25.661 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02 00:06:25.682 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:06:25.759 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:06:29.753 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:06:29.755 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:06:30.794 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:06:30.795 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:07:43.960 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:07:43.961 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:07:44.154 [http-nio-9998-exec-5] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/286248593 query : null 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+### The error may exist in file [D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes\mapper\AlbumCollectMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert ignore into album_collect (user_id, album_id, collect)         values (?, ?, false);          select collect         from album_collect         where user_id = ?         and album_id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy101.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy106.selectOrInsert(Unknown Source) ~[?:?]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl.info(AlbumServiceImpl.java:72) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl$$SpringCGLIB$$0.info(<generated>) ~[classes/:?]
+	at com.xxxyjade.hiphopghetto.controller.AlbumController.info(AlbumController.java:36) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-6.3.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.3.jar:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy3/jdk.proxy3.$Proxy131.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy129.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.19.jar:3.5.19]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.14.jar:3.5.14]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy128.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	... 70 more
+2025-11-02 00:07:46.243 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:07:46.244 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:07:46.265 [http-nio-9998-exec-7] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/286248593 query : null 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+### The error may exist in file [D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes\mapper\AlbumCollectMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert ignore into album_collect (user_id, album_id, collect)         values (?, ?, false);          select collect         from album_collect         where user_id = ?         and album_id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy101.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy106.selectOrInsert(Unknown Source) ~[?:?]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl.info(AlbumServiceImpl.java:72) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl$$SpringCGLIB$$0.info(<generated>) ~[classes/:?]
+	at com.xxxyjade.hiphopghetto.controller.AlbumController.info(AlbumController.java:36) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-6.3.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.3.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor16.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy3/jdk.proxy3.$Proxy131.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.internal.reflect.GeneratedMethodAccessor19.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy129.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.19.jar:3.5.19]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.14.jar:3.5.14]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy128.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	... 70 more
+2025-11-02 00:07:47.454 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:07:47.455 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:07:47.470 [http-nio-9998-exec-9] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/98339170 query : null 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+### The error may exist in file [D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes\mapper\AlbumCollectMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert ignore into album_collect (user_id, album_id, collect)         values (?, ?, false);          select collect         from album_collect         where user_id = ?         and album_id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy101.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy106.selectOrInsert(Unknown Source) ~[?:?]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl.info(AlbumServiceImpl.java:72) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl$$SpringCGLIB$$0.info(<generated>) ~[classes/:?]
+	at com.xxxyjade.hiphopghetto.controller.AlbumController.info(AlbumController.java:36) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-6.3.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.3.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor16.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy3/jdk.proxy3.$Proxy131.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.internal.reflect.GeneratedMethodAccessor19.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy129.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.19.jar:3.5.19]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.14.jar:3.5.14]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy128.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	... 70 more
+2025-11-02 00:07:59.332 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:07:59.333 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:07:59.358 [http-nio-9998-exec-1] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/98339170 query : null 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+### The error may exist in file [D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes\mapper\AlbumCollectMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert ignore into album_collect (user_id, album_id, collect)         values (?, ?, false);          select collect         from album_collect         where user_id = ?         and album_id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy101.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy106.selectOrInsert(Unknown Source) ~[?:?]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl.info(AlbumServiceImpl.java:72) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl$$SpringCGLIB$$0.info(<generated>) ~[classes/:?]
+	at com.xxxyjade.hiphopghetto.controller.AlbumController.info(AlbumController.java:36) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-6.3.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.3.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor16.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy3/jdk.proxy3.$Proxy131.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.internal.reflect.GeneratedMethodAccessor19.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy129.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.19.jar:3.5.19]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.14.jar:3.5.14]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy128.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	... 70 more
+2025-11-02 00:08:13.020 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:08:13.021 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:08:13.036 [http-nio-9998-exec-3] ERROR com.xxxyjade.hiphopghetto.exception.handler.GlobalExceptionHandler - 全局异常 method : GET url : http://localhost:9998/api/album/98339170 query : null 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+### The error may exist in file [D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes\mapper\AlbumCollectMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert ignore into album_collect (user_id, album_id, collect)         values (?, ?, false);          select collect         from album_collect         where user_id = ?         and album_id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy101.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93) ~[mybatis-plus-core-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy106.selectOrInsert(Unknown Source) ~[?:?]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl.info(AlbumServiceImpl.java:72) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.xxxyjade.hiphopghetto.service.impl.AlbumServiceImpl$$SpringCGLIB$$0.info(<generated>) ~[classes/:?]
+	at com.xxxyjade.hiphopghetto.controller.AlbumController.info(AlbumController.java:36) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select collect
+        from album_collect
+        where user_id = 19839417178292' at line 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-6.3.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.3.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor16.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy3/jdk.proxy3.$Proxy131.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.internal.reflect.GeneratedMethodAccessor19.invoke(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy129.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.19.jar:3.5.19]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.14.jar:3.5.14]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.19.jar:3.5.19]
+	at jdk.proxy2/jdk.proxy2.$Proxy128.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.19.jar:3.5.19]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.19.jar:3.5.19]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.5.jar:3.0.5]
+	... 70 more
+2025-11-02 00:11:21.693 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:11:21.719 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:15:53.664 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-02 00:15:53.668 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-02 00:15:56.843 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-02 00:15:56.868 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Starting HiphopGhettoApplication using Java 17.0.14 with PID 11268 (D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto\target\classes started by yckin in D:\Develop\ToolBox\IntelliJ IDEA Ultimate\code\HipHop Ghetto)
+2025-11-02 00:15:56.873 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-02 00:15:57.640 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9998"]
+2025-11-02 00:15:57.641 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-02 00:15:57.641 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-02 00:15:57.678 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-02 00:15:58.175 [main] INFO  com.xxxyjade.hiphopghetto.config.WebMvcConfiguration - 开始注册拦截器...
+2025-11-02 00:15:58.322 [main] INFO  com.baomidou.mybatisplus.extension.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@894858
+2025-11-02 00:15:58.443 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9998"]
+2025-11-02 00:15:58.461 [main] INFO  com.xxxyjade.hiphopghetto.HiphopGhettoApplication - Started HiphopGhettoApplication in 1.827 seconds (process running for 2.393)
+2025-11-02 00:15:58.466 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-02 00:15:58.579 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21f1440b
+2025-11-02 00:15:58.580 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-02 00:15:58.585 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:15:58.671 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:16:08.685 [http-nio-9998-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02 00:16:11.628 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:11.670 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:25.384 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:25.387 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:27.004 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:27.005 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:27.715 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:27.716 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:29.921 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:29.922 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:31.057 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:31.058 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:32.257 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:32.259 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:32.859 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:32.861 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:16:43.268 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:16:43.269 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:18:52.315 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:18:52.317 [http-nio-9998-exec-6] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - 当前用户id:1983941717829218305
+2025-11-02 00:19:10.956 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:19:18.193 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:19:34.765 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:19:43.124 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:19:52.204 [http-nio-9998-exec-1] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:20:58.462 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理专辑聚合数据
+2025-11-02 00:20:58.522 [scheduling-1] INFO  com.xxxyjade.hiphopghetto.schedule.StatsHandleTask - 开始处理歌曲聚合数据
+2025-11-02 00:21:08.088 [http-nio-9998-exec-2] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:10.335 [http-nio-9998-exec-3] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:10.969 [http-nio-9998-exec-4] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:11.324 [http-nio-9998-exec-5] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:16.075 [http-nio-9998-exec-7] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:19.877 [http-nio-9998-exec-8] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:21:39.304 [http-nio-9998-exec-9] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc
+2025-11-02 00:22:04.562 [http-nio-9998-exec-10] INFO  com.xxxyjade.hiphopghetto.controller.intecepter.JwtInterceptor - jwt校验:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE5ODM5NDE3MTc4MjkyMTgzMDUsImV4cCI6MTc2MjAxMzk0Mn0.F8Fn5nm0iK5kH6MEpIbP0BsqmwYua0DQwyQ5lieedmc

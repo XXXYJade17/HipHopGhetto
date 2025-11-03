@@ -8,32 +8,35 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 评分实体类
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("album_collect")
-public class AlbumCollect {
+@TableName("score")
+public class Score {
 
     /**
-     * 主键
+     * 评分记录id
      */
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
-     * 用户 Id
+     * 用户id
      */
     private Long userId;
 
     /**
-     * 专辑 Id
+     * 专辑/歌曲id
      */
-    private Long albumId;
+    private Long resourceId;
 
     /**
-     * 是否收藏
+     * 评分
      */
-    private Boolean collect;
+    private Integer score;
 
 }

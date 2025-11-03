@@ -12,12 +12,16 @@ import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Selectable;
 
+import java.time.LocalDate;
+
 @Component
 @Slf4j
 public class NetEaseSongCrawlUtil implements PageProcessor {
 
     @Autowired
     private SongService songService;
+
+    private LocalDate releaseTime;
 
     private static final Site site = Site.me()
             .setDomain("music.163.com")        // 目标域名
@@ -39,7 +43,7 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
         if (page.getUrl().regex("https?://music\\.163\\.com/song\\?id=\\d+").match()) {
             Selectable html = page.getHtml();
             // 歌曲 id
-            Long songId = Long.parseLong(page.getUrl().regex("id=(\\d+)").get());
+            Long neteaseId = Long.parseLong(page.getUrl().regex("id=(\\d+)").get());
             // 歌曲名
             String songName = html.xpath("//meta[@property='og:title']/@content").get();
             // 专辑 id
@@ -55,11 +59,12 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
 
             // 插入数据
             songService.insert(Song.builder()
-                    .songId(songId)
+                    .neteaseId(neteaseId)
                     .songName(songName)
                     .albumId(albumId)
                     .albumName(albumName)
                     .singer(singer)
+                    .releaseTime(releaseTime)
                     .duration(duration)
                     .coverUrl(coverUrl)
                     .build());
@@ -71,6 +76,11 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
                 .addUrl("https://music.163.com/song?id=" + id)
                 .thread(1) // 单线程避免请求过于频繁
                 .run();
+    }
+
+    public void startCrawl(Long id, LocalDate releaseTime) {
+        this.releaseTime = releaseTime;
+        startCrawl(id);
     }
 
 }

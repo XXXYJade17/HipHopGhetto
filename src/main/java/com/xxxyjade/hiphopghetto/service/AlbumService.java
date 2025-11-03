@@ -1,37 +1,38 @@
 package com.xxxyjade.hiphopghetto.service;
 
-import com.xxxyjade.hiphopghetto.common.pojo.dto.AlbumScoreDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
+import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumInfoVO;
-
-import java.util.List;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 
 public interface AlbumService {
 
     /**
-     * 插入专辑数据
+     * 插入数据
      */
     void insert(Album album);
 
     /**
-     * 分页查询
+     * （条件）分页查询
      */
-    List<Album> page(PageQueryDTO pageQueryDTO);
+    PageVO<Album> page(PageQueryDTO pageQueryDTO);
 
     /**
-     * 查询详情
+     * 查询专辑详情
      */
-    AlbumInfoVO info(Long albumId);
+    AlbumInfoVO info(Long id);
 
     /**
-     * 专辑评分
+     * 创建/修改专辑评分
      */
-    void score(AlbumScoreDTO albumScoreDTO);
+    void score(ScoreDTO scoreDTO);
 
     /**
-     * 收藏/取消专辑
+     * 收藏/取消收藏专辑
      */
-    void collect(Long albumId);
+    void collect(Long id);
 
 }

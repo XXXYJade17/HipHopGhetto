@@ -3,38 +3,40 @@ package com.xxxyjade.hiphopghetto.common.pojo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 收藏实体类
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("song_comment")
-public class SongComment extends BaseTableData {
+@TableName("collect")
+public class Collect {
 
     /**
-     * 主键
+     * 评分记录id
      */
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
-     * 用户 Id
+     * 用户id
      */
     private Long userId;
 
     /**
-     * 歌曲 Id
+     * 专辑/歌曲id
      */
-    private Long songId;
+    private Long resourceId;
 
     /**
-     * 评论
+     * 收藏
      */
-    private String comment;
+    private Boolean collect;
 
 }

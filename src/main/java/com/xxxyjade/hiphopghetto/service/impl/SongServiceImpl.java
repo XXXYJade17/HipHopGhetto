@@ -2,15 +2,12 @@ package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xxxyjade.hiphopghetto.common.constant.Number;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.SongScoreDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
-import com.xxxyjade.hiphopghetto.common.pojo.vo.SongScoreVO;
+import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
-import com.xxxyjade.hiphopghetto.mapper.SongMapper;
-import com.xxxyjade.hiphopghetto.mapper.SongScoreMapper;
-import com.xxxyjade.hiphopghetto.mapper.SongStatsMapper;
+import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.SongService;
 import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -18,79 +15,79 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @Slf4j
 public class SongServiceImpl implements SongService {
 
     @Autowired
+    private ScoreMapper scoreMapper;
+    @Autowired
     private SongMapper songMapper;
     @Autowired
-    private SongScoreMapper songScoreMapper;
-    @Autowired
-    private SongStatsMapper songStatsMapper;
+    private CollectMapper collectMapper;
 
     /**
      * 插入歌曲数据
      */
     public void insert(Song song) {
         songMapper.insertIgnore(song);
-        songStatsMapper.insertIgnore(song.getSongId());
     }
 
     /**
      * （条件）分页查询
      */
-    public List<Song> page(PageQueryDTO pageQueryDTO) {
+    public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
         QueryWrapper<Song> wrapper = new QueryWrapper<>();
-        String clause = "";
         switch (pageQueryDTO.getSortType()){
-            case AVG_SCORE -> clause = "avg_score";
-            case COLLECT_COUNT -> clause = "collect_count";
-            case COMMENT_COUNT -> clause = "comment_count";
+            case AVG_SCORE -> wrapper.orderByDesc("avg_score");
+            case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
+            case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
+            case NEAREST_TIME -> wrapper.orderByDesc("release_time");
         }
-        if (!clause.isEmpty()) {
-            wrapper = wrapper.orderByDesc("song_stats." + clause);
-        }
-        Page<Song> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
-        page = songMapper.selectSongPage(page, wrapper);
-        return page.getRecords();
+        Page<Song> page = songMapper
+                .selectPage(new Page<>(pageQueryDTO.getPage(),
+                        pageQueryDTO.getSize()), wrapper);
+        PageVO<Song> pageVO = new PageVO<>();
+        pageVO.setTotal(page.getTotal());
+        pageVO.setData(page.getRecords());
+        return pageVO;
     }
 
     /**
-     * 查询详情
+     * 查询歌曲详情
      */
     public SongInfoVO info(Long id) {
+        Long userId = ThreadUtil.getId();
         Song song = songMapper.selectById(id);
-        SongStats songStats = songStatsMapper.selectById(id);
+        Integer score = scoreMapper.isScored(userId, id);
+        Boolean collect = collectMapper.isCollected(userId, id);
 
-        SongInfoVO songInfoVO = new SongInfoVO();
-        BeanUtils.copyProperties(song, songInfoVO);
-        BeanUtils.copyProperties(songStats, songInfoVO);
-        System.out.println(songInfoVO);
-        return songInfoVO;
+        SongInfoVO albumInfoVO = new SongInfoVO();
+        BeanUtils.copyProperties(song, albumInfoVO);
+        albumInfoVO.setScore(score);
+        albumInfoVO.setCollect(collect);
+        return albumInfoVO;
     }
 
     /**
-     * 歌曲评分
+     * 创建/修改歌曲评分
      */
-    public void score(SongScoreDTO songScoreDTO) {
+    public void score(ScoreDTO scoreDTO) {
         Long userId = ThreadUtil.getId();
-        SongScore songScore = SongScore.builder()
-                .songId(songScoreDTO.getSongId())
+        Score score = Score.builder()
                 .userId(userId)
-                .score(Number.getStr(songScoreDTO.getScore()))
+                .resourceId(scoreDTO.getResourceId())
+                .score(scoreDTO.getScore())
                 .build();
-        songScoreMapper.insertOrUpdate(songScore);
+        scoreMapper.insertOrUpdate(score);
     }
 
     /**
-     * 是否已经评分
+     * 收藏/取消收藏专辑
      */
-    public Integer hasScore(Long songId) {
+    public void collect(Long id) {
         Long userId = ThreadUtil.getId();
-        return Number.getInt(songScoreMapper.select(userId, songId));
+        collectMapper.collect(userId, id);
     }
 
 }

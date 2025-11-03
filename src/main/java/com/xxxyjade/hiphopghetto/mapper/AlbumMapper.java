@@ -10,8 +10,8 @@ import org.apache.ibatis.annotations.Param;
 
 public interface AlbumMapper extends BaseMapper<Album> {
 
-    @Insert("insert ignore into album(album_id, album_name, singer, release_time, cover_url, description) " +
-            "values (#{albumId}, #{albumName}, #{singer}, #{releaseTime}, #{coverUrl}, #{description})")
+    @Insert("insert ignore into album(id, netease_id, album_name, singer, release_time, cover_url, description, comment_section_id) " +
+            "values (#{id}, #{neteaseId}, #{albumName}, #{singer}, #{releaseTime}, #{coverUrl}, #{description}, #{commentSectionId})")
     void insertIgnore(Album album);
 
     Page<Album> selectAlbumPage(Page<Album> page, @Param(Constants.WRAPPER) QueryWrapper<Album> queryWrapper);

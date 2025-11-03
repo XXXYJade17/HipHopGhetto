@@ -1,15 +1,17 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
+/**
+ * 歌曲实体类
+ */
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,46 +20,82 @@ import java.math.BigDecimal;
 public class Song {
 
     /**
-     * 歌曲 Id
+     * 歌曲id
      */
-    @TableId
-    Long songId;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
 
     /**
-     * 歌曲名
+     * 网易云id
      */
-    String songName;
+    private Long neteaseId;
 
     /**
-     * 所属专辑 Id
+     * 歌名
      */
-    Long albumId;
+    private String songName;
+
+    /**
+     * 所属专辑id
+     */
+    private Long albumId;
 
 
     /**
-     * 所属专辑 名
+     * 所属专辑名
      */
-    String albumName;
+    private String albumName;
 
     /**
      * 歌手名
      */
-    String singer;
+    private String singer;
+
+    /**
+     * 发行时间
+     */
+    private LocalDate releaseTime;
 
     /**
      * 时长（秒）
      */
-    Integer duration;
+    private Integer duration;
 
     /**
      * 封面 URL
      */
-    String coverUrl;
+    private String coverUrl;
 
     /**
-     * 专辑综合评分
+     * 评论区id
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Long commentSectionId;
+
+    /**
+     * 总评分
      */
     @TableField(exist = false)
-    BigDecimal avgScore;
+    private Long totalScore;
+
+    /**
+     * 综合评分
+     */
+    private BigDecimal avgScore;
+
+    /**
+     * 评分总数
+     */
+    private Integer scoreCount;
+
+    /**
+     * 收藏总数
+     */
+    private Integer collectCount;
+
+    /**
+     * 评论总数
+     */
+    private Integer commentCount;
 
 }
