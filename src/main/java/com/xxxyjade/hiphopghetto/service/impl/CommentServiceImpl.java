@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentPageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.mapper.CommentMapper;
@@ -23,17 +23,17 @@ public class CommentServiceImpl implements CommentService {
     /**
      * （条件）分页查询专辑/歌曲评论
      */
-    public PageVO<Comment> commentPage(PageQueryDTO pageQueryDTO) {
-        QueryWrapper<Comment> wrapper = new QueryWrapper<>();
-        switch (pageQueryDTO.getSortType()){
+    public PageVO<Comment> commentPage(CommentPageQueryDTO commentPageQueryDTO) {
+        QueryWrapper<Comment> wrapper = new QueryWrapper<Comment>().eq("comment_section_id", commentPageQueryDTO.getCommentSectionId());
+        switch (commentPageQueryDTO.getSortType()){
             case AVG_SCORE -> wrapper.orderByDesc("avg_score");
             case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
             case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
             case NEAREST_TIME -> wrapper.orderByDesc("create_time");
         }
         Page<Comment> page = commentMapper
-                .selectPage(new Page<>(pageQueryDTO.getPage(),
-                        pageQueryDTO.getSize()), wrapper);
+                .selectPage(new Page<>(commentPageQueryDTO.getPage(),
+                        commentPageQueryDTO.getSize()), wrapper);
         PageVO<Comment> pageVO = new PageVO<>();
         pageVO.setTotal(page.getTotal());
         pageVO.setData(page.getRecords());

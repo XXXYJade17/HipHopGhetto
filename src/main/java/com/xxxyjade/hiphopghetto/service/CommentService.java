@@ -1,7 +1,7 @@
 package com.xxxyjade.hiphopghetto.service;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentPageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 
@@ -10,7 +10,7 @@ public interface CommentService {
     /**
      * （条件）分页查询专辑评论
      */
-    PageVO<Comment> commentPage(PageQueryDTO pageQueryDTO);
+    PageVO<Comment> commentPage(CommentPageQueryDTO commentPageQueryDTO);
 
     /**
      * 创建评论

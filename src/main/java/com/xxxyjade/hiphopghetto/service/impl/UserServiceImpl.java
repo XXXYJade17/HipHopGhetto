@@ -1,7 +1,6 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xxxyjade.hiphopghetto.common.constant.JwtClaimsConstant;
 import com.xxxyjade.hiphopghetto.common.enums.AccountType;
@@ -19,7 +18,6 @@ import com.xxxyjade.hiphopghetto.mapper.UserMapper;
 import com.xxxyjade.hiphopghetto.service.UserService;
 import com.xxxyjade.hiphopghetto.util.JwtUtil;
 import com.xxxyjade.hiphopghetto.util.PasswordUtil;
-import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,12 +61,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         // 生成令牌
         Map<String,Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.USER_ID, user.getUserId());
+        claims.put(JwtClaimsConstant.USER_ID, user.getId());
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
         // 构造返回VO
         return UserRegisterVO.builder()
-                .id(user.getUserId())
+                .id(user.getId())
                 .token(token)
                 .build();
     }
@@ -101,11 +99,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         // 生成令牌
         Map<String,Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.USER_ID, user.getUserId());
+        claims.put(JwtClaimsConstant.USER_ID, user.getId());
         String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
 
         return UserLoginVO.builder()
-                .id(user.getUserId())
+                .id(user.getId())
                 .token(token)
                 .build();
     }

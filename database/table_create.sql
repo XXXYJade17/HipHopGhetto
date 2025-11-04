@@ -3,20 +3,20 @@ create database hiphop_ghetto;
 use hiphop_ghetto;
 # 用户表
 create table user (
-                      id bigint primary key , # 用户ID（雪花算法生成）
-                      username varchar(20) not null , # 用户名
-                      password varchar(100) not null , # 密码
-                      real_name varchar(20) default null , # 姓名
-                      id_card varchar(18) default null , # 身份证号
-                      phone varchar(20) default null , # 手机号
-                      email varchar(100) default null ,
-                      sex tinyint default 0 , # 性别（0-未知，1-男，2-女）
-                      avatar varchar(255) default null , # 头像url
-                      description varchar(60) default null, # 简介
-                      birthday datetime default null , # 生日
-                      create_time datetime not null default current_timestamp , # 创建时间
-                      update_time datetime not null default current_timestamp on update current_timestamp , # 修改时间
-                      status tinyint not null default 0 # 数据状态（0-正常，1-已删除）
+    id bigint primary key , # 用户ID（雪花算法生成）
+    username varchar(20) not null , # 用户名
+    password varchar(100) not null , # 密码
+    real_name varchar(20) default null , # 姓名
+    id_card varchar(18) default null , # 身份证号
+    phone varchar(20) default null , # 手机号
+    email varchar(100) default null ,
+    sex tinyint default 0 , # 性别（0-未知，1-男，2-女）
+    avatar varchar(255) default null , # 头像url
+    description varchar(60) default null, # 简介
+    birthday datetime default null , # 生日
+    create_time datetime not null default current_timestamp , # 创建时间
+    update_time datetime not null default current_timestamp on update current_timestamp , # 修改时间
+    status tinyint not null default 0 # 数据状态（0-正常，1-已删除）
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 # 评论区表
 create table comment (
@@ -44,13 +44,10 @@ create table album (
     description text not null , # 简介
     comment_section_id bigint unique not null , # 评论区id
     avg_score decimal(3,1) default null , # 平均评分
-    score_count int default 0 not null , # 评分数
-    collect_count int default 0 not null , # 收藏数
-    comment_count int default 0 not null , # 评论数
-    index idx_album_netease_id (netease_id),
-    constraint fk_album_comment
-        foreign key (comment_section_id)
-            references comment(comment_section_id)
+    score_count int default 0 , # 评分数
+    collect_count int default 0 , # 收藏数
+    comment_count int default 0 , # 评论数
+    index idx_album_netease_id (netease_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 歌曲表
 create table song (
@@ -65,14 +62,11 @@ create table song (
     cover_url varchar(255) not null , # 封面url
     comment_section_id bigint unique not null , # 评论区id
     avg_score decimal(3,1) default null , # 平均评分
-    score_count int default 0 not null , # 评分数
-    collect_count int default 0 not null , # 收藏数
-    comment_count int default 0 not null , # 评论数
+    score_count int default 0 , # 评分数
+    collect_count int default 0 , # 收藏数
+    comment_count int default 0 , # 评论数
     index idx_song_netease_id (netease_id),
-    index idx_song_album_id (album_id),
-    constraint fk_song_comment
-        foreign key (comment_section_id)
-            references comment(comment_section_id)
+    index idx_song_album_id (album_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 评论点赞记录表
 create table comment_like (
@@ -93,7 +87,7 @@ create table score (
     id bigint auto_increment primary key , # 主键自增
     user_id bigint not null , # 用户id
     resource_id bigint not null , # 专辑/歌曲id
-    score tinyint not null , # 评分
+    score tinyint default -1 not null , # 评分
     unique index uniq_score_user_id_resource_id (user_id, resource_id), # 唯一联合索引
     index idx_score_user_id (user_id),
     index idx_score_resource_id (resource_id),

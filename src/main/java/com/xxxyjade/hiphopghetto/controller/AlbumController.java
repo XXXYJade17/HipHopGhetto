@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.controller;
 
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentPageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
@@ -36,6 +37,7 @@ public class AlbumController {
     @Operation(summary = "查询专辑详情")
     @GetMapping("/album/{id}")
     public Result<AlbumInfoVO> info(@PathVariable("id") Long id) {
+        log.info("AlbumId:{}",id);
         return Result.success(albumService.info(id));
     }
 
@@ -55,8 +57,8 @@ public class AlbumController {
 
     @Operation(summary = "（条件）分页查询专辑评论")
     @PostMapping("/album/comments")
-    public Result<PageVO<Comment>> commentPage(@RequestBody PageQueryDTO pageQueryDTO) {
-        return Result.success(commentService.commentPage(pageQueryDTO));
+    public Result<PageVO<Comment>> commentPage(@RequestBody CommentPageQueryDTO commentPageQueryDTO) {
+        return Result.success(commentService.commentPage(commentPageQueryDTO));
     }
 
     @Operation(summary = "创建评论")

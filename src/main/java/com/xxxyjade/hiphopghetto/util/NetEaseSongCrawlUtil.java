@@ -22,6 +22,7 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
     @Autowired
     private SongMapper songMapper;
 
+    private Long albumId;
     private LocalDate releaseTime;
 
     private static final Site site = Site.me()
@@ -47,8 +48,6 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
             Long neteaseId = Long.parseLong(page.getUrl().regex("id=(\\d+)").get());
             // 歌曲名
             String songName = html.xpath("//meta[@property='og:title']/@content").get();
-            // 专辑 id
-            Long albumId = Long.parseLong(page.getHtml().xpath("//meta[@property='music:album']/@content").get().split("id=")[1]);
             // 专辑名
             String albumName = html.xpath("//p[contains(@class, 'des') and contains(@class, 's-fc4')]/a[starts-with(@href, '/album?id=')]/text()").get();
             // 歌手
@@ -68,7 +67,6 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
                     .duration(duration)
                     .coverUrl(coverUrl)
                     .build();
-            System.out.println(song);
             // 插入数据
             songMapper.insertIgnore(song);
         }
@@ -81,7 +79,8 @@ public class NetEaseSongCrawlUtil implements PageProcessor {
                 .run();
     }
 
-    public void startCrawl(Long id, LocalDate releaseTime) {
+    public void startCrawl(Long id, Long albumId, LocalDate releaseTime) {
+        this.albumId = albumId;
         this.releaseTime = releaseTime;
         startCrawl(id);
     }

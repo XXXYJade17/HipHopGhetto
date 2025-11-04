@@ -40,7 +40,6 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void process(Page page) {
-        log.info("开始爬取专辑数据");
         // 判断 URL
         if (page.getUrl().regex("https?://music\\.163\\.com/album\\?id=\\d+").match()) {
             // 网易云id
@@ -60,10 +59,7 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
                 Html html = Html.create(s);
                 return Long.parseLong(html.xpath("//a/@href").get().replace("/song?id=", ""));
             }).toList();
-            // 插入歌曲数据
-            songs.forEach(songId -> {
-                netEaseSongCrawlUtil.startCrawl(songId, releaseTime);
-            });
+
             Album album = Album.builder()
                     .neteaseId(neteaseId)
                     .albumName(albumName)
@@ -72,9 +68,14 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
                     .coverUrl(url)
                     .description(description)
                     .build();
-            System.out.println(album);
             // 插入专辑数据
             albumMapper.insertIgnore(album);
+
+            // 插入歌曲数据
+            songs.forEach(songId -> {
+                netEaseSongCrawlUtil.startCrawl(songId, album.getId(), releaseTime);
+            });
+
         }
     }
 

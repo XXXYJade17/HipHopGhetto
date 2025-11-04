@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface StatsMapper {
 
-    @Select("select ${key}.id, score.score, score.score_count, collect.collect_count, comment.comment_count from ${key} " +
+    @Select("select ${key}.id as resource_id, score.score, score.score_count, collect.collect_count, comment.comment_count from ${key} " +
             "left join ( " +
                 "select resource_id, score, count(*) as score_count from score " +
                 "group by resource_id, score " +

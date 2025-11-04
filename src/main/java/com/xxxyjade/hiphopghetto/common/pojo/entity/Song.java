@@ -75,8 +75,9 @@ public class Song {
     /**
      * 总评分
      */
+    @Builder.Default
     @TableField(exist = false)
-    private Long totalScore;
+    private Long totalScore = 0L;
 
     /**
      * 综合评分
@@ -86,16 +87,35 @@ public class Song {
     /**
      * 评分总数
      */
-    private Integer scoreCount;
+    @Builder.Default
+    private Integer scoreCount = 0;
 
     /**
      * 收藏总数
      */
-    private Integer collectCount;
+    @Builder.Default
+    private Integer collectCount = 0;
 
     /**
      * 评论总数
      */
-    private Integer commentCount;
+    @Builder.Default
+    private Integer commentCount = 0;
+
+    public void addTotalScore(int n) {
+        totalScore += n;
+    }
+
+    public void addScoreCount(int n) {
+        scoreCount += n;
+    }
+
+    public void addCollectCount(int n) {
+        collectCount += n;
+    }
+
+    public void addCommentCount(int n) {
+        commentCount += n;
+    }
 
 }

@@ -34,6 +34,7 @@ public class AlbumServiceImpl implements AlbumService {
     /**
      * （条件）分页查询专辑
      */
+    @Transactional(rollbackFor = Exception.class)
     public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
         QueryWrapper<Album> wrapper = new QueryWrapper<>();
         switch (pageQueryDTO.getSortType()){
@@ -80,7 +81,7 @@ public class AlbumServiceImpl implements AlbumService {
                 .resourceId(scoreDTO.getResourceId())
                 .score(scoreDTO.getScore())
                 .build();
-        scoreMapper.insertOrUpdate(score);
+        scoreMapper.insertOrUpdateScore(score);
     }
 
     /**
