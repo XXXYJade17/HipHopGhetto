@@ -38,10 +38,10 @@ public class UserController {
         return Result.success(userService.login(userLoginDTO));
     }
 
-    @Operation(summary = "获取信息")
+    @Operation(summary = "详情")
     @GetMapping("/{id}")
     public Result<UserVO> info(@PathVariable("id") Long id) {
-        log.info("获取信息:{}",id);
+        log.info("详情:{}",id);
         return Result.success(userService.info(id));
     }
 

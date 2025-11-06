@@ -1,7 +1,9 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
@@ -14,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
 
 @Service
 @Slf4j
@@ -30,20 +34,13 @@ public class SongServiceImpl implements SongService {
      * （条件）分页查询
      */
     public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
-        QueryWrapper<Song> wrapper = new QueryWrapper<>();
-        switch (pageQueryDTO.getSortType()){
-            case AVG_SCORE -> wrapper.orderByDesc("avg_score");
-            case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
-            case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
-            case NEAREST_TIME -> wrapper.orderByDesc("release_time");
+        SortType sortType = pageQueryDTO.getSortType();
+        Page<Song> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
+        if (sortType != SortType.DEFAULT) {
+            page.setOrders(Collections.singletonList(OrderItem.desc(sortType.getType())));
         }
-        Page<Song> page = songMapper
-                .selectPage(new Page<>(pageQueryDTO.getPage(),
-                        pageQueryDTO.getSize()), wrapper);
-        PageVO<Song> pageVO = new PageVO<>();
-        pageVO.setTotal(page.getTotal());
-        pageVO.setData(page.getRecords());
-        return pageVO;
+        songMapper.selectPage(page, null);
+        return new PageVO<>(page.getTotal(), page.getRecords());
     }
 
     /**

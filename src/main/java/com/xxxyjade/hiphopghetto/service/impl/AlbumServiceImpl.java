@@ -1,9 +1,10 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
@@ -16,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -34,22 +37,14 @@ public class AlbumServiceImpl implements AlbumService {
     /**
      * （条件）分页查询专辑
      */
-    @Transactional(rollbackFor = Exception.class)
     public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
-        QueryWrapper<Album> wrapper = new QueryWrapper<>();
-        switch (pageQueryDTO.getSortType()){
-            case AVG_SCORE -> wrapper.orderByDesc("avg_score");
-            case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
-            case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
-            case NEAREST_TIME -> wrapper.orderByDesc("release_time");
+        SortType sortType = pageQueryDTO.getSortType();
+        Page<Album> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
+        if (sortType != SortType.DEFAULT) {
+            page.setOrders(Collections.singletonList(OrderItem.desc(sortType.getType())));
         }
-        Page<Album> page = albumMapper
-                .selectPage(new Page<>(pageQueryDTO.getPage(),
-                        pageQueryDTO.getSize()), wrapper);
-        PageVO<Album> pageVO = new PageVO<>();
-        pageVO.setTotal(page.getTotal());
-        pageVO.setData(page.getRecords());
-        return pageVO;
+        albumMapper.selectPage(page, null);
+        return new PageVO<>(page.getTotal(), page.getRecords());
     }
 
     /**

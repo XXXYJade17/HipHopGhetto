@@ -19,12 +19,12 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         log.info("开始插入填充...");
         this.strictInsertFill(metaObject, "commentSectionId", Long.class, (Long) identifierGenerator.nextId(null));
-//        this.strictInsertFill(metaObject, "createTime", LocalDateTime::now, LocalDateTime.class);
-//        this.strictInsertFill(metaObject, "updateTime", LocalDateTime::now, LocalDateTime.class);
+        this.strictInsertFill(metaObject, "createTime", LocalDateTime::now, LocalDateTime.class);
+        this.strictInsertFill(metaObject, "updateTime", LocalDateTime::now, LocalDateTime.class);
     }
 
     public void updateFill(MetaObject metaObject) {
         log.info("开始更新填充...");
-//        this.strictInsertFill(metaObject, "updateTime", LocalDateTime::now, LocalDateTime.class);
+        this.strictInsertFill(metaObject, "updateTime", LocalDateTime::now, LocalDateTime.class);
     }
 }

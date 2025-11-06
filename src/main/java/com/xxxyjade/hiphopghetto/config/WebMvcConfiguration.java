@@ -29,6 +29,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
                 .addPathPatterns("/api/song/score/**")
                 .excludePathPatterns("/api/albums", "/api/album")
                 .excludePathPatterns("/api/songs", "/api/song")
+                .excludePathPatterns("/api/album/comments")
                 .excludePathPatterns("/discover.html")
                 .excludePathPatterns("/swagger-ui/index.html")
                 .excludePathPatterns("/v3/api-docs/**");

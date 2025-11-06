@@ -63,7 +63,7 @@ public class AlbumController {
 
     @Operation(summary = "创建评论")
     @PostMapping("/album/comment")
-    public Result<Void> comment(@RequestBody CommentDTO commentDTO) {
+    public Result<Boolean> comment(@RequestBody CommentDTO commentDTO) {
         commentService.comment(commentDTO);
         return Result.success();
     }

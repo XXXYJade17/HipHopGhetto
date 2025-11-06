@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user")
-public class User extends BaseTableData implements Serializable {
+public class User extends BaseTableData {
 
     /**
      * id
@@ -56,6 +55,11 @@ public class User extends BaseTableData implements Serializable {
      * 头像
      */
     private String avatar;
+
+    /**
+     * 背景图
+     */
+    private String background;
 
     /**
      * 简介

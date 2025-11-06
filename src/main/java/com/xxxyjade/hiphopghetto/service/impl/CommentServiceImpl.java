@@ -1,7 +1,9 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentPageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
@@ -12,6 +14,8 @@ import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
 
 @Service
 @Slf4j
@@ -24,20 +28,13 @@ public class CommentServiceImpl implements CommentService {
      * （条件）分页查询专辑/歌曲评论
      */
     public PageVO<Comment> commentPage(CommentPageQueryDTO commentPageQueryDTO) {
-        QueryWrapper<Comment> wrapper = new QueryWrapper<Comment>().eq("comment_section_id", commentPageQueryDTO.getCommentSectionId());
-        switch (commentPageQueryDTO.getSortType()){
-            case AVG_SCORE -> wrapper.orderByDesc("avg_score");
-            case COLLECT_COUNT -> wrapper.orderByDesc("collect_count");
-            case COMMENT_COUNT -> wrapper.orderByDesc("comment_count");
-            case NEAREST_TIME -> wrapper.orderByDesc("create_time");
+        SortType sortType = commentPageQueryDTO.getSortType();
+        Page<Comment> page = new Page<>(commentPageQueryDTO.getPage(), commentPageQueryDTO.getSize());
+        if (sortType != SortType.DEFAULT) {
+            page.setOrders(Collections.singletonList(OrderItem.desc(sortType.getType())));
         }
-        Page<Comment> page = commentMapper
-                .selectPage(new Page<>(commentPageQueryDTO.getPage(),
-                        commentPageQueryDTO.getSize()), wrapper);
-        PageVO<Comment> pageVO = new PageVO<>();
-        pageVO.setTotal(page.getTotal());
-        pageVO.setData(page.getRecords());
-        return pageVO;
+        commentMapper.selectPage(page, null);
+        return new PageVO<>(page.getTotal(), page.getRecords());
     }
 
     /**
