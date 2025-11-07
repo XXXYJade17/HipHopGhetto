@@ -4,15 +4,15 @@ public class ThreadUtil {
 
     public static ThreadLocal<Long> threadLocal = new ThreadLocal<>();
 
-    public static void setId(Long id) {
+    public static void setUserId(Long id) {
         threadLocal.set(id);
     }
 
-    public static Long getId() {
+    public static Long getUserId() {
         return threadLocal.get();
     }
 
-    public static void removeId() {
+    public static void removeUserId() {
         threadLocal.remove();
     }
 }

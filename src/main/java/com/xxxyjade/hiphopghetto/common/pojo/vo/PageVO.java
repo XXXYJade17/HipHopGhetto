@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -13,8 +14,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(title = "分页查询VO")
-public class PageVO<T> {
+public class PageVO<T> implements Serializable {
 
     @Schema(description = "总记录数")
     private Long total;

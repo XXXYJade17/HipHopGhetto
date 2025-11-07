@@ -1,6 +1,5 @@
 package com.xxxyjade.hiphopghetto.service;
 
-import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumInfoVO;
@@ -17,15 +16,5 @@ public interface AlbumService {
      * 查询专辑详情
      */
     AlbumInfoVO info(Long id);
-
-    /**
-     * 创建/修改专辑评分
-     */
-    void score(ScoreDTO scoreDTO);
-
-    /**
-     * 收藏/取消收藏专辑
-     */
-    void collect(Long id);
 
 }

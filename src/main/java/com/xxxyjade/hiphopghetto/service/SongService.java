@@ -1,10 +1,11 @@
 package com.xxxyjade.hiphopghetto.service;
 
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Song;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
+
+import java.util.List;
 
 
 public interface SongService {
@@ -20,13 +21,8 @@ public interface SongService {
     SongInfoVO info(Long id);
 
     /**
-     * 创建/修改歌曲评分
+     * 查询专辑中全部歌曲
      */
-    void score(ScoreDTO scoreDTO);
-
-    /**
-     * 收藏/取消收藏专辑
-     */
-    void collect(Long id);
+    List<Song> selectByAlbumId(Long albumId);
 
 }

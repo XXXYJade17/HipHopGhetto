@@ -6,6 +6,11 @@ spring:
     url: jdbc:mysql://192.168.31.140:3306/hiphop_ghetto?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 123456
+  data:
+    redis:
+      host: 192.168.31.140
+      port: 6379
+      password: xxxyjade17
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   global-config:

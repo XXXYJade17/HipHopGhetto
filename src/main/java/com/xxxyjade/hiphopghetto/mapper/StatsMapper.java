@@ -9,7 +9,9 @@ import java.util.List;
 @Mapper
 public interface StatsMapper {
 
-    @Select("select ${key}.id as resource_id, score.score, score.score_count, collect.collect_count, comment.comment_count from ${key} " +
+    @Select("select ${key}.id as resource_id, score.score, score.score_count, " +
+            "collect.collect_count, comment.comment_count " +
+            "from ${key} " +
             "left join ( " +
                 "select resource_id, score, count(*) as score_count from score " +
                 "group by resource_id, score " +
@@ -23,7 +25,8 @@ public interface StatsMapper {
                 "select comment_section_id, count(*) as comment_count from comment " +
                 "where status = 1 " +
                 "group by comment_section_id " +
-            ") as comment on comment.comment_section_id = ${key}.comment_section_id")
+            ") as comment on comment.comment_section_id = ${key}.comment_section_id " +
+            "where ${key}.staus = 0")
     List<StatsDTO> selectStats(String key);
 
 }

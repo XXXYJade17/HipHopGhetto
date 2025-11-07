@@ -2,8 +2,13 @@ package com.xxxyjade.hiphopghetto.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.CollectCountDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 public interface CommentMapper extends BaseMapper<Comment> {
 
@@ -27,5 +32,11 @@ public interface CommentMapper extends BaseMapper<Comment> {
                 "#{updateTime} " +
             ")")
     int insert(Comment comment);
+
+    @Select("select resource_id, count(*) as collect_count from comment " +
+            "where resource_id in (:ids) " +
+            "group by resource_id")
+    List<CollectCountDTO> selectCollectCountByIds(@Param("ids") List<Integer> ids);
+
 
 }

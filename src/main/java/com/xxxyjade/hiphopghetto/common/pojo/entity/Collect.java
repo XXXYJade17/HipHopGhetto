@@ -34,9 +34,4 @@ public class Collect {
      */
     private Long resourceId;
 
-    /**
-     * 收藏
-     */
-    private Boolean collect;
-
 }

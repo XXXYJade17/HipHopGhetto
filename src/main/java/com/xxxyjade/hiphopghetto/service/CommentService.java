@@ -10,7 +10,7 @@ public interface CommentService {
     /**
      * （条件）分页查询专辑评论
      */
-    PageVO<Comment> commentPage(CommentPageQueryDTO commentPageQueryDTO);
+    PageVO<Comment> page(CommentPageQueryDTO commentPageQueryDTO);
 
     /**
      * 创建评论
@@ -20,6 +20,6 @@ public interface CommentService {
     /**
      * 删除评论
      */
-    void deleteComment(Long id);
+    void delete(Long id);
 
 }

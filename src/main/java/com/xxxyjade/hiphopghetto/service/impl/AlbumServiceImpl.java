@@ -10,14 +10,17 @@ import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
 import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
-import com.xxxyjade.hiphopghetto.util.ThreadUtil;
+import com.xxxyjade.hiphopghetto.service.CollectService;
+import com.xxxyjade.hiphopghetto.service.ScoreService;
+import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,15 +31,22 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private AlbumMapper albumMapper;
     @Autowired
-    private CollectMapper collectMapper;
+    private CollectService collectService;
     @Autowired
-    private ScoreMapper scoreMapper;
+    private RedisTemplate<String, Object> redisTemplate;
     @Autowired
-    private SongMapper songMapper;
+    private ScoreService scoreService;
+    @Autowired
+    private SongService songService;
 
     /**
      * （条件）分页查询专辑
      */
+    @Cacheable(
+            value = "album",
+            key = "'page=' + #pageQueryDTO.page + '&size=' + #pageQueryDTO.size + '&sort=' + #pageQueryDTO.sortType",
+            unless = "#result == null"
+    )
     public PageVO<Album> page(PageQueryDTO pageQueryDTO) {
         SortType sortType = pageQueryDTO.getSortType();
         Page<Album> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
@@ -50,13 +60,17 @@ public class AlbumServiceImpl implements AlbumService {
     /**
      * 查询专辑详情
      */
+    @Cacheable(
+            value ="album  ",
+            key ="#id",
+            unless ="#result == null"
+    )
     @Transactional(rollbackFor = Exception.class)
     public AlbumInfoVO info(Long id) {
-        Long userId = ThreadUtil.getId();
         Album album = albumMapper.selectById(id);
-        Integer score = scoreMapper.isScored(userId, id);
-        Boolean collect = collectMapper.isCollected(userId, id);
-        List<Song> songs = songMapper.selectList(new QueryWrapper<Song>().eq("album_id", id));
+        Integer score = scoreService.select(id);
+        Boolean collect = collectService.select(id);
+        List<Song> songs = songService.selectByAlbumId(id);
 
         AlbumInfoVO albumInfoVO = new AlbumInfoVO();
         BeanUtils.copyProperties(album, albumInfoVO);
@@ -64,27 +78,6 @@ public class AlbumServiceImpl implements AlbumService {
         albumInfoVO.setCollect(collect);
         albumInfoVO.setSongs(songs);
         return albumInfoVO;
-    }
-
-    /**
-     * 创建/修改专辑评分
-     */
-    public void score(ScoreDTO scoreDTO) {
-        Long userId = ThreadUtil.getId();
-        Score score = Score.builder()
-                .userId(userId)
-                .resourceId(scoreDTO.getResourceId())
-                .score(scoreDTO.getScore())
-                .build();
-        scoreMapper.insertOrUpdateScore(score);
-    }
-
-    /**
-     * 收藏/取消收藏专辑
-     */
-    public void collect(Long id) {
-        Long userId = ThreadUtil.getId();
-        collectMapper.collect(userId, id);
     }
 
 }

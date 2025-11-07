@@ -5,11 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-@Schema(description = "专辑/歌曲评分DTO")
+@Schema(description = "评分DTO")
 public class ScoreDTO {
 
-    @NotNull(message = "专辑/歌曲id不能为空")
-    @Schema(description = "专辑/歌曲id")
+    @NotNull(message = "评分对象id不能为空")
+    @Schema(description = "评分对象id")
     Long resourceId;
 
     @NotNull(message = "评分不能为空")

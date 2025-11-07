@@ -1,6 +1,5 @@
 package com.xxxyjade.hiphopghetto.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.enums.SortType;
@@ -27,7 +26,7 @@ public class CommentServiceImpl implements CommentService {
     /**
      * （条件）分页查询专辑/歌曲评论
      */
-    public PageVO<Comment> commentPage(CommentPageQueryDTO commentPageQueryDTO) {
+    public PageVO<Comment> page(CommentPageQueryDTO commentPageQueryDTO) {
         SortType sortType = commentPageQueryDTO.getSortType();
         Page<Comment> page = new Page<>(commentPageQueryDTO.getPage(), commentPageQueryDTO.getSize());
         if (sortType != SortType.DEFAULT) {
@@ -41,7 +40,7 @@ public class CommentServiceImpl implements CommentService {
      * 创建评论
      */
     public void comment(CommentDTO commentDTO) {
-        Long userId = ThreadUtil.getId();
+        Long userId = ThreadUtil.getUserId();
         Comment comment = Comment.builder()
                 .userId(userId)
                 .commentSectionId(commentDTO.getCommentSectionId())
@@ -54,7 +53,7 @@ public class CommentServiceImpl implements CommentService {
     /**
      * 删除评论
      */
-    public void deleteComment(Long id) {
+    public void delete(Long id) {
         commentMapper.deleteById(id);
     }
 

@@ -1,0 +1,18 @@
+package com.xxxyjade.hiphopghetto.common.pojo.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class CollectCountDTO {
+
+    private Long resourceId;
+
+    private Integer collectCount;
+
+}

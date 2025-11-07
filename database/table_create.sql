@@ -33,6 +33,30 @@ create table comment (
         foreign key (user_id)
             references user(id)
 ) engine = InnoDB default charset = utf8mb4;
+# 点赞记录表
+create table `like` (
+    id bigint auto_increment primary key ,
+    resource_id bigint not null , # 点赞对象id
+    user_id bigint not null , # 用户id
+    unique index uniq_like_resource_id_user_id (resource_id, user_id) ,
+    index idx_like_resource_id (resource_id),
+    index idx_like_user_id (user_id),
+    constraint fk_topic_like_user
+        foreign key (user_id)
+            references user(id)
+) engine = InnoDB default charset = utf8mb4;
+# 收藏记录表
+create table collect (
+    id bigint auto_increment primary key , # 主键自增
+    user_id bigint not null , # 用户id
+    resource_id bigint not null , # 专辑/歌曲id
+    unique index uniq_collect_user_id_resource_id (user_id, resource_id), # 唯一联合索引
+    index idx_collect_user_id (user_id),
+    index idx_collect_resource_id (resource_id),
+    constraint fk_collect_user_id
+        foreign key (user_id)
+            references user(id)
+)engine = InnoDB default charset = utf8mb4;
 # 专辑表
 create table album (
     id bigint primary key , # 专辑id（雪花算法生成）
@@ -68,20 +92,6 @@ create table song (
     index idx_song_netease_id (netease_id),
     index idx_song_album_id (album_id)
 ) engine = InnoDB default charset = utf8mb4;
-# 评论点赞记录表
-create table comment_like (
-                              id bigint auto_increment primary key ,
-                              comment_id bigint not null , # 评论id
-                              user_id bigint not null , # 用户id
-                              `like` tinyint default 1 not null , # 是否点赞 1-点赞 0-未点赞
-                              unique index (comment_id, user_id) ,
-                              constraint fk_comment_like_comment
-                                  foreign key (comment_id)
-                                      references comment(id) ,
-                              constraint fk_comment_like_user
-                                  foreign key (user_id)
-                                      references user(id)
-) engine = InnoDB default charset = utf8mb4;
 # 话题表
 create table topic (
     id bigint primary key , # 话题id
@@ -100,8 +110,8 @@ create table topic (
 create table score (
     id bigint auto_increment primary key , # 主键自增
     user_id bigint not null , # 用户id
-    resource_id bigint not null , # 专辑/歌曲id
-    score tinyint default -1 not null , # 评分
+    resource_id bigint not null , # 评分对象曲id
+    score tinyint not null , # 评分
     unique index uniq_score_user_id_resource_id (user_id, resource_id), # 唯一联合索引
     index idx_score_user_id (user_id),
     index idx_score_resource_id (resource_id),
@@ -109,18 +119,5 @@ create table score (
         foreign key (user_id)
             references user(id)
 ) engine = InnoDB default charset = utf8mb4;
-# 收藏记录表
-create table collect (
-    id bigint auto_increment primary key , # 主键自增
-    user_id bigint not null , # 用户id
-    resource_id bigint not null , # 专辑/歌曲id
-    collect tinyint default 1 not null , # 是否收藏
-    unique index uniq_collect_user_id_resource_id (user_id, resource_id), # 唯一联合索引
-    index idx_collect_user_id (user_id),
-    index idx_collect_resource_id (resource_id),
-    constraint fk_collect_user_id
-        foreign key (user_id)
-            references user(id)
-)engine = InnoDB default charset = utf8mb4;
 
 

@@ -5,30 +5,31 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 import com.xxxyjade.hiphopghetto.mapper.*;
+import com.xxxyjade.hiphopghetto.service.CollectService;
+import com.xxxyjade.hiphopghetto.service.ScoreService;
 import com.xxxyjade.hiphopghetto.service.SongService;
-import com.xxxyjade.hiphopghetto.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 
 @Service
 @Slf4j
 public class SongServiceImpl implements SongService {
 
     @Autowired
-    private ScoreMapper scoreMapper;
+    private ScoreService scoreService;
     @Autowired
     private SongMapper songMapper;
     @Autowired
-    private CollectMapper collectMapper;
+    private CollectService collectService;
 
     /**
      * （条件）分页查询
@@ -47,10 +48,9 @@ public class SongServiceImpl implements SongService {
      * 查询歌曲详情
      */
     public SongInfoVO info(Long id) {
-        Long userId = ThreadUtil.getId();
         Song song = songMapper.selectById(id);
-        Integer score = scoreMapper.isScored(userId, id);
-        Boolean collect = collectMapper.isCollected(userId, id);
+        Integer score = scoreService.select(id);
+        Boolean collect = collectService.select(id);
 
         SongInfoVO albumInfoVO = new SongInfoVO();
         BeanUtils.copyProperties(song, albumInfoVO);
@@ -60,24 +60,13 @@ public class SongServiceImpl implements SongService {
     }
 
     /**
-     * 创建/修改歌曲评分
+     * 查询专辑中全部歌曲
      */
-    public void score(ScoreDTO scoreDTO) {
-        Long userId = ThreadUtil.getId();
-        Score score = Score.builder()
-                .userId(userId)
-                .resourceId(scoreDTO.getResourceId())
-                .score(scoreDTO.getScore())
-                .build();
-        scoreMapper.insertOrUpdate(score);
-    }
-
-    /**
-     * 收藏/取消收藏专辑
-     */
-    public void collect(Long id) {
-        Long userId = ThreadUtil.getId();
-        collectMapper.collect(userId, id);
+    public List<Song> selectByAlbumId(Long albumId) {
+        return songMapper.selectList(
+                new QueryWrapper<Song>()
+                        .eq("album_id", albumId)
+        );
     }
 
 }
