@@ -47,14 +47,18 @@ public class Comment extends BaseTableData {
     private Long replyId;
 
     /**
-     * 回复数
-     */
-    @TableField(exist = false)
-    private Integer replyCount;
-
-    /**
      * 评论内容
      */
     private String content;
+
+    /**
+     * 点赞量
+     */
+    private Integer likeCount;
+
+    /**
+     * 回复量
+     */
+    private Integer replyCount;
 
 }

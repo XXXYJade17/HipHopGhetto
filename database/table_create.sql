@@ -23,8 +23,10 @@ create table comment (
     user_id bigint not null , # 用户id
     username varchar(20) not null , # 用户名
     comment_section_id bigint not null , # 评论区id（后端雪花生成）
-    reply_id bigint default null, # 回复用户id
+    reply_id bigint default null, # 回复对象id
     content text not null , # 评论内容
+    like_count int default 0 , # 点赞量
+    reply_count int default 0 , # 回复量
     create_time datetime not null , # 创建时间
     update_time datetime not null , # 修改时间
     status tinyint not null default 0 , # 数据状态（0-正常，1-已删除）

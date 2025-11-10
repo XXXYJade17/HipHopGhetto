@@ -24,11 +24,12 @@ public class ScoreServiceImpl implements ScoreService {
      * 查询评分
      */
     public Integer select(Long resourceId) {
-        return scoreMapper.selectOne(
+        Score score = scoreMapper.selectOne(
                 new QueryWrapper<Score>()
                         .eq("user_id", ThreadUtil.getUserId())
                         .eq("resource_id", resourceId)
-        ).getScore();
+        );
+        return score == null ? -1 : score.getScore();
     }
 
     /**

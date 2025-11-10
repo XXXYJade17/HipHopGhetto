@@ -15,6 +15,7 @@ import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -34,6 +35,12 @@ public class SongServiceImpl implements SongService {
     /**
      * （条件）分页查询
      */
+
+    @Cacheable(
+            value = "song",
+            key = "'page=' + #pageQueryDTO.page + '&size=' + #pageQueryDTO.size + '&sort=' + #pageQueryDTO.sortType",
+            unless = "#result == null"
+    )
     public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
         SortType sortType = pageQueryDTO.getSortType();
         Page<Song> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
@@ -47,6 +54,11 @@ public class SongServiceImpl implements SongService {
     /**
      * 查询歌曲详情
      */
+    @Cacheable(
+            value ="song  ",
+            key ="#id",
+            unless ="#result == null"
+    )
     public SongInfoVO info(Long id) {
         Song song = songMapper.selectById(id);
         Integer score = scoreService.select(id);
