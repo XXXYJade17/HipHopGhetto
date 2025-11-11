@@ -35,6 +35,13 @@ public class Score {
     private Long resourceId;
 
     /**
+     * 类型
+     * 1 - 专辑
+     * 2 - 歌曲
+     */
+    private Integer resourceType;
+
+    /**
      * 评分
      */
     private Integer score;

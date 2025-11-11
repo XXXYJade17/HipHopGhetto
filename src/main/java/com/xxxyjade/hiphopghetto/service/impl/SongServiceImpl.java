@@ -3,8 +3,10 @@ package com.xxxyjade.hiphopghetto.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xxxyjade.hiphopghetto.common.constant.ResourceType;
 import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
+import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreCountDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
@@ -16,16 +18,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 @Slf4j
 public class SongServiceImpl implements SongService {
 
     @Autowired
+    @Lazy
     private ScoreService scoreService;
     @Autowired
     private SongMapper songMapper;
@@ -79,6 +82,33 @@ public class SongServiceImpl implements SongService {
                 new QueryWrapper<Song>()
                         .eq("album_id", albumId)
         );
+    }
+
+    /**
+     * 处理平均分
+     */
+    public void processAvgScore() {
+        List<ScoreCountDTO> scoreCountDTOS = scoreService.selectScoreCount(ResourceType.SONG);
+
+        Map<Long, ScoreStats> scoreStatsMap = new HashMap<>();
+        scoreCountDTOS.forEach(scoreCountDTO -> {
+            Long resourceId = scoreCountDTO.getResourceId();
+            Integer count = scoreCountDTO.getScoreCount();
+            Integer score = scoreCountDTO.getScore();
+
+            ScoreStats scoreStats = scoreStatsMap.computeIfAbsent(resourceId, k -> new ScoreStats());
+
+            scoreStats.setScoreCount(scoreStats.getScoreCount() +count);
+            scoreStats.setTotalScore(scoreStats.getTotalScore() + score * count);
+        });
+        List<Song> songs = new ArrayList<>();
+        scoreStatsMap.forEach((key, scoreStats) -> songs.add(Song.builder()
+                .id(key)
+                .scoreCount(scoreStats.getScoreCount())
+                .avgScore(scoreStats.getAvgScore())
+                .build()
+        ));
+        songMapper.updateById(songs);
     }
 
 }

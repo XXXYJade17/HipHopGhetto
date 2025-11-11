@@ -8,12 +8,16 @@ import lombok.Data;
 @Schema(description = "评分DTO")
 public class ScoreDTO {
 
-    @NotNull(message = "评分对象id不能为空")
+    @NotNull
     @Schema(description = "评分对象id")
-    Long resourceId;
+    private Long resourceId;
 
-    @NotNull(message = "评分不能为空")
+    @NotNull
+    @Schema(description = "评分对象类型")
+    private Integer resourceType;
+
+    @NotNull
     @Schema(description = "评分")
-    Integer score;
+    private Integer score;
 
 }

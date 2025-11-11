@@ -1,4 +1,3 @@
-drop database  hiphop_ghetto;
 create database hiphop_ghetto;
 use hiphop_ghetto;
 # 用户表
@@ -30,10 +29,7 @@ create table comment (
     create_time datetime not null , # 创建时间
     update_time datetime not null , # 修改时间
     status tinyint not null default 0 , # 数据状态（0-正常，1-已删除）
-    index idx_comment_comment_section_id (comment_section_id),
-    constraint fk_comment_user
-        foreign key (user_id)
-            references user(id)
+    index idx_comment_section_id (comment_section_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 点赞记录表
 create table `like` (
@@ -42,10 +38,7 @@ create table `like` (
     user_id bigint not null , # 用户id
     unique index uniq_like_resource_id_user_id (resource_id, user_id) ,
     index idx_like_resource_id (resource_id),
-    index idx_like_user_id (user_id),
-    constraint fk_topic_like_user
-        foreign key (user_id)
-            references user(id)
+    index idx_like_user_id (user_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 收藏记录表
 create table collect (
@@ -54,10 +47,7 @@ create table collect (
     resource_id bigint not null , # 专辑/歌曲id
     unique index uniq_collect_user_id_resource_id (user_id, resource_id), # 唯一联合索引
     index idx_collect_user_id (user_id),
-    index idx_collect_resource_id (resource_id),
-    constraint fk_collect_user_id
-        foreign key (user_id)
-            references user(id)
+    index idx_collect_resource_id (resource_id)
 )engine = InnoDB default charset = utf8mb4;
 # 专辑表
 create table album (
@@ -91,8 +81,11 @@ create table song (
     score_count int default 0 , # 评分数
     collect_count int default 0 , # 收藏数
     comment_count int default 0 , # 评论数
-    index idx_song_netease_id (netease_id),
-    index idx_song_album_id (album_id)
+    index idx_song_netease_id (netease_id) ,
+    index idx_song_album_id (album_id) ,
+    constraint fk_song_album
+        foreign key (album_id)
+            references album(id)
 ) engine = InnoDB default charset = utf8mb4;
 # 话题表
 create table topic (
@@ -113,13 +106,11 @@ create table score (
     id bigint auto_increment primary key , # 主键自增
     user_id bigint not null , # 用户id
     resource_id bigint not null , # 评分对象曲id
+    resource_type tinyint not null , # 对象类型 1-专辑 2-歌曲
     score tinyint not null , # 评分
     unique index uniq_score_user_id_resource_id (user_id, resource_id), # 唯一联合索引
     index idx_score_user_id (user_id),
-    index idx_score_resource_id (resource_id),
-    constraint fk_score_user_id
-        foreign key (user_id)
-            references user(id)
+    index idx_score_resource_id (resource_id)
 ) engine = InnoDB default charset = utf8mb4;
 
 

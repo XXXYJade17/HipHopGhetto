@@ -88,7 +88,7 @@
         <!--jBCrypt-->
         <dependency>
             <groupId>org.mindrot</groupId>
-            <artifactId>jBCrypt</artifactId>
+            <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
         </dependency>
         <!--JWT-->

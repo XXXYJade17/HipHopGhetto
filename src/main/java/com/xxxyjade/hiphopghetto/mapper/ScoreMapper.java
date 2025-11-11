@@ -18,8 +18,8 @@ public interface ScoreMapper extends BaseMapper<Score> {
     void insertOrUpdateScore(Score score);
 
     @Select("select resource_id, score, count(*) as score_count from score " +
-            "where resource_id in (:ids) " +
+            "where resource_type = #{resourceType} " +
             "group by resource_id, score")
-    List<ScoreCountDTO> selectScoreCountByIds(@Param("ids") List<Integer> ids);
+    List<ScoreCountDTO> selectScoreCount(@Param("resourceType") Integer resourceType);
 
 }

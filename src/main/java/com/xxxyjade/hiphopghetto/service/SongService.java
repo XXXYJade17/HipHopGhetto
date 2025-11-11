@@ -25,4 +25,8 @@ public interface SongService {
      */
     List<Song> selectByAlbumId(Long albumId);
 
+    /**
+     * 处理平均分
+     */
+    void processAvgScore();
 }
