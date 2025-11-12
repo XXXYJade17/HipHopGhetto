@@ -14,6 +14,10 @@ public class KeyGenerator {
         return "albumPage::page=" + page + "&size=" + size + "&sort=" + sortType;
     }
 
+    public String generateAlbumSongsKey(Long albumId) {
+        return "albumSongs::id" + albumId;
+    }
+
     /**
      * 生成评论分页查询的缓存键（与 @Cacheable 的 key 规则保持一致）
      * @param sectionId 评论区ID
@@ -25,6 +29,14 @@ public class KeyGenerator {
     public String generateCommentPageKey(Long sectionId, Integer page, Integer size, SortType sortType) {
         // 格式：缓存名称::具体参数（与 @Cacheable 的 value 对应，避免和其他缓存冲突）
         return "commentPage::sectionId=" + sectionId + "&page=" + page + "&size=" + size + "&sort=" + sortType;
+    }
+
+    public String generateSongInfoKey(Integer id) {
+        return "songInfo::id" + id;
+    }
+
+    public String generateSongPageKey(Integer page, Integer size, SortType sortType) {
+        return "songPage::page=" + page + "&size=" + size + "&sort=" + sortType;
     }
 
     public String getAlbumInfoCachePrefix() {

@@ -24,7 +24,7 @@ public class ScoreController {
         return Result.success(scoreService.select(resourceId));
     }
 
-    @PutMapping("/score/{id}")
+    @PutMapping("/score")
     @Operation(summary = "评分")
     public Result<Void> collect(@RequestBody ScoreDTO scoreDTO) {
         scoreService.score(scoreDTO);

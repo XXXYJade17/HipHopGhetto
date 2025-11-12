@@ -7,11 +7,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-@Schema(title = "用户注册DTO")
 public class UserRegisterDTO implements Serializable {
 
     @NotBlank(message = "用户名不能为空")
-    @Size(min = 6, max = 16, message = "用户名长度必须为6-16位")
+    @Size(max = 16, message = "用户名长度必须小于16位")
     @Pattern(regexp = "^[a-zA-Z0-9_\\u4e00-\\u9fa5]+$", message = "用户名只能包含中文、字母、数字和下划线")
     @Schema(description = "用户名", requiredMode = Schema.RequiredMode.REQUIRED)
     private String username;
@@ -26,8 +25,8 @@ public class UserRegisterDTO implements Serializable {
 
     @NotBlank(message = "密码不能为空")
     @Size(min = 8, max = 20, message = "密码长度必须为8-20位")
-    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*()_+=-]).+$",
-            message = "密码必须包含字母、数字和特殊字符")
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d).+$",
+            message = "密码必须包含字母、数字")
     @Schema(description = "密码", requiredMode = Schema.RequiredMode.REQUIRED)
     private String password;
 

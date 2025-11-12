@@ -17,9 +17,11 @@ import com.xxxyjade.hiphopghetto.service.SongService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -38,12 +40,16 @@ public class SongServiceImpl implements SongService {
     /**
      * （条件）分页查询
      */
-
     @Cacheable(
-            value = "song",
-            key = "'page=' + #pageQueryDTO.page + '&size=' + #pageQueryDTO.size + '&sort=' + #pageQueryDTO.sortType",
+            value = "songPage",
+            key = "#keyGenerator.generateSongPageKey(" +
+                    "#pageQueryDTO.page, " +
+                    "#pageQueryDTO.size, " +
+                    "#pageQueryDTO.sortType" +
+                    ")",
             unless = "#result == null"
     )
+    @Transactional(rollbackFor = Exception.class)
     public PageVO<Song> page(PageQueryDTO pageQueryDTO) {
         SortType sortType = pageQueryDTO.getSortType();
         Page<Song> page = new Page<>(pageQueryDTO.getPage(), pageQueryDTO.getSize());
@@ -58,10 +64,13 @@ public class SongServiceImpl implements SongService {
      * 查询歌曲详情
      */
     @Cacheable(
-            value ="song  ",
-            key ="#id",
+            value ="songInfo",
+            key = "#keyGenerator.generateSongInfoKey(" +
+                    "#id" +
+                    ")",
             unless ="#result == null"
     )
+    @Transactional(rollbackFor = Exception.class)
     public SongInfoVO info(Long id) {
         Song song = songMapper.selectById(id);
         Integer score = scoreService.select(id);
@@ -77,6 +86,12 @@ public class SongServiceImpl implements SongService {
     /**
      * 查询专辑中全部歌曲
      */
+    @Cacheable(
+            value ="albumSongs",
+            key ="'albumSongs::id' + #albumId",
+            unless ="#result == null"
+    )
+    @Transactional(rollbackFor = Exception.class)
     public List<Song> selectByAlbumId(Long albumId) {
         return songMapper.selectList(
                 new QueryWrapper<Song>()
@@ -87,6 +102,11 @@ public class SongServiceImpl implements SongService {
     /**
      * 处理平均分
      */
+    @CacheEvict(
+            value = {"songPage", "albumSongs"},  // 批量清理分页缓存和专辑歌曲缓存
+            allEntries = true  // 这两类缓存无法精准匹配单首歌曲，全量清理更可靠
+    )
+    @Transactional(rollbackFor = Exception.class)
     public void processAvgScore() {
         List<ScoreCountDTO> scoreCountDTOS = scoreService.selectScoreCount(ResourceType.SONG);
 

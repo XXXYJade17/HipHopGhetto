@@ -14,10 +14,10 @@ import com.xxxyjade.hiphopghetto.service.CollectService;
 import com.xxxyjade.hiphopghetto.service.ScoreService;
 import com.xxxyjade.hiphopghetto.service.SongService;
 import com.xxxyjade.hiphopghetto.util.KeyGenerator;
-import com.xxxyjade.hiphopghetto.util.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -35,10 +35,6 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private CollectService collectService;
     @Autowired
-    private KeyGenerator keyGenerator;
-    @Autowired
-    private RedisUtil redisUtil;
-    @Autowired
     @Lazy
     private ScoreService scoreService;
     @Autowired
@@ -49,11 +45,7 @@ public class AlbumServiceImpl implements AlbumService {
      */
     @Cacheable(
             value = "albumPage",
-            key = "#keyGenerator.generateAlbumPageKey(" +
-                    "#pageQueryDTO.page, " +
-                    "#pageQueryDTO.size, " +
-                    "#pageQueryDTO.sortType" +
-                    ")",
+            key = "'albumPage::page=' + #pageQueryDTO.page + '&size=' + #pageQueryDTO.size + '&sort=' + #pageQueryDTO.sortType",
             unless = "#result == null"
     )
     @Transactional(rollbackFor = Exception.class)
@@ -72,9 +64,7 @@ public class AlbumServiceImpl implements AlbumService {
      */
     @Cacheable(
             value ="albumInfo",
-            key = "#keyGenerator.generateAlbumInfoKey(" +
-                    "#id" +
-                    ")",
+            key = "'albumInfo::id=' + #id",
             unless ="#result == null"
     )
     @Transactional(rollbackFor = Exception.class)
@@ -95,6 +85,11 @@ public class AlbumServiceImpl implements AlbumService {
     /**
      * 处理平均分
      */
+    @CacheEvict(
+            value = {"albumPage", "albumInfo"},  // 同时需要清除的缓存名称
+            allEntries = true  // 清除对应缓存中的所有数据
+    )
+    @Transactional(rollbackFor = Exception.class)
     public void processAvgScore() {
         List<ScoreCountDTO> scoreCountDTOS = scoreService.selectScoreCount(ResourceType.ALBUM);
 
@@ -117,9 +112,6 @@ public class AlbumServiceImpl implements AlbumService {
                 .build()
         ));
         albumMapper.updateById(albums);
-
-        redisUtil.deleteByPrefix(keyGenerator.getAlbumInfoCachePrefix());
-        redisUtil.deleteByPrefix(keyGenerator.getAlbumPageCachePrefix());
     }
 
 }
