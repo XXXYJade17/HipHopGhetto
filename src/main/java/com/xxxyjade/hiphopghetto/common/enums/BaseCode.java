@@ -18,6 +18,11 @@ public enum BaseCode {
         this.msg = msg;
     }
 
+    BaseCode(String msg) {
+        this.code = -1;
+        this.msg = msg;
+    }
+
     public Integer getCode() {
         return this.code;
     }

@@ -8,13 +8,15 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@Schema(title = "用户注册 VO")
+@Schema(title = "UserRegisterVO", description = "用户注册VO")
 public class UserRegisterVO {
 
-    @Schema(description = "用户Id")
+    @Schema(name = "id",
+            description = "用户Id")
     private Long id;
 
-    @Schema(description = "Jwt令牌")
+    @Schema(name = "token",
+            description = "用户id令牌")
     private String token;
 
 }

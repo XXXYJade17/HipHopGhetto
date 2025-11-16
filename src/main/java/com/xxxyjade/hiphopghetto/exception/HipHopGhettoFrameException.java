@@ -8,4 +8,8 @@ public class HipHopGhettoFrameException extends BaseException{
         super(baseCode);
     }
 
+    public HipHopGhettoFrameException(String message) {
+        super(message);
+    }
+
 }

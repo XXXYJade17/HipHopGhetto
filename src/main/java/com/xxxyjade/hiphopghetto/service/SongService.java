@@ -26,7 +26,18 @@ public interface SongService {
     List<Song> selectByAlbumId(Long albumId);
 
     /**
-     * 处理平均分
+     * 插入歌曲数据，若存在则忽略
      */
-    void processAvgScore();
+    void insertIgnore(Song song);
+
+    /**
+     * 更新专辑信息
+     */
+    void update(List<Song> songs);
+
+    /**
+     * 增加累计评分
+     */
+    void increaseRatingCount(Long id);
+
 }

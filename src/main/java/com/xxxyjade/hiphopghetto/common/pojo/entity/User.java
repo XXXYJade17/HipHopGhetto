@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user")
-public class User extends BaseTableData {
+public class User implements Serializable {
 
     /**
      * id
@@ -29,11 +30,6 @@ public class User extends BaseTableData {
     private String username;
 
     /**
-     * 密码
-     */
-    private String password;
-
-    /**
      * 手机号
      */
     private String phone;
@@ -44,32 +40,26 @@ public class User extends BaseTableData {
     private String email;
 
     /**
-     * 性别
-     * 0 - 未知
-     * 1 - 男
-     * 2 - 女
+     * 密码
      */
-    private Integer sex;
+    private String password;
 
     /**
-     * 头像
+     * 创建时间
      */
-    private String avatar;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
     /**
-     * 背景图
+     * 修改时间
      */
-    private String background;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
     /**
-     * 简介
+     * 数据状态
      */
-    private String description;
-
-    /**
-     * 生日
-     */
-    private LocalDateTime birthday;
-
+    @TableLogic(value = "1", delval = "0")
+    private Integer status;
 
 }

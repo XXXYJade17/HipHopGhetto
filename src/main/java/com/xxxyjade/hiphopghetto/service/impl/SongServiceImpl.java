@@ -6,18 +6,17 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxxyjade.hiphopghetto.common.constant.ResourceType;
 import com.xxxyjade.hiphopghetto.common.enums.SortType;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreCountDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.*;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.SongInfoVO;
 import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.CollectService;
-import com.xxxyjade.hiphopghetto.service.ScoreService;
+import com.xxxyjade.hiphopghetto.service.RatingService;
 import com.xxxyjade.hiphopghetto.service.SongService;
+import com.xxxyjade.hiphopghetto.util.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -31,7 +30,9 @@ public class SongServiceImpl implements SongService {
 
     @Autowired
     @Lazy
-    private ScoreService scoreService;
+    private RatingService ratingService;
+    @Autowired
+    private RedisUtil redisUtil;
     @Autowired
     private SongMapper songMapper;
     @Autowired
@@ -42,11 +43,7 @@ public class SongServiceImpl implements SongService {
      */
     @Cacheable(
             value = "songPage",
-            key = "#keyGenerator.generateSongPageKey(" +
-                    "#pageQueryDTO.page, " +
-                    "#pageQueryDTO.size, " +
-                    "#pageQueryDTO.sortType" +
-                    ")",
+            key = "'songPage::page=' + #pageQueryDTO.page + '&size=' + #pageQueryDTO.size + '&sort=' + #pageQueryDTO.sortType",
             unless = "#result == null"
     )
     @Transactional(rollbackFor = Exception.class)
@@ -65,15 +62,13 @@ public class SongServiceImpl implements SongService {
      */
     @Cacheable(
             value ="songInfo",
-            key = "#keyGenerator.generateSongInfoKey(" +
-                    "#id" +
-                    ")",
+            key = "'songInfo::id=' + #id",
             unless ="#result == null"
     )
     @Transactional(rollbackFor = Exception.class)
     public SongInfoVO info(Long id) {
         Song song = songMapper.selectById(id);
-        Integer score = scoreService.select(id);
+        Integer score = ratingService.select(id);
         Boolean collect = collectService.select(id);
 
         SongInfoVO albumInfoVO = new SongInfoVO();
@@ -100,35 +95,35 @@ public class SongServiceImpl implements SongService {
     }
 
     /**
-     * 处理平均分
+     * 插入歌曲，若存在则忽略
      */
-    @CacheEvict(
-            value = {"songPage", "albumSongs"},  // 批量清理分页缓存和专辑歌曲缓存
-            allEntries = true  // 这两类缓存无法精准匹配单首歌曲，全量清理更可靠
-    )
-    @Transactional(rollbackFor = Exception.class)
-    public void processAvgScore() {
-        List<ScoreCountDTO> scoreCountDTOS = scoreService.selectScoreCount(ResourceType.SONG);
+    public void insertIgnore(Song song) {
+        // 尝试插入
+        int insertIgnore = songMapper.insertIgnore(song);
 
-        Map<Long, ScoreStats> scoreStatsMap = new HashMap<>();
-        scoreCountDTOS.forEach(scoreCountDTO -> {
-            Long resourceId = scoreCountDTO.getResourceId();
-            Integer count = scoreCountDTO.getScoreCount();
-            Integer score = scoreCountDTO.getScore();
+        if (insertIgnore == 1) {
+            // 插入成功清除缓存
+            redisUtil.deleteByPrefix("songPage::");
+        }
+    }
 
-            ScoreStats scoreStats = scoreStatsMap.computeIfAbsent(resourceId, k -> new ScoreStats());
-
-            scoreStats.setScoreCount(scoreStats.getScoreCount() +count);
-            scoreStats.setTotalScore(scoreStats.getTotalScore() + score * count);
-        });
-        List<Song> songs = new ArrayList<>();
-        scoreStatsMap.forEach((key, scoreStats) -> songs.add(Song.builder()
-                .id(key)
-                .scoreCount(scoreStats.getScoreCount())
-                .avgScore(scoreStats.getAvgScore())
-                .build()
-        ));
+    /**
+     * 更新专辑信息
+     */
+    public void update(List<Song> songs) {
         songMapper.updateById(songs);
+        redisUtil.deleteByPrefix("songPage::");
+        redisUtil.deleteByPrefix("songInfo::");
+    }
+
+    /**
+     * 增加累计评分
+     */
+    public void increaseRatingCount(Long id) {
+        int increase = songMapper.increaseRatingCount(id);
+        if (increase == 1) {
+            redisUtil.delete("songInfo::id=" + id);
+        }
     }
 
 }

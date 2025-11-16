@@ -66,8 +66,6 @@ public class CommentServiceImpl implements CommentService {
         Long sectionId = commentDTO.getCommentSectionId();
         Comment comment = Comment.builder()
                 .userId(userId)
-                .commentSectionId(sectionId)
-                .replyId(commentDTO.getReplyId())
                 .content(commentDTO.getContent())
                 .build();
         commentMapper.insert(comment);
@@ -86,14 +84,13 @@ public class CommentServiceImpl implements CommentService {
         if (comment == null) {
             throw new RuntimeException("评论不存在");
         }
-        Long sectionId = comment.getCommentSectionId();
 
         // 删除评论
         commentMapper.deleteById(id);
 
         // 删除该评论区的所有缓存
-        String cachePrefix = keyGenerator.getCommentSectionCachePrefix(sectionId);
-        redisUtil.deleteByPrefix(cachePrefix);
+//        String cachePrefix = keyGenerator.getCommentSectionCachePrefix(sectionId);
+//        redisUtil.deleteByPrefix(cachePrefix);
     }
 
 }

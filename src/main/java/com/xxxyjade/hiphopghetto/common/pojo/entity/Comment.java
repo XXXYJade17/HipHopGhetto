@@ -1,14 +1,14 @@
 package com.xxxyjade.hiphopghetto.common.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.xxxyjade.hiphopghetto.common.pojo.base.BaseTableData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * 评论实体类
@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("comment")
-public class Comment extends BaseTableData {
+public class Comment implements Serializable {
 
     /**
      * 评论id
@@ -32,19 +32,9 @@ public class Comment extends BaseTableData {
     private Long userId;
 
     /**
-     * 用户名
+     * 评论对象id
      */
-    private String username;
-
-    /**
-     * 评论区id
-     */
-    private Long commentSectionId;
-
-    /**
-     * 回复对象id
-     */
-    private Long replyId;
+    private Long parentId;
 
     /**
      * 评论内容
@@ -52,13 +42,15 @@ public class Comment extends BaseTableData {
     private String content;
 
     /**
-     * 点赞量
+     * 创建时间
      */
-    private Integer likeCount;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
     /**
-     * 回复量
+     * 数据状态
      */
-    private Integer replyCount;
+    @TableLogic(value = "1", delval = "0")
+    private Integer status;
 
 }

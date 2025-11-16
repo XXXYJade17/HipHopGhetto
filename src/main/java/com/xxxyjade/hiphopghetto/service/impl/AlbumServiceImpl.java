@@ -11,10 +11,11 @@ import com.xxxyjade.hiphopghetto.common.pojo.vo.*;
 import com.xxxyjade.hiphopghetto.mapper.*;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
 import com.xxxyjade.hiphopghetto.service.CollectService;
-import com.xxxyjade.hiphopghetto.service.ScoreService;
+import com.xxxyjade.hiphopghetto.service.RatingService;
 import com.xxxyjade.hiphopghetto.service.SongService;
-import com.xxxyjade.hiphopghetto.util.KeyGenerator;
+import com.xxxyjade.hiphopghetto.util.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.executor.BatchResult;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -35,8 +36,10 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private CollectService collectService;
     @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
     @Lazy
-    private ScoreService scoreService;
+    private RatingService ratingService;
     @Autowired
     private SongService songService;
 
@@ -70,7 +73,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Transactional(rollbackFor = Exception.class)
     public AlbumInfoVO info(Long id) {
         Album album = albumMapper.selectById(id);
-        Integer score = scoreService.select(id);
+        Integer score = ratingService.select(id);
         Boolean collect = collectService.select(id);
         List<Song> songs = songService.selectByAlbumId(id);
 
@@ -83,35 +86,35 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * 处理平均分
+     * 插入专辑，若存在则忽略
      */
-    @CacheEvict(
-            value = {"albumPage", "albumInfo"},  // 同时需要清除的缓存名称
-            allEntries = true  // 清除对应缓存中的所有数据
-    )
-    @Transactional(rollbackFor = Exception.class)
-    public void processAvgScore() {
-        List<ScoreCountDTO> scoreCountDTOS = scoreService.selectScoreCount(ResourceType.ALBUM);
+    public void insertIgnore(Album album) {
+        // 尝试插入
+        int insertIgnore = albumMapper.insertIgnore(album);
 
-        Map<Long, ScoreStats> scoreStatsMap = new HashMap<>();
-        scoreCountDTOS.forEach(scoreCountDTO -> {
-            Long resourceId = scoreCountDTO.getResourceId();
-            Integer count = scoreCountDTO.getScoreCount();
-            Integer score = scoreCountDTO.getScore();
+        if (insertIgnore == 1) {
+            // 插入成功清除缓存
+            redisUtil.deleteByPrefix("albumPage::");
+        }
+    }
 
-            ScoreStats scoreStats = scoreStatsMap.computeIfAbsent(resourceId, k -> new ScoreStats());
-
-            scoreStats.setScoreCount(scoreStats.getScoreCount() +count);
-            scoreStats.setTotalScore(scoreStats.getTotalScore() + score * count);
-        });
-        List<Album> albums = new ArrayList<>();
-        scoreStatsMap.forEach((key, scoreStats) -> albums.add(Album.builder()
-                .id(key)
-                .scoreCount(scoreStats.getScoreCount())
-                .avgScore(scoreStats.getAvgScore())
-                .build()
-        ));
+    /**
+     * 更新专辑信息
+     */
+    public void update(List<Album> albums) {
         albumMapper.updateById(albums);
+        redisUtil.deleteByPrefix("albumPage::");
+        redisUtil.deleteByPrefix("albumInfo::");
+    }
+
+    /**
+     * 增加累计评分
+     */
+    public void increaseRatingCount(Long id) {
+        int increase = albumMapper.increaseRatingCount(id);
+        if (increase == 1) {
+            redisUtil.delete("albumInfo::id=" + id);
+        }
     }
 
 }

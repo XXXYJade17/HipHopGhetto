@@ -22,11 +22,12 @@ import java.util.List;
 public class NetEaseAlbumCrawlUtil implements PageProcessor {
 
     @Autowired
-    private AlbumMapper albumMapper;
+    private AlbumService albumService;
     @Autowired
     private NetEaseSongCrawlUtil netEaseSongCrawlUtil;
 
-    private final Site site = Site.me()
+    private static final String ALBUM_URL = "https://music.163.com/album?id=";
+    private static final Site site = Site.me()
             .setDomain("music.163.com")        // 目标域名
             .setSleepTime(100)               // 爬取间隔（避免反爬）
             .setRetryTimes(3)                 // 重试次数
@@ -47,7 +48,7 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             // 专辑名
             String albumName = page.getHtml().xpath("//h2[@class='f-ff2']/text()").get();
             // 歌手名
-            String singer = String.join(" / ", page.getHtml().xpath("//p[@class='intr'][1]/span/a/text()").all());
+            String artists = String.join(" / ", page.getHtml().xpath("//p[@class='intr'][1]/span/a/text()").all());
             // 发行时间
             LocalDate releaseTime = LocalDate.parse(page.getHtml().xpath("//p[@class='intr'][2]/text()").get(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             // 专辑封面
@@ -55,7 +56,7 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             // 专辑介绍
             String description = page.getHtml().xpath("//div[@id='album-desc-dot']/p/text()").get();
             // 歌曲id列表
-            List<Long> songs = page.getHtml().xpath("//ul[@class='f-hide']/li").all().stream().map(s -> {
+            List<Long> songIds = page.getHtml().xpath("//ul[@class='f-hide']/li").all().stream().map(s -> {
                 Html html = Html.create(s);
                 return Long.parseLong(html.xpath("//a/@href").get().replace("/song?id=", ""));
             }).toList();
@@ -63,25 +64,23 @@ public class NetEaseAlbumCrawlUtil implements PageProcessor {
             Album album = Album.builder()
                     .neteaseId(neteaseId)
                     .albumName(albumName)
-                    .singer(singer)
+                    .artists(artists)
                     .releaseTime(releaseTime)
                     .coverUrl(url)
                     .description(description)
                     .build();
             // 插入专辑数据
-            albumMapper.insertIgnore(album);
+            albumService.insertIgnore(album);
 
             // 插入歌曲数据
-            songs.forEach(songId -> {
-                netEaseSongCrawlUtil.startCrawl(songId, album.getId(), releaseTime);
-            });
+            netEaseSongCrawlUtil.startCrawl(songIds, album.getId(), releaseTime);
 
         }
     }
 
     public void startCrawl(Long id) {
         Spider.create(this)
-                .addUrl(("https://music.163.com/album?id=" + id))
+                .addUrl(ALBUM_URL + id)
                 .thread(1) // 单线程避免请求过于频繁
                 .run();
     }

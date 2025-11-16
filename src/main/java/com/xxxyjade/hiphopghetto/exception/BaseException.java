@@ -22,4 +22,10 @@ public class BaseException extends RuntimeException{
         this.message = baseCode.getMsg();
     }
 
+    public BaseException(String message) {
+        super(message);
+        this.code = -1;
+        this.message = message;
+    }
+
 }

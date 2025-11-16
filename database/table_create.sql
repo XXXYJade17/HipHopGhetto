@@ -1,116 +1,125 @@
+drop database  hiphop_ghetto;
 create database hiphop_ghetto;
 use hiphop_ghetto;
-# 用户表
+-- 用户表
 create table user (
-    id bigint primary key , # 用户ID（雪花算法生成）
-    username varchar(20) not null , # 用户名
-    password varchar(100) not null , # 密码
-    phone varchar(20) default null , # 手机号
-    email varchar(100) default null , # 邮箱
-    sex tinyint default 0 , # 性别（0-未知，1-男，2-女）
-    avatar varchar(255) default null , # 头像url
-    background varchar(255) default null , # 背景图url
-    description varchar(60) default null, # 简介
-    birthday datetime default null , # 生日
-    create_time datetime not null , # 创建时间
-    update_time datetime not null , # 修改时间
-    status tinyint not null default 0 # 数据状态（0-正常，1-已删除）
+    id bigint not null comment '用户ID(雪花算法生成)',
+    username varchar(16) not null comment '用户名',
+    phone varchar(20) default null comment '手机号',
+    email varchar(100) default null comment '邮箱',
+    password varchar(128) not null comment '(加密后)密码',
+    create_time datetime not null comment '创建时间',
+    update_time datetime not null comment '修改时间',
+    status tinyint not null default 1 comment '数据状态(0-禁用,1-正常)',
+    primary key (id),
+    unique key uk_phone (phone),
+    unique key uk_email (email)
 ) engine = InnoDB default charset = utf8mb4;
-# 评论区表
-create table comment (
-    id bigint auto_increment primary key , # 评论id
-    user_id bigint not null , # 用户id
-    username varchar(20) not null , # 用户名
-    comment_section_id bigint not null , # 评论区id（后端雪花生成）
-    reply_id bigint default null, # 回复对象id
-    content text not null , # 评论内容
-    like_count int default 0 , # 点赞量
-    reply_count int default 0 , # 回复量
-    create_time datetime not null , # 创建时间
-    update_time datetime not null , # 修改时间
-    status tinyint not null default 0 , # 数据状态（0-正常，1-已删除）
-    index idx_comment_section_id (comment_section_id)
+-- 用户信息表(后续放mongodb)
+create table user_info (
+    id bigint not null comment '用户id',
+    nickname varchar(8) not null comment '用户昵称',
+    sex tinyint default 0 comment '性别(0-未知 1-男 2-女)',
+    avatar varchar(255) default null comment '头像url',
+    background varchar(255) default null comment '背景图url',
+    description varchar(60) default null comment '简介',
+    birthday datetime default null comment '生日',
+    primary key (id),
+    constraint fk_user_info foreign key (id) references user(id)
 ) engine = InnoDB default charset = utf8mb4;
-# 点赞记录表
-create table `like` (
-    id bigint auto_increment primary key ,
-    resource_id bigint not null , # 点赞对象id
-    user_id bigint not null , # 用户id
-    unique index uniq_like_resource_id_user_id (resource_id, user_id) ,
-    index idx_like_resource_id (resource_id),
-    index idx_like_user_id (user_id)
-) engine = InnoDB default charset = utf8mb4;
-# 收藏记录表
-create table collect (
-    id bigint auto_increment primary key , # 主键自增
-    user_id bigint not null , # 用户id
-    resource_id bigint not null , # 专辑/歌曲id
-    unique index uniq_collect_user_id_resource_id (user_id, resource_id), # 唯一联合索引
-    index idx_collect_user_id (user_id),
-    index idx_collect_resource_id (resource_id)
-)engine = InnoDB default charset = utf8mb4;
 # 专辑表
 create table album (
-    id bigint primary key , # 专辑id（雪花算法生成）
-    netease_id bigint unique , # 网易云id
-    album_name varchar(20) not null , # 专辑名
-    singer varchar(50) not null , # 歌手名
-    release_time date not null , # 发行日期
-    cover_url varchar(255) not null , # 专辑封面
-    description text not null , # 简介
-    comment_section_id bigint unique not null , # 评论区id
-    avg_score decimal(3,1) default null , # 平均评分
-    score_count int default 0 , # 评分数
-    collect_count int default 0 , # 收藏数
-    comment_count int default 0 , # 评论数
-    index idx_album_netease_id (netease_id)
+    id bigint comment '专辑id(雪花算法生成)',
+    netease_id bigint comment '网易云id',
+    album_name varchar(20) not null comment '# 专辑名',
+    artists varchar(50) not null comment '歌手名',
+    release_time date not null comment '发行日期',
+    cover_url varchar(255) not null comment '专辑封面',
+    description text not null comment '简介',
+    avg_score tinyint default null comment '平均评分(百分制)',
+    rating_count int default 0 comment '累计评分',
+    collect_count int default 0 comment '累计收藏',
+    comment_count int default 0 comment '累计评论',
+    primary key (id),
+    unique key uk_album_netease_id (netease_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 歌曲表
 create table song (
-    id bigint primary key , # 歌曲id（雪花算法生成）
-    netease_id bigint unique , # 网易云id
-    song_name varchar(20) not null , # 歌曲名
-    album_id bigint not null , # 所属专辑 Id
-    album_name varchar(20) not null , # 所属专辑名
-    singer varchar(100) not null , # 歌手名
-    release_time date not null , # 发行日期
-    duration int not null , # 时长
-    cover_url varchar(255) not null , # 封面url
-    comment_section_id bigint unique not null , # 评论区id
-    avg_score decimal(3,1) default null , # 平均评分
-    score_count int default 0 , # 评分数
-    collect_count int default 0 , # 收藏数
-    comment_count int default 0 , # 评论数
-    index idx_song_netease_id (netease_id) ,
+    id bigint comment '歌曲id(雪花算法生成)',
+    netease_id bigint unique comment '网易云id',
+    song_name varchar(20) not null comment '歌曲名',
+    album_id bigint not null comment '所属专辑 Id',
+    album_name varchar(20) not null comment '所属专辑名',
+    artists varchar(100) not null comment '歌手名',
+    release_time date not null comment '发行日期',
+    duration int not null comment '时长(秒)',
+    cover_url varchar(255) not null comment '封面url',
+    avg_score tinyint default null comment '平均评分(百分制)',
+    rating_count int default 0 comment '累计评分',
+    collect_count int default 0 comment '累计收藏',
+    comment_count int default 0 comment '累计评论',
+    primary key (id),
+    unique key uk_album_netease_id (netease_id),
     index idx_song_album_id (album_id) ,
-    constraint fk_song_album
-        foreign key (album_id)
-            references album(id)
+    constraint fk_album_song foreign key (album_id) references album(id)
+) engine = InnoDB default charset = utf8mb4;
+# 评论区表
+create table comment (
+    id bigint comment '评论id(雪花算法生成)',
+    user_id bigint not null comment '用户id',
+    parent_id bigint not null comment '评论对象id',
+    content text not null comment '评论内容',
+    create_time datetime not null comment '创建时间',
+    status tinyint not null default 1 comment '数据状态(0-禁用,1-正常)',
+    primary key (id),
+    index idx_user_id(user_id),
+    index idx_parent_id(parent_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 话题表
 create table topic (
-    id bigint primary key , # 话题id
-    title varchar(20) not null , # 标题
-    content text , # 内容
-    cover_url varchar(255) , # 封面url
-    comment_section_id bigint unique not null , # 评论区id
-    comment_count int default 0 , # 评论数
-    view_count int default 0 , # 浏览数
-    like_count int default 0 , # 点赞数
-    create_time datetime not null , # 创建时间
-    update_time datetime not null , # 修改时间
-    status tinyint not null default 0 # 数据状态（0-正常，1-已删除）
+    id bigint comment '话题id(雪花算法生成)',
+    user_id bigint comment '发起用户id',
+    title varchar(20) not null comment '标题',
+    content text comment '内容',
+    cover_url varchar(255) comment '封面url',
+    view_count int default 0 comment '浏览量',
+    create_time datetime not null comment '创建时间',
+    update_time datetime not null comment '修改时间',
+    status tinyint not null default 1 comment '数据状态(0-禁用,1-正常)',
+    primary key (id),
+    index idx_topic_user (user_id)
 ) engine = InnoDB default charset = utf8mb4;
-# 评分记录表
-create table score (
-    id bigint auto_increment primary key , # 主键自增
-    user_id bigint not null , # 用户id
-    resource_id bigint not null , # 评分对象曲id
-    resource_type tinyint not null , # 对象类型 1-专辑 2-歌曲
-    score tinyint not null , # 评分
-    unique index uniq_score_user_id_resource_id (user_id, resource_id), # 唯一联合索引
-    index idx_score_user_id (user_id),
-    index idx_score_resource_id (resource_id)
+# 点赞记录表
+create table like_relation (
+    id bigint auto_increment comment '点赞id(雪花算法生成)',
+    user_id bigint not null comment '用户id',
+    target_id bigint not null comment '点赞对象id',
+    primary key (id),
+    unique index uk_user_target (user_id, target_id) ,
+    index idx_like_target (target_id),
+    index idx_like_user (user_id)
+) engine = InnoDB default charset = utf8mb4;
+# 收藏记录表
+create table collection (
+    id bigint comment '收藏id(雪花算法生成)',
+    user_id bigint not null comment '用户id',
+    target_id bigint not null comment '收藏对象id',
+    primary key (id),
+    unique index uk_user_target (user_id, target_id),
+    index idx_like_target (target_id),
+    index idx_like_user (user_id)
+)engine = InnoDB default charset = utf8mb4;
+# 评分表
+create table rating (
+    id bigint comment '评分id',
+    user_id bigint not null comment '评分用户id',
+    target_id bigint not null comment '评分对象曲id',
+    target_type tinyint not null comment '评分对象类型 1-专辑 2-歌曲',
+    score tinyint not null comment '评分',
+    primary key (id),
+    unique index uk_user_target (user_id, target_id),
+    index idx_user (user_id),
+    index idx_target (target_id)
 ) engine = InnoDB default charset = utf8mb4;
 
 

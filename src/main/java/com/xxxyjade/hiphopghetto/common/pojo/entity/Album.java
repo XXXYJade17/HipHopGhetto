@@ -39,7 +39,7 @@ public class Album implements Serializable {
     /**
      * 歌手名
      */
-    private String singer;
+    private String artists;
 
     /**
      * 发行时间
@@ -57,55 +57,26 @@ public class Album implements Serializable {
     private String description;
 
     /**
-     * 评论区id
-     */
-    @TableField(fill = FieldFill.INSERT)
-    private Long commentSectionId;
-
-    /**
-     * 总评分
-     */
-    @Builder.Default
-    @TableField(exist = false)
-    private Long totalScore = 0L;
-
-    /**
-     * 综合评分
+     * 平均评分(100分制)
      */
     private BigDecimal avgScore;
 
     /**
-     * 评分总数
+     * 累计评分
      */
     @Builder.Default
-    private Integer scoreCount = 0;
+    private Integer ratingCount = 0;
 
     /**
-     * 收藏总数
+     * 累计收藏
      */
     @Builder.Default
     private Integer collectCount = 0;
 
     /**
-     * 评论总数
+     * 累计评论
      */
     @Builder.Default
     private Integer commentCount = 0;
-
-    public void addTotalScore(int n) {
-        totalScore += n;
-    }
-
-    public void addScoreCount(int n) {
-        scoreCount += n;
-    }
-
-    public void addCollectCount(int n) {
-        collectCount += n;
-    }
-
-    public void addCommentCount(int n) {
-        commentCount += n;
-    }
 
 }

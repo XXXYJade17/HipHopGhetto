@@ -1,16 +1,11 @@
 package com.xxxyjade.hiphopghetto.controller;
 
-import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentPageQueryDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.ScoreDTO;
-import com.xxxyjade.hiphopghetto.common.pojo.dto.CommentDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.dto.PageQueryDTO;
 import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Comment;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.AlbumInfoVO;
 import com.xxxyjade.hiphopghetto.common.pojo.vo.PageVO;
 import com.xxxyjade.hiphopghetto.common.result.Result;
 import com.xxxyjade.hiphopghetto.service.AlbumService;
-import com.xxxyjade.hiphopghetto.service.CommentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;

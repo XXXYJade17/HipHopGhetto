@@ -20,8 +20,17 @@ public interface AlbumService {
     AlbumInfoVO info(Long id);
 
     /**
-     * 处理平均分
+     * 更新专辑信息
      */
-    void processAvgScore();
+    void update(List<Album> albums);
 
+    /**
+     * 插入专辑，若存在则忽略
+     */
+    void insertIgnore(Album album);
+
+    /**
+     * 增加累计评分
+     */
+    void increaseRatingCount(Long id);
 }
