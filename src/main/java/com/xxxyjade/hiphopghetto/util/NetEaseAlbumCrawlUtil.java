@@ -1,8 +1,7 @@
 package com.xxxyjade.hiphopghetto.util;
 
-import com.xxxyjade.hiphopghetto.common.pojo.entity.Album;
-import com.xxxyjade.hiphopghetto.mapper.AlbumMapper;
-import com.xxxyjade.hiphopghetto.service.AlbumService;
+import com.xxxyjade.hiphopghetto.model.entity.Album;
+import com.xxxyjade.hiphopghetto.server.album.service.AlbumService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

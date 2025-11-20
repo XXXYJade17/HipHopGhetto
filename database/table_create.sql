@@ -38,7 +38,7 @@ create table album (
     description text not null comment '简介',
     avg_score tinyint default null comment '平均评分(百分制)',
     rating_count int default 0 comment '累计评分',
-    collect_count int default 0 comment '累计收藏',
+    collection_count int default 0 comment '累计收藏',
     comment_count int default 0 comment '累计评论',
     primary key (id),
     unique key uk_album_netease_id (netease_id)
@@ -56,7 +56,7 @@ create table song (
     cover_url varchar(255) not null comment '封面url',
     avg_score tinyint default null comment '平均评分(百分制)',
     rating_count int default 0 comment '累计评分',
-    collect_count int default 0 comment '累计收藏',
+    collection_count int default 0 comment '累计收藏',
     comment_count int default 0 comment '累计评论',
     primary key (id),
     unique key uk_album_netease_id (netease_id),
@@ -67,8 +67,11 @@ create table song (
 create table comment (
     id bigint comment '评论id(雪花算法生成)',
     user_id bigint not null comment '用户id',
-    parent_id bigint not null comment '评论对象id',
+    parent_id bigint not null comment '评论上级id',
+    parent_type tinyint not null comment '评论上级类型 3-评论 4-话题',
     content text not null comment '评论内容',
+    comment_count int default 0 comment '评论数量',
+    like_count int default 0 comment '点赞数量',
     create_time datetime not null comment '创建时间',
     status tinyint not null default 1 comment '数据状态(0-禁用,1-正常)',
     primary key (id),
@@ -83,6 +86,8 @@ create table topic (
     content text comment '内容',
     cover_url varchar(255) comment '封面url',
     view_count int default 0 comment '浏览量',
+    comment_count int default 0 comment '评论量',
+    like_count int default 0 comment '点赞量',
     create_time datetime not null comment '创建时间',
     update_time datetime not null comment '修改时间',
     status tinyint not null default 1 comment '数据状态(0-禁用,1-正常)',
@@ -90,10 +95,13 @@ create table topic (
     index idx_topic_user (user_id)
 ) engine = InnoDB default charset = utf8mb4;
 # 点赞记录表
-create table like_relation (
+create table like_record (
     id bigint auto_increment comment '点赞id(雪花算法生成)',
     user_id bigint not null comment '用户id',
     target_id bigint not null comment '点赞对象id',
+    target_type tinyint not null comment '点赞对象类型 3-评论 4-话题',
+    is_liked bool default true not null comment '是否点赞',
+    create_time datetime not null comment '创建时间',
     primary key (id),
     unique index uk_user_target (user_id, target_id) ,
     index idx_like_target (target_id),
@@ -104,6 +112,9 @@ create table collection (
     id bigint comment '收藏id(雪花算法生成)',
     user_id bigint not null comment '用户id',
     target_id bigint not null comment '收藏对象id',
+    target_type tinyint not null comment '收藏对象类型 1-专辑 2-歌曲',
+    is_collected bool default true not null comment '是否收藏',
+    create_time datetime not null comment '创建时间',
     primary key (id),
     unique index uk_user_target (user_id, target_id),
     index idx_like_target (target_id),

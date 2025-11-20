@@ -1,19 +1,19 @@
 package com.xxxyjade.hiphopghetto.common.result;
 
-import com.xxxyjade.hiphopghetto.common.enums.BaseCode;
+import com.xxxyjade.hiphopghetto.model.enums.BaseCode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(title="数据响应规范结构")
+@Schema(title="Result", description = "数据响应规范结构")
 public class Result<T> {
-    @Schema(name ="状态码", type ="Integer", description ="0-成功 其余-失败")
+    @Schema(name ="code", description ="状态码")
     private Integer code;
 
-    @Schema(name ="错误信息", type ="String")
+    @Schema(name = "message", description ="错误信息")
     private String message;
 
-    @Schema(name ="响应数据")
+    @Schema(name = "data", description ="响应数据")
     private T data;
 
     private Result() {}

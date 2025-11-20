@@ -1,9 +1,9 @@
 package com.xxxyjade.hiphopghetto.message.strategy;
 
-import com.xxxyjade.hiphopghetto.common.constant.MessageTypeConstant;
-import com.xxxyjade.hiphopghetto.common.pojo.entity.User;
+import com.xxxyjade.hiphopghetto.common.constant.MessageType;
+import com.xxxyjade.hiphopghetto.model.entity.User;
 import com.xxxyjade.hiphopghetto.message.domain.Message;
-import com.xxxyjade.hiphopghetto.service.UserService;
+import com.xxxyjade.hiphopghetto.server.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +31,7 @@ public class UserInfoCreateHandler implements MessageStrategy<User> {
      * 消息类型标识
      */
     public String getMessageType() {
-        return MessageTypeConstant.USER_INFO_CREATE;
+        return MessageType.USER_INFO_CREATE;
     }
 
 }

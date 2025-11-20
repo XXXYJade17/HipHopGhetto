@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xxxyjade.hiphopghetto.mapper.CommentMapper">
+<mapper namespace="com.xxxyjade.hiphopghetto.server.comment.mapper.CommentMapper">
 
-    <select id="selectCommentPage" resultType="com.xxxyjade.hiphopghetto.common.pojo.entity.Comment">
+    <select id="selectCommentPage" resultType="com.xxxyjade.hiphopghetto.model.entity.Comment">
         select comment.*, COUNT(c.reply_id) as reply_count  from comment
         left join comment c on c.reply_id = comment.id
         where comment.comment_section_id = #{commentSectionId} and comment.reply_id is null

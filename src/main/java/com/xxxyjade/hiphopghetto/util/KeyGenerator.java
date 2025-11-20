@@ -1,6 +1,6 @@
 package com.xxxyjade.hiphopghetto.util;
 
-import com.xxxyjade.hiphopghetto.common.enums.SortType;
+import com.xxxyjade.hiphopghetto.model.enums.SortType;
 import org.springframework.stereotype.Component;
 
 @Component
