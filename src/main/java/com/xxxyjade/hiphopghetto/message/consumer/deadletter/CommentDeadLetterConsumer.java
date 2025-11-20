@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.message.consumer.deadletter;
 
+import com.xxxyjade.hiphopghetto.common.constant.MessageQueue;
 import com.xxxyjade.hiphopghetto.model.entity.Comment;
 import com.xxxyjade.hiphopghetto.config.RabbitConfig;
 import com.xxxyjade.hiphopghetto.message.domain.Message;
@@ -24,7 +25,7 @@ public class CommentDeadLetterConsumer {
     private final Map<String, AtomicInteger> retryCountMap = new ConcurrentHashMap<>();
 
     // 监听收藏死信队列
-    @RabbitListener(queues = RabbitConfig.COMMENT_DEAD_QUEUE)
+    @RabbitListener(queues = MessageQueue.COMMENT_DEAD_QUEUE)
     public void handleDeadLetterMessage(Message<Comment> message) {
         String messageId = message.getMessageId();
         AtomicInteger retryCount = retryCountMap.computeIfAbsent(
@@ -43,10 +44,10 @@ public class CommentDeadLetterConsumer {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            rabbitTemplate.convertAndSend(RabbitConfig.COMMENT_QUEUE, message);
+            rabbitTemplate.convertAndSend(MessageQueue.COMMENT_QUEUE, message);
         } else {
             log.error("超过重试次数，发送到永久失败队列: {}", message);
-            rabbitTemplate.convertAndSend(RabbitConfig.DEAD_LETTER_QUEUE, message);
+            rabbitTemplate.convertAndSend(MessageQueue.DEAD_LETTER_QUEUE, message);
             retryCountMap.remove(messageId);
         }
     }

@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.message.consumer;
 
+import com.xxxyjade.hiphopghetto.common.constant.MessageQueue;
 import com.xxxyjade.hiphopghetto.model.entity.Rating;
 import com.xxxyjade.hiphopghetto.config.RabbitConfig;
 import com.xxxyjade.hiphopghetto.message.context.MessageStrategyDispatcher;
@@ -16,7 +17,7 @@ public class RatingConsumer {
     @Autowired
     private MessageStrategyDispatcher messageStrategyDispatcher;
 
-    @RabbitListener(queues = RabbitConfig.RATING_QUEUE)
+    @RabbitListener(queues = MessageQueue.RATING_QUEUE)
     public void handleUserInfoMessage(Message<Rating> message) {
         log.info("接收到消息: {}", message);
         messageStrategyDispatcher.dispatch(message);

@@ -22,10 +22,13 @@ public class RatingCountIncreaseHandler implements MessageStrategy<Rating> {
      * 评分数加一
      */
     public void handle(Message<Rating> message) {
-        Rating rating = message.getMessageBody();
-        switch (rating.getTargetType()) {
-            case ResourceType.ALBUM -> albumService.increaseRatingCount(rating.getId());
-            case ResourceType.SONG -> songService.increaseRatingCount(rating.getId());
+        try {
+            Rating rating = message.getMessageBody();
+            switch (rating.getTargetType()) {
+                case ResourceType.ALBUM -> albumService.increaseRatingCount(rating.getId());
+                case ResourceType.SONG -> songService.increaseRatingCount(rating.getId());
+            }
+        } catch (Exception e) {
         }
     }
 

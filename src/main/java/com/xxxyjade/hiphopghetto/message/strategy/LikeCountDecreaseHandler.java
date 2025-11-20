@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.message.strategy;
 import com.xxxyjade.hiphopghetto.common.constant.MessageType;
 import com.xxxyjade.hiphopghetto.common.constant.ResourceType;
 import com.xxxyjade.hiphopghetto.model.entity.Like;
-import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
+//import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
 import com.xxxyjade.hiphopghetto.message.domain.Message;
 import com.xxxyjade.hiphopghetto.server.comment.service.CommentService;
 import com.xxxyjade.hiphopghetto.server.topic.service.TopicService;
@@ -34,7 +34,7 @@ public class LikeCountDecreaseHandler implements MessageStrategy<Like> {
                 default -> log.warn("未知对象类型: {}", like.getTargetType());
             }
         } catch (Exception e) {
-            throw new HipHopGhettoFrameException("消息处理失败");
+//            throw new HipHopGhettoFrameException("消息处理失败");
         }
     }
 

@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.message.consumer;
 
+import com.xxxyjade.hiphopghetto.common.constant.MessageQueue;
 import com.xxxyjade.hiphopghetto.model.entity.User;
 import com.xxxyjade.hiphopghetto.config.RabbitConfig;
 import com.xxxyjade.hiphopghetto.message.context.MessageStrategyDispatcher;
@@ -17,7 +18,7 @@ public class UserConsumer {
     @Autowired
     private MessageStrategyDispatcher messageStrategyDispatcher;
 
-    @RabbitListener(queues = RabbitConfig.USER_QUEUE)
+    @RabbitListener(queues = MessageQueue.USER_QUEUE)
     @SneakyThrows
     public void handleUserInfoMessage(Message<User> message) {
         log.info("Received user info message: {}", message);

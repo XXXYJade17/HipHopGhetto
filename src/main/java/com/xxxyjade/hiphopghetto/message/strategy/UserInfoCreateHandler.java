@@ -18,13 +18,16 @@ public class UserInfoCreateHandler implements MessageStrategy<User> {
      * 创建用户信息
      */
     public void handle(Message<User> message) {
-        User user = message.getMessageBody();
-        userService.createInfo(
-                User.builder()
-                        .id(user.getId())
-                        .username(user.getUsername())
-                        .build()
-        );
+        try {
+            User user = message.getMessageBody();
+            userService.createInfo(
+                    User.builder()
+                            .id(user.getId())
+                            .username(user.getUsername())
+                            .build()
+            );
+        } catch (Exception e) {
+        }
     }
 
     /**

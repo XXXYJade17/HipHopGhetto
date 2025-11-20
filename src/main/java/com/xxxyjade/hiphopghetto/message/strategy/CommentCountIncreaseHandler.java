@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.message.strategy;
 import com.xxxyjade.hiphopghetto.common.constant.MessageType;
 import com.xxxyjade.hiphopghetto.common.constant.ResourceType;
 import com.xxxyjade.hiphopghetto.model.entity.Comment;
-import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
+//import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
 import com.xxxyjade.hiphopghetto.message.domain.Message;
 import com.xxxyjade.hiphopghetto.server.comment.service.CommentService;
 import com.xxxyjade.hiphopghetto.util.RedisUtil;

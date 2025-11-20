@@ -3,7 +3,7 @@ package com.xxxyjade.hiphopghetto.message.strategy;
 import com.xxxyjade.hiphopghetto.common.constant.MessageType;
 import com.xxxyjade.hiphopghetto.common.constant.ResourceType;
 import com.xxxyjade.hiphopghetto.model.entity.Collection;
-import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
+//import com.xxxyjade.hiphopghetto.exception.HipHopGhettoFrameException;
 import com.xxxyjade.hiphopghetto.message.domain.Message;
 import com.xxxyjade.hiphopghetto.server.album.service.AlbumService;
 import com.xxxyjade.hiphopghetto.server.song.service.SongService;
@@ -35,7 +35,7 @@ public class CollectionCountDecreaseHandler implements MessageStrategy<Collectio
                 default -> log.warn("未知对象类型: {}", collection.getTargetType());
             }
         } catch (Exception e) {
-            throw new HipHopGhettoFrameException("消息处理失败");
+//            throw new HipHopGhettoFrameException("消息处理失败");
         }
     }
 

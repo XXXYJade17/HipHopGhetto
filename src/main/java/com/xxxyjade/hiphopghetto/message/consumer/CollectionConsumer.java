@@ -1,5 +1,6 @@
 package com.xxxyjade.hiphopghetto.message.consumer;
 
+import com.xxxyjade.hiphopghetto.common.constant.MessageQueue;
 import com.xxxyjade.hiphopghetto.model.entity.Collection;
 import com.xxxyjade.hiphopghetto.config.RabbitConfig;
 import com.xxxyjade.hiphopghetto.message.context.MessageStrategyDispatcher;
@@ -17,7 +18,7 @@ public class CollectionConsumer {
     private MessageStrategyDispatcher messageStrategyDispatcher;
 
     // 监听收藏计数队列
-    @RabbitListener(queues = RabbitConfig.COLLECTION_QUEUE)
+    @RabbitListener(queues = MessageQueue.COLLECTION_QUEUE)
     public void handleCollectCount(Message<Collection> message) {
         log.info("接收到消息: {}", message);
         messageStrategyDispatcher.dispatch(message);
